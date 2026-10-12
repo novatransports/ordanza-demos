@@ -142,7 +142,7 @@ function analizar(lr,url){
   var shot=a['final-screenshot']&&a['final-screenshot'].details&&a['final-screenshot'].details.data||'';
   if(!/^data:image\/(jpeg|png|webp);base64,/.test(shot))shot='';
   var lcp=a['largest-contentful-paint']&&a['largest-contentful-paint'].displayValue||'';
-  return {cats:cats,fallas:out.slice(0,6),shot:shot,lcp:lcp,host:host};
+  return {cats:cats,fallas:out.slice(0,6),shot:shot,lcp:lcp,host:host,url:url};
 }
 function waLink(texto){return 'https://wa.me/'+WA+'?text='+encodeURIComponent(texto)}
 function pintar(r,negocio){
@@ -153,7 +153,7 @@ function pintar(r,negocio){
     '<div class="scores">'+CAT.map(function(c){var v=r.cats[c[0]];return '<div class="card sc"><div class="ring" style="--v:'+(v||0)+';--c:'+color(v||0)+'"><span>'+(v==null?'–':v)+'</span></div><b>'+c[1]+'</b>'+(c[0]==='performance'&&r.lcp?'<small>Lo principal tarda '+esc(r.lcp)+'</small>':'')+'</div>'}).join('')+'</div>'+
     '<div class="grid2">'+(r.shot?'<div class="shot"><img alt="Así se ve su página en un celular" src="'+r.shot+'"></div>':'<div></div>')+
     '<ol class="fallas">'+(r.fallas.map(function(x){return '<li style="--c:'+(x.p<0.5?'var(--bad)':'var(--mid)')+'"><i></i><div><b>'+esc(x.t)+'</b><span>'+esc(x.d)+'</span></div></li>'}).join('')||'<li style="--c:var(--ok)"><i></i><div><b>Sin fallas importantes</b><span>Aun así, revisamos con usted si su página está consiguiendo clientes.</span></div></li>')+'</ol></div>'+
-    '<div class="cta"><p>Le mandamos el reporte completo y, si quiere, le enseñamos una propuesta de cómo se vería su página arreglada antes de cobrarle un peso.</p><a href="'+waLink('Hola, acabo de hacer la auditoría de '+(negocio||r.host)+' y quiero ver la propuesta.')+'" target="_blank" rel="noopener">Quiero ver mi propuesta</a></div></div>';
+    '<div class="cta"><p>Le mandamos el reporte completo y, si quiere, le enseñamos una propuesta de cómo se vería su página arreglada antes de cobrarle un peso.</p><a href="'+waLink('Hola, acabo de hacer la auditoría gratis y quiero ver mi propuesta.\nNegocio: '+(negocio||r.host)+'\nPágina: '+r.url+'\nVelocidad '+(r.cats.performance==null?'–':r.cats.performance)+' · Google '+(r.cats.seo==null?'–':r.cats.seo)+'\nFallas: '+r.fallas.map(function(x){return x.t}).join(', '))+'" target="_blank" rel="noopener">Quiero ver mi propuesta</a></div></div>';
 }
 function sinMedicion(l,guardado){
   var txt='Hola, quiero la auditoría gratis de mi página.\nNegocio: '+l.negocio+'\nPágina: '+l.url+'\nNombre: '+l.nombre+(l.whatsapp?'\nWhatsApp: '+l.whatsapp:'')+(l.correo?'\nCorreo: '+l.correo:'');
