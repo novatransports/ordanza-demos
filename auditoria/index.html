@@ -180,6 +180,10 @@ $('f').addEventListener('submit',function(ev){
     function(){return guardar(lead).then(function(ok){sinMedicion(lead,!!ok)})})
   .finally(function(){$('btn').disabled=false;$('btn').textContent='Revisar otra página'});
 });
+/* Enlace personalizado: ?url=...&n=Negocio llena el formulario */
+(function(){try{var q=new URLSearchParams(location.search),u=q.get('url'),n=q.get('n');
+  if(u&&normUrl(u))$('url').value=u.slice(0,300);if(n)$('negocio').value=n.slice(0,120);
+  if(u&&n)$('nombre').focus()}catch(e){}})();
 </script>
 </body>
 </html>
