@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Auditoría gratis de su página web · Ordanza</title>
+<meta name="description" content="Revise gratis en un minuto qué tan rápida, visible en Google y lista para celular está la página de su negocio.">
+<meta property="og:title" content="Auditoría gratis de su página web · Ordanza">
+<meta property="og:description" content="Velocidad, Google y celular: qué le falla a su página y cómo arreglarlo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0e11;--card:#15171c;--ink:#f3f3f1;--mut:#9a9ca3;--line:#262930;--acc:#e8e6df;--ok:#3fbf7f;--mid:#e0a43a;--bad:#e5534b}
+@media (prefers-color-scheme: light){:root{--bg:#f7f7f4;--card:#fff;--ink:#121316;--mut:#5f636b;--line:#e2e2dc;--acc:#121316}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 Inter,system-ui,sans-serif}
+a{color:inherit}
+.wrap{max-width:880px;margin:0 auto;padding:0 16px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:22px 0}
+.mark{font-weight:600;letter-spacing:.32em;font-size:13px;text-decoration:none}
+header a.wa{font-size:14px;color:var(--mut);text-decoration:none}
+.hero{padding:40px 0 24px}
+.eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin:0 0 14px}
+h1{font-size:clamp(30px,5vw,48px);line-height:1.08;letter-spacing:-.02em;margin:0 0 16px;font-weight:700}
+.lead{color:var(--mut);font-size:18px;max-width:600px;margin:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:30px 0}
+.full{grid-column:1/-1}
+label{display:grid;gap:6px;font-size:13px;font-weight:600;color:var(--mut)}
+input{font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px;width:100%}
+input:focus{outline:none;border-color:var(--acc)}
+button{font:inherit;font-weight:600;border:0;border-radius:999px;padding:14px 22px;background:var(--acc);color:var(--bg);cursor:pointer}
+button:disabled{opacity:.6;cursor:wait}
+.nota{font-size:13px;color:var(--mut);margin:0}
+.err{color:var(--bad);font-size:14px;min-height:1em;margin:0}
+.puntos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:8px 0 40px}
+.puntos div{border-top:1px solid var(--line);padding-top:14px}
+.puntos b{display:block;margin-bottom:4px}
+.puntos span{color:var(--mut);font-size:15px}
+#res{display:none;margin:10px 0 50px}
+.estado{display:flex;align-items:center;gap:12px;color:var(--mut)}
+.giro{width:18px;height:18px;flex:none;border-radius:50%;border:2px solid var(--line);border-top-color:var(--acc);animation:g 1s linear infinite}
+@keyframes g{to{transform:rotate(360deg)}}
+.scores{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0}
+.sc{text-align:center;padding:18px 10px}
+.ring{--v:0;--c:var(--mid);width:86px;height:86px;margin:0 auto 10px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--c) calc(var(--v)*1%),var(--line) 0)}
+.ring span{width:70px;height:70px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-weight:700;font-size:22px}
+.sc b{display:block;font-size:14px}
+.sc small{color:var(--mut);font-size:12px}
+.grid2{display:grid;grid-template-columns:200px 1fr;gap:20px;align-items:start}
+.shot{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--bg)}
+.shot img{display:block;width:100%}
+ol.fallas{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+ol.fallas li{display:grid;grid-template-columns:12px 1fr;gap:12px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+ol.fallas li:last-child{border:0}
+ol.fallas i{width:10px;height:10px;border-radius:50%;margin-top:7px;background:var(--c)}
+ol.fallas b{display:block}
+ol.fallas span{color:var(--mut);font-size:15px}
+.cta{margin-top:26px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+.cta p{margin:0;max-width:460px}
+.cta a{display:inline-block;text-decoration:none;font-weight:600;border-radius:999px;padding:14px 22px;background:var(--acc);color:var(--bg)}
+footer{border-top:1px solid var(--line);padding:24px 0 40px;color:var(--mut);font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media (max-width:700px){form{grid-template-columns:1fr}.puntos{grid-template-columns:1fr}.scores{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.shot{max-width:220px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><a class="mark" href="https://ordanzacorp.com">ORDANZA</a><a class="wa" href="https://wa.me/523325482531" target="_blank" rel="noopener">WhatsApp +52 33 2548 2531</a></header>
+
+<section class="hero">
+  <p class="eyebrow">Auditoría gratis · 1 minuto</p>
+  <h1>¿Su página web le está trayendo clientes o se los está quitando?</h1>
+  <p class="lead">Escriba la dirección de su página y le decimos qué tan rápida es en celular, qué tan bien la encuentra Google y qué le está fallando. Sin costo y sin compromiso.</p>
+</section>
+
+<form id="f" class="card" novalidate>
+  <label class="full">Dirección de su página web<input id="url" name="url" inputmode="url" autocomplete="url" placeholder="www.sunegocio.com" required></label>
+  <label>Nombre del negocio<input id="negocio" name="negocio" autocomplete="organization" required></label>
+  <label>Su nombre<input id="nombre" name="nombre" autocomplete="name" required></label>
+  <label>WhatsApp<input id="wa" name="wa" type="tel" inputmode="tel" autocomplete="tel" placeholder="33 1234 5678"></label>
+  <label>Correo<input id="correo" name="correo" type="email" autocomplete="email" placeholder="usted@sunegocio.com"></label>
+  <p class="nota full">Le pedimos un WhatsApp o un correo para mandarle el reporte completo. No compartimos sus datos.</p>
+  <p class="err full" id="err" role="alert"></p>
+  <div class="full"><button id="btn" type="submit">Revisar mi página gratis</button></div>
+</form>
+
+<div class="puntos">
+  <div><b>Velocidad en celular</b><span>Mucha gente se va si la página tarda más de unos segundos en abrir.</span></div>
+  <div><b>Visibilidad en Google</b><span>Si Google no entiende su página, sus clientes encuentran a la competencia.</span></div>
+  <div><b>Lista para vender</b><span>Botones, textos y fotos que funcionen bien en el teléfono.</span></div>
+</div>
+
+<section id="res" aria-live="polite"></section>
+
+<footer><span>Ordanza · Páginas web, paneles y marketing para negocios</span><a href="https://ordanzacorp.com">ordanzacorp.com</a></footer>
+</div>
+
+<script src="config.js"></script>
+<script>
+/* config.js define window.AUDITORIA = {psiKey, leadsUrl}. Sin ellos, la página igual recibe la solicitud por WhatsApp. */
+var CFG=window.AUDITORIA||{};
+var WA='523325482531';
+var $=function(id){return document.getElementById(id)};
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function normUrl(u){u=String(u||'').trim();if(!u)return '';if(!/^https?:\/\//i.test(u))u='https://'+u;try{var x=new URL(u);if(!/\./.test(x.hostname))return '';return x.href}catch(e){return ''}}
+function guardar(o){if(!CFG.leadsUrl)return Promise.resolve(null);
+  return fetch(CFG.leadsUrl,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(o)}).then(function(r){return r.ok?r.json().catch(function(){return {}}):null}).catch(function(){return null})}
+
+/* Lo que revisamos, en palabras de negocio */
+var FALLAS={
+ 'is-on-https':['No usa conexión segura','El navegador puede marcar su página como "No segura" y la gente desconfía.'],
+ 'viewport':['No está hecha para celular','Se ve chiquita o descuadrada en el teléfono, que es donde la ven casi todos.'],
+ 'document-title':['No tiene título para Google','Google no sabe cómo mostrar su página en los resultados.'],
+ 'meta-description':['No tiene descripción para Google','En los resultados de búsqueda aparece sin un texto que invite a entrar.'],
+ 'largest-contentful-paint':['Tarda en mostrar lo importante','En celular tarda {v} en verse lo principal; lo ideal es menos de 2.5 s.'],
+ 'speed-index':['Se siente lenta al abrir','La página tarda {v} en verse completa en celular.'],
+ 'total-blocking-time':['Se traba al cargar','Mientras carga no responde a los toques durante {v}.'],
+ 'render-blocking-resources':['Carga cosas que la frenan','Hay archivos que detienen la página antes de mostrar algo.'],
+ 'uses-optimized-images':['Fotos más pesadas de lo necesario','Se pueden aligerar sin que se vean peor.'],
+ 'modern-image-formats':['Fotos en formato antiguo','Con un formato moderno cargarían más rápido.'],
+ 'uses-responsive-images':['Fotos de tamaño equivocado','Manda imágenes grandes a pantallas chicas.'],
+ 'image-alt':['Las imágenes no tienen descripción','Google no entiende qué hay en sus fotos.'],
+ 'font-size':['Letra muy chica en celular','Hay textos que se leen con trabajo en el teléfono.'],
+ 'tap-targets':['Botones muy juntos','En el celular es fácil tocar el botón equivocado.'],
+ 'color-contrast':['Textos difíciles de leer','Algunos colores de texto casi no se distinguen del fondo.'],
+ 'errors-in-console':['Tiene errores técnicos','La página registra errores que pueden romper partes de ella.'],
+ 'link-text':['Enlaces poco claros','Textos como "clic aquí" no le dicen nada a Google.'],
+ 'http-status-code':['La página responde con error','Google puede no estar mostrando su página.']
+};
+var GRATIS=/(wixsite\.com|wordpress\.com|blogspot\.|godaddysites\.com|negocio\.site|business\.site|jimdosite\.com|jimdofree\.com|webnode\.|weebly\.com|site123\.me|mystrikingly\.com|carrd\.co)/i;
+var CAT=[['performance','Velocidad'],['seo','Google'],['accessibility','Fácil de usar'],['best-practices','Buenas prácticas']];
+function color(p){return p>=90?'var(--ok)':p>=50?'var(--mid)':'var(--bad)'}
+
+function analizar(lr,url){
+  var a=lr.audits||{},out=[],cats={};
+  CAT.forEach(function(c){var x=lr.categories&&lr.categories[c[0]];cats[c[0]]=x&&x.score!=null?Math.round(x.score*100):null});
+  var host='';try{host=new URL(lr.finalDisplayedUrl||lr.finalUrl||url).hostname}catch(e){}
+  if(GRATIS.test(host))out.push({p:0,t:'Usa un dominio gratuito',d:'Su dirección ('+host+') es la de un constructor gratuito. Un dominio propio da más confianza y se ve más profesional.'});
+  Object.keys(FALLAS).forEach(function(k){var x=a[k];if(!x||x.score==null||x.score>=0.9||x.scoreDisplayMode==='notApplicable')return;
+    out.push({p:x.score,t:FALLAS[k][0],d:FALLAS[k][1].replace('{v}',x.displayValue||'varios segundos')})});
+  out.sort(function(x,y){return x.p-y.p});
+  var shot=a['final-screenshot']&&a['final-screenshot'].details&&a['final-screenshot'].details.data||'';
+  if(!/^data:image\/(jpeg|png|webp);base64,/.test(shot))shot='';
+  var lcp=a['largest-contentful-paint']&&a['largest-contentful-paint'].displayValue||'';
+  return {cats:cats,fallas:out.slice(0,6),shot:shot,lcp:lcp,host:host};
+}
+function waLink(texto){return 'https://wa.me/'+WA+'?text='+encodeURIComponent(texto)}
+function pintar(r,negocio){
+  var malos=r.fallas.length;
+  $('res').innerHTML='<div class="card"><p class="eyebrow">Resultado para '+esc(negocio||r.host)+'</p>'+
+    '<h2 style="margin:0 0 6px;font-size:26px;letter-spacing:-.01em">'+(malos?'Encontramos '+malos+' cosa'+(malos>1?'s':'')+' que le pueden estar costando clientes':'Su página está en buena forma')+'</h2>'+
+    '<p class="nota">Medido en celular con la herramienta de Google (PageSpeed). Calificación de 0 a 100.</p>'+
+    '<div class="scores">'+CAT.map(function(c){var v=r.cats[c[0]];return '<div class="card sc"><div class="ring" style="--v:'+(v||0)+';--c:'+color(v||0)+'"><span>'+(v==null?'–':v)+'</span></div><b>'+c[1]+'</b>'+(c[0]==='performance'&&r.lcp?'<small>Lo principal tarda '+esc(r.lcp)+'</small>':'')+'</div>'}).join('')+'</div>'+
+    '<div class="grid2">'+(r.shot?'<div class="shot"><img alt="Así se ve su página en un celular" src="'+r.shot+'"></div>':'<div></div>')+
+    '<ol class="fallas">'+(r.fallas.map(function(x){return '<li style="--c:'+(x.p<0.5?'var(--bad)':'var(--mid)')+'"><i></i><div><b>'+esc(x.t)+'</b><span>'+esc(x.d)+'</span></div></li>'}).join('')||'<li style="--c:var(--ok)"><i></i><div><b>Sin fallas importantes</b><span>Aun así, revisamos con usted si su página está consiguiendo clientes.</span></div></li>')+'</ol></div>'+
+    '<div class="cta"><p>Le mandamos el reporte completo y, si quiere, le enseñamos una propuesta de cómo se vería su página arreglada antes de cobrarle un peso.</p><a href="'+waLink('Hola, acabo de hacer la auditoría de '+(negocio||r.host)+' y quiero ver la propuesta.')+'" target="_blank" rel="noopener">Quiero ver mi propuesta</a></div></div>';
+}
+function sinMedicion(l,guardado){
+  var txt='Hola, quiero la auditoría gratis de mi página.\nNegocio: '+l.negocio+'\nPágina: '+l.url+'\nNombre: '+l.nombre+(l.whatsapp?'\nWhatsApp: '+l.whatsapp:'')+(l.correo?'\nCorreo: '+l.correo:'');
+  $('res').innerHTML='<div class="card"><p class="eyebrow">'+(guardado?'Recibimos su solicitud':'Un paso más')+'</p><h2 style="margin:0 0 8px;font-size:24px">Le mandamos su reporte en menos de 24 horas</h2>'+
+    '<p class="nota" style="font-size:16px">Un especialista revisa '+esc(l.negocio)+' y le escribe con lo que encontró.'+(guardado?'':' Toque el botón para enviarnos su solicitud por WhatsApp.')+'</p>'+
+    (guardado?'':'<div class="cta"><span></span><a href="'+waLink(txt)+'" target="_blank" rel="noopener">Enviar por WhatsApp</a></div>')+'</div>';
+}
+$('f').addEventListener('submit',function(ev){
+  ev.preventDefault();$('err').textContent='';
+  var url=normUrl($('url').value),neg=$('negocio').value.trim(),nom=$('nombre').value.trim(),wa=$('wa').value.trim(),co=$('correo').value.trim();
+  if(!url){$('err').textContent='Escriba la dirección de su página, por ejemplo www.sunegocio.com';$('url').focus();return}
+  if(!neg||!nom){$('err').textContent='Escriba el nombre del negocio y el suyo.';return}
+  if(!wa&&!co){$('err').textContent='Déjenos un WhatsApp o un correo para mandarle el reporte.';return}
+  if(co&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(co)){$('err').textContent='Revise el correo.';return}
+  $('btn').disabled=true;$('btn').textContent='Revisando…';
+  $('res').style.display='block';$('res').innerHTML='<div class="card estado"><span class="giro"></span>Revisando su página como la ve Google en un celular. Tarda cerca de un minuto…</div>';
+  $('res').scrollIntoView({behavior:'smooth',block:'start'});
+  var lead={url:url,negocio:neg.slice(0,120),nombre:nom.slice(0,120),whatsapp:wa.slice(0,40),correo:co.slice(0,120),creado:new Date().toISOString()};
+  var medir=CFG.psiKey?fetch('https://www.googleapis.com/pagespeedonline/v5/runPagespeed?strategy=mobile&locale=es&category=performance&category=seo&category=accessibility&category=best-practices&key='+encodeURIComponent(CFG.psiKey)+'&url='+encodeURIComponent(url))
+    .then(function(r){if(!r.ok)throw new Error('psi '+r.status);return r.json()}):Promise.reject(new Error('sin llave'));
+  medir.then(function(j){var r=analizar(j.lighthouseResult||{},url);pintar(r,neg);
+      lead.velocidad=r.cats.performance;lead.google=r.cats.seo;lead.facil=r.cats.accessibility;lead.practicas=r.cats['best-practices'];lead.carga=r.lcp;lead.fallas=r.fallas.map(function(x){return x.t});
+      return guardar(lead)},
+    function(){return guardar(lead).then(function(ok){sinMedicion(lead,!!ok)})})
+  .finally(function(){$('btn').disabled=false;$('btn').textContent='Revisar otra página'});
+});
+</script>
+</body>
+</html>
