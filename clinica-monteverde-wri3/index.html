@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clínica Monteverde · Clínica Dental en Puerto Montt</title>
+<meta name="description" content="Clínica dental en Puerto Montt con más de 12 años y más de 21 profesionales: ortodoncia, implantología, estética orofacial y 11 especialidades. Evaluación gratuita.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f8f8f6;--ink:#1a2320;--mut:#5a6460;--acc:#2e5a4c;--acc-soft:#e6eee9;--line:#dfe2de;--card:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Public Sans",system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.franja{background:var(--ink);color:#d3dad7;font-size:13px;text-align:center;padding:9px 16px}
+.franja b{color:#fff;font-weight:600}
+header{position:sticky;top:0;z-index:5;background:rgba(248,248,246,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{max-width:1120px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 16px}
+.marca{text-decoration:none;line-height:1.1}
+.marca b{display:block;font-family:Newsreader,Georgia,serif;font-weight:500;font-size:24px}
+.marca span{font-size:11px;color:var(--mut);letter-spacing:.12em;text-transform:uppercase}
+.nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0;font-size:15px;color:var(--mut)}
+.nav ul a{text-decoration:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--acc);color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:13px 22px;border-radius:8px}
+.btn.sec{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.hero{max-width:1120px;margin:auto;padding:80px 16px 56px}
+.kicker{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);font-weight:700}
+h1,h2{font-family:Newsreader,Georgia,serif;font-weight:400;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(42px,7vw,80px);line-height:1.02;margin:14px 0 22px;max-width:860px}
+.hero p{font-size:19px;color:var(--mut);max-width:620px;margin:0}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.cifras{max-width:1120px;margin:0 auto;padding:0 16px;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.cifras div{padding:24px 0}
+.cifras b{display:block;font-family:Newsreader,Georgia,serif;font-weight:400;font-size:44px;line-height:1;color:var(--acc)}
+.cifras span{font-size:15px;color:var(--mut)}
+section{max-width:1120px;margin:auto;padding:64px 16px}
+h2{font-size:clamp(32px,4.6vw,48px);line-height:1.08}
+.intro{color:var(--mut);max-width:640px;margin:14px 0 36px;font-size:17px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.grid div{background:var(--card);padding:24px 22px}
+.grid h3{margin:0 0 6px;font-size:18px;font-weight:600}
+.grid p{margin:0;color:var(--mut);font-size:15px}
+.nos{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.nos p{font-size:18px;color:var(--mut);margin:0 0 16px}
+.equipo{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.equipo li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:16px}
+.equipo li span{color:var(--mut);text-align:right}
+.cita{background:var(--acc);color:#fff;border-radius:18px;padding:44px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.cita h2{color:#fff}
+.cita p{margin:8px 0 0;color:#d2e2db;max-width:540px}
+.cita .btn{background:#fff;color:var(--acc)}
+.contacto{display:grid;grid-template-columns:1fr 1.2fr;gap:28px}
+dl{margin:0}
+dt{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--acc);font-weight:700;margin-top:22px}
+dt:first-child{margin-top:0}
+dd{margin:4px 0 0;font-size:17px}
+dd a{text-decoration-color:var(--line);text-underline-offset:3px}
+.mapa{border:1px solid var(--line);border-radius:16px;overflow:hidden;min-height:340px;background:var(--acc-soft)}
+.mapa iframe{display:block;width:100%;height:100%;min-height:340px;border:0}
+footer{border-top:1px solid var(--line);margin-top:24px;padding:28px 16px 96px;text-align:center;color:var(--mut);font-size:14px}
+.fijo{position:fixed;left:16px;right:16px;bottom:16px;z-index:9;display:none}
+.fijo .btn{width:100%;box-shadow:0 10px 30px rgba(26,35,32,.25)}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){
+ .nav ul,.nav>.btn{display:none}
+ .hero{padding:48px 16px 36px}
+ .hero p{font-size:17px}
+ .cifras b{font-size:34px}
+ .cifras span{font-size:13px}
+ section{padding:48px 16px}
+ .nos,.contacto{grid-template-columns:1fr;gap:24px}
+ .cita{padding:28px}
+ .fijo{display:block}
+}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.cta .btn{flex:1 1 100%}.equipo li{flex-direction:column;gap:2px}.equipo li span{text-align:left}}
+</style>
+</head>
+<body>
+<div class="franja">Propuesta de diseño para <b>Clínica Monteverde</b> · preparada por Ordanza</div>
+
+<header><nav class="nav">
+  <a class="marca" href="#"><b>Clínica Monteverde</b><span>Clínica dental · Puerto Montt</span></a>
+  <ul><li><a href="#especialidades">Especialidades</a></li><li><a href="#equipo">Equipo</a></li><li><a href="#contacto">Contacto</a></li></ul>
+  <a class="btn" href="https://wa.me/56966638288" target="_blank" rel="noopener">Agendar hora</a>
+</nav></header>
+
+<main>
+<div class="hero">
+  <div class="kicker">Clínica dental en Puerto Montt</div>
+  <h1>Más de 12 años cuidando tu salud dental.</h1>
+  <p>Contamos con más de 21 profesionales y tecnología de última generación para ofrecerte tratamientos dentales de calidad. Evaluación gratuita.</p>
+  <div class="cta">
+    <a class="btn" href="https://wa.me/56966638288" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    <a class="btn sec" href="tel:+56652252948">Llamar (65) 225 2948</a>
+  </div>
+</div>
+<div class="cifras">
+  <div><b>+12</b><span>años en Puerto Montt</span></div>
+  <div><b>+21</b><span>profesionales</span></div>
+  <div><b>11</b><span>especialidades</span></div>
+</div>
+
+<section id="especialidades">
+  <h2>Especialidades</h2>
+  <p class="intro">Servicios odontológicos integrales, con un plan de tratamiento adaptado a tus necesidades y presupuesto.</p>
+  <div class="grid">
+    <div><h3>Ortodoncia</h3><p>Brackets metálicos, estéticos, de zafiro y alineadores invisibles ClearCorrect. 5 ortodoncistas.</p></div>
+    <div><h3>Implantología</h3><p>Implantes dentales para reemplazar piezas perdidas y recuperar tu sonrisa.</p></div>
+    <div><h3>Estética orofacial</h3><p>Ácido hialurónico, botox, mesoterapia y rejuvenecimiento facial con resultados naturales.</p></div>
+    <div><h3>Blanqueamiento dental</h3><p>Tratamiento profesional para aclarar el tono de tus dientes de forma rápida y segura.</p></div>
+    <div><h3>Limpiezas dentales</h3><p>Limpieza profesional con ultrasonido. Elimina sarro y manchas.</p></div>
+    <div><h3>Endodoncia</h3><p>Tratamiento de conducto para salvar dientes dañados, con anestesia local.</p></div>
+    <div><h3>Periodoncia</h3><p>Tratamiento de encías y enfermedades periodontales.</p></div>
+    <div><h3>Odontopediatría</h3><p>Atención dental especializada para niños.</p></div>
+    <div><h3>Odontología general</h3><p>Diagnóstico, prevención y tratamiento integral para toda la familia.</p></div>
+    <div><h3>Rehabilitación oral</h3><p>Prótesis, coronas, carillas y restauraciones.</p></div>
+    <div><h3>Radiografías dentales</h3><p>Radiografías digitales panorámicas y periapicales.</p></div>
+    <div><h3>Urgencias dentales</h3><p>Dentro del horario de atención. Escríbenos por WhatsApp para atención prioritaria.</p></div>
+  </div>
+</section>
+
+<section id="equipo">
+  <div class="nos">
+    <div>
+      <h2>Tu clínica dental de confianza en Puerto Montt</h2>
+    </div>
+    <div>
+      <p>Nos destacamos por un trato cercano y personalizado, donde cada paciente recibe un plan de tratamiento adaptado a sus necesidades y presupuesto.</p>
+      <ul class="equipo">
+        <li>Dra. Romina Mora<span>Directora · Estética orofacial</span></li>
+        <li>Dra. Javiera Nahum<span>Ortodoncia · ClearCorrect</span></li>
+        <li>Dr. Humberto Velásquez<span>Implantología y cirugía</span></li>
+        <li>Dra. Ángela Casanova<span>Odontología general y odontopediatría</span></li>
+        <li>Dr. Francisco Henríquez, Dr. Sebastián Quezada, Dr. Felipe Leal y Dr. Marcos Castillo<span>Ortodoncia</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="cita">
+    <div>
+      <h2>Tu primera evaluación es sin costo</h2>
+      <p>Evaluamos tu caso, hacemos el diagnóstico y te presentamos un plan de tratamiento personalizado, en todas nuestras especialidades.</p>
+    </div>
+    <a class="btn" href="https://wa.me/56966638288" target="_blank" rel="noopener">Agendar por WhatsApp</a>
+  </div>
+</section>
+
+<section id="contacto">
+  <h2>Visítanos</h2>
+  <p class="intro">Atendemos de lunes a sábado en el centro de Puerto Montt.</p>
+  <div class="contacto">
+    <dl>
+      <dt>Dirección</dt><dd>Baquedano 281<br>Puerto Montt, Región de Los Lagos</dd>
+      <dt>Horario</dt><dd>Lunes a viernes: 10:00 a 14:00 y 15:00 a 19:30<br>Sábado: 9:00 a 18:00</dd>
+      <dt>WhatsApp</dt><dd><a href="https://wa.me/56966638288" target="_blank" rel="noopener">+56 9 6663 8288</a></dd>
+      <dt>Teléfono</dt><dd><a href="tel:+56652252948">(65) 225 2948</a></dd>
+      <dt>Correo</dt><dd><a href="mailto:consultas@clinicamonteverde.cl">consultas@clinicamonteverde.cl</a></dd>
+      <dt>Redes</dt><dd><a href="https://www.instagram.com/clinicamonteverde" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.facebook.com/ClinicaMonteverde" target="_blank" rel="noopener">Facebook</a></dd>
+    </dl>
+    <div class="mapa"><iframe title="Mapa de Clínica Monteverde" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Baquedano%20281%2C%20Puerto%20Montt%2C%20Chile&amp;z=16&amp;output=embed"></iframe></div>
+  </div>
+</section>
+</main>
+
+<footer>Clínica Monteverde · Puerto Montt<br>Propuesta preparada por Ordanza · ordanzacorp.com</footer>
+
+<div class="fijo"><a class="btn" href="https://wa.me/56966638288" target="_blank" rel="noopener">Agendar por WhatsApp</a></div>
+</body>
+</html>
