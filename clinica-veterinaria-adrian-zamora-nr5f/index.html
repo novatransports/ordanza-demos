@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clínica Veterinaria Adrián Zamora · Perros y gatos en Satélite, Querétaro</title>
+<meta name="description" content="Clínica veterinaria para perros y gatos en Satélite, Querétaro: vacunas, desparasitaciones, hospitalización, laboratorio, rayos X, ultrasonido, tomografía, farmacia y alimentos.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#244d54;--mint:#2ecea0;--soft:#6dddbd;--ink:#151515;--gra:#4d4d4d;--sla:#6b6b6b;--mist:#e5e7eb;--bone:#f0f1f2;--paper:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Inter Tight",Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--paper);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;letter-spacing:.005em}
+a{color:inherit}
+.franja{background:var(--mint);color:#06281f;font-size:13px;text-align:center;padding:10px 16px;font-weight:500}
+.franja b{font-weight:600}
+header{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.96);border-bottom:1px solid var(--mist)}
+.nav{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 16px}
+.marca{text-decoration:none;line-height:1.1}
+.marca b{display:block;font-weight:600;font-size:18px;letter-spacing:-.01em;color:var(--teal)}
+.marca span{font-size:11px;color:var(--sla);letter-spacing:.1em;text-transform:uppercase}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:15px;font-weight:500}
+.nav ul a{text-decoration:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--mint);color:#06281f;text-decoration:none;font-weight:600;font-size:15px;padding:13px 26px;border-radius:50px;border:1px solid var(--mint);white-space:nowrap}
+.btn.line{background:transparent;color:#fff;border-color:var(--mint)}
+.btn.dark{background:var(--teal);border-color:var(--teal);color:#fff}
+.hero{background:var(--teal);color:#fff}
+.hero-in{max-width:1200px;margin:auto;padding:80px 16px 72px;display:grid;grid-template-columns:1.35fr 1fr;gap:56px;align-items:end}
+.tag{display:inline-block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--soft)}
+h1{font-size:clamp(40px,6.4vw,64px);line-height:1.02;letter-spacing:-.035em;font-weight:500;margin:16px 0 22px}
+.hero p{font-size:19px;color:#cfe0dd;max-width:540px;margin:0}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.horario{border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:26px}
+.horario h2{margin:0 0 12px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);font-weight:600}
+.horario table{width:100%;border-collapse:collapse;font-size:16px}
+.horario td{padding:12px 0;border-top:1px solid rgba(255,255,255,.14)}
+.horario td:last-child{text-align:right;font-weight:500}
+.horario .tel{margin-top:16px;font-size:14px;color:#cfe0dd}
+.horario .tel a{color:#fff;font-weight:600;text-decoration:none}
+section{max-width:1200px;margin:auto;padding:80px 16px}
+.cab{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;margin-bottom:40px}
+h2.t{font-size:clamp(30px,4.2vw,45px);line-height:1.08;letter-spacing:-.03em;font-weight:500;margin:10px 0 0}
+.cab p{color:var(--gra);font-size:17px;margin:0;max-width:480px}
+.tag.d{color:var(--teal)}
+.serv{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);column-gap:48px;border-top:1px solid var(--ink)}
+.serv li{display:grid;grid-template-columns:44px 1fr;gap:8px;padding:22px 0;border-bottom:1px solid var(--mist)}
+.serv small{font-size:12px;font-weight:600;color:var(--teal);letter-spacing:.06em;padding-top:4px}
+.serv h3{margin:0;font-size:20px;font-weight:500;letter-spacing:-.01em;color:var(--teal)}
+.serv p{margin:4px 0 0;color:var(--sla);font-size:15px}
+.equipo{background:var(--bone)}
+.equipo-in{max-width:1200px;margin:auto;padding:80px 16px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.ficha{background:var(--paper);border:1px solid var(--mist);border-radius:20px;padding:28px}
+.ficha h3{margin:0;font-size:24px;font-weight:500;letter-spacing:-.02em}
+.ficha .rol{color:var(--gra);margin:4px 0 20px}
+.ficha dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:0}
+.ficha dt,.ficha dd{padding:12px 0;border-top:1px solid var(--mist);margin:0;font-size:15px}
+.ficha dt{color:var(--sla);padding-right:20px}
+.ficha dd{text-align:right;font-weight:500}
+.pagos{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;padding:0;list-style:none}
+.pagos li{border:1px solid #c9cdd2;border-radius:50px;padding:6px 14px;font-size:13px;font-weight:500;color:var(--gra)}
+.cita{background:var(--teal);color:#fff;border-radius:20px;padding:44px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.cita h2{margin:0;font-size:clamp(26px,3.6vw,36px);font-weight:500;letter-spacing:-.025em}
+.cita p{margin:8px 0 0;color:#cfe0dd}
+.contacto{display:grid;grid-template-columns:1fr 1.3fr;gap:40px}
+.contacto dl{margin:0}
+.contacto dt{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-top:24px}
+.contacto dt:first-child{margin-top:0}
+.contacto dd{margin:6px 0 0;font-size:17px}
+.contacto dd a{text-underline-offset:3px;text-decoration-color:#b8c4c6}
+.mapa{border:1px solid var(--mist);border-radius:20px;overflow:hidden;min-height:360px;background:var(--bone)}
+.mapa iframe{display:block;width:100%;height:100%;min-height:360px;border:0}
+footer{border-top:1px solid var(--mist);padding:32px 16px 100px;text-align:center;color:var(--sla);font-size:14px}
+footer p{margin:4px 0}
+.fijo{position:fixed;left:16px;right:16px;bottom:16px;z-index:9;display:none}
+.fijo .btn{width:100%}
+@media(max-width:860px){
+ .nav ul,.nav>.btn{display:none}
+ .hero-in{grid-template-columns:1fr;padding:48px 16px 48px;gap:36px}
+ .hero p{font-size:17px}
+ section{padding:56px 16px}
+ .cab{grid-template-columns:1fr;gap:12px;margin-bottom:28px}
+ .serv{grid-template-columns:1fr}
+ .equipo-in{grid-template-columns:1fr;padding:56px 16px;gap:28px}
+ .contacto{grid-template-columns:1fr}
+ .cita{padding:30px 24px}
+ .fijo{display:block}
+}
+@media(max-width:440px){.cta .btn{flex:1 1 100%}}
+</style>
+</head>
+<body>
+<div class="franja">Propuesta de diseño para <b>Clínica Veterinaria Adrián Zamora</b> · preparada por Ordanza</div>
+
+<header><nav class="nav">
+  <a class="marca" href="#"><b>Clínica Veterinaria Adrián Zamora</b><span>Perros y gatos · Querétaro</span></a>
+  <ul><li><a href="#servicios">Servicios</a></li><li><a href="#equipo">Médico responsable</a></li><li><a href="#contacto">Ubicación</a></li></ul>
+  <a class="btn" href="https://wa.me/5214423708857?text=Hola%2C%20quisiera%20agendar%20una%20cita%20para%20mi%20mascota.">Agendar por WhatsApp</a>
+</nav></header>
+
+<main>
+<div class="hero"><div class="hero-in">
+  <div>
+    <span class="tag">Satélite, Querétaro · Abierto los siete días</span>
+    <h1>Especialistas en perros y gatos.</h1>
+    <p>Laboratorio clínico, rayos X, ultrasonido, tomografía y hospitalización en la misma clínica, sobre Av. Paseo de las Peñas.</p>
+    <div class="cta">
+      <a class="btn" href="https://wa.me/5214423708857?text=Hola%2C%20quisiera%20agendar%20una%20cita%20para%20mi%20mascota.">Agendar por WhatsApp</a>
+      <a class="btn line" href="https://www.google.com/maps/search/?api=1&amp;query=20.634803,-100.446994">Cómo llegar</a>
+    </div>
+  </div>
+  <div class="horario" id="horario">
+    <h2>Horario de atención</h2>
+    <table>
+      <tr><td>Lunes a viernes</td><td>9:00 – 19:00</td></tr>
+      <tr><td>Sábado</td><td>9:00 – 18:00</td></tr>
+      <tr><td>Domingo</td><td>9:00 – 15:00</td></tr>
+    </table>
+    <p class="tel">Teléfono <a href="tel:+524422187049">442 218 7049</a> · WhatsApp <a href="https://wa.me/5214423708857">442 370 8857</a></p>
+  </div>
+</div></div>
+
+<section id="servicios">
+  <div class="cab">
+    <div><span class="tag d">Servicios</span><h2 class="t">Diagnóstico, tratamiento y cuidado en un solo lugar.</h2></div>
+    <p>Desde la vacuna de cada año hasta estudios de imagen para casos complejos.</p>
+  </div>
+  <ul class="serv">
+    <li><small>01</small><div><h3>Vacunas</h3><p>Programa de vacunación contra enfermedades comunes, adaptado a cada mascota.</p></div></li>
+    <li><small>02</small><div><h3>Desparasitaciones</h3><p>Tratamientos para prevenir y eliminar parásitos.</p></div></li>
+    <li><small>03</small><div><h3>Hospitalización</h3><p>Atención en emergencias o enfermedades graves y durante la recuperación.</p></div></li>
+    <li><small>04</small><div><h3>Laboratorio de sangre</h3><p>Análisis para diagnosticar enfermedades y monitorear la salud.</p></div></li>
+    <li><small>05</small><div><h3>Rayos X y ultrasonido</h3><p>Imágenes para evaluar problemas internos y lesiones.</p></div></li>
+    <li><small>06</small><div><h3>Tomografía</h3><p>Imágenes detalladas en 3D para casos complejos.</p></div></li>
+    <li><small>07</small><div><h3>Farmacia veterinaria</h3><p>Medicamentos y productos para el cuidado de su mascota.</p></div></li>
+    <li><small>08</small><div><h3>Venta de alimentos</h3><p>Alimento para perros y gatos, con asesoría del equipo.</p></div></li>
+  </ul>
+</section>
+
+<div class="equipo" id="equipo"><div class="equipo-in">
+  <div>
+    <span class="tag d">Médico responsable</span>
+    <h2 class="t">Atención a cargo de una médica veterinaria titulada.</h2>
+    <p style="color:var(--gra);font-size:17px;margin:16px 0 0;max-width:460px">Formas de pago aceptadas en la clínica:</p>
+    <ul class="pagos">
+      <li>Efectivo</li><li>Tarjeta de crédito</li><li>Tarjeta de débito</li><li>Transferencia</li><li>SPEI</li><li>CoDi</li><li>Mercado Pago</li><li>PayPal</li><li>Oxxo</li><li>Vales</li>
+    </ul>
+  </div>
+  <div class="ficha">
+    <h3>MVZ Matilde Adriana Zamora León</h3>
+    <p class="rol">Médico Veterinario Zootecnista</p>
+    <dl>
+      <dt>Institución</dt><dd>Universidad Veracruzana</dd>
+      <dt>Cédula profesional</dt><dd>10676650</dd>
+    </dl>
+  </div>
+</div></div>
+
+<section style="padding-bottom:0">
+  <div class="cita">
+    <div><h2>¿Su mascota necesita consulta?</h2><p>Escríbanos por WhatsApp o llame al 442 218 7049.</p></div>
+    <a class="btn" href="https://wa.me/5214423708857?text=Hola%2C%20quisiera%20agendar%20una%20cita%20para%20mi%20mascota.">Escribir por WhatsApp</a>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="cab">
+    <div><span class="tag d">Ubicación</span><h2 class="t">Visítenos en Satélite.</h2></div>
+  </div>
+  <div class="contacto">
+    <dl>
+      <dt>Dirección</dt><dd>Av. Paseo de las Peñas Mz S No. 1<br>Satélite, 76110 Querétaro, Qro.</dd>
+      <dt>Teléfono</dt><dd><a href="tel:+524422187049">442 218 7049</a></dd>
+      <dt>WhatsApp</dt><dd><a href="https://wa.me/5214423708857">442 370 8857</a></dd>
+      <dt>Correo</dt><dd><a href="mailto:adrian.z.o@hotmail.com">adrian.z.o@hotmail.com</a></dd>
+      <dt>Mapa</dt><dd><a href="https://www.google.com/maps/search/?api=1&amp;query=20.634803,-100.446994">Abrir en Google Maps</a></dd>
+    </dl>
+    <div class="mapa"><iframe title="Mapa de Clínica Veterinaria Adrián Zamora" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=20.634803,-100.446994&amp;z=16&amp;output=embed"></iframe></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p>Clínica Veterinaria Adrián Zamora · Av. Paseo de las Peñas Mz S No. 1, Satélite, Querétaro</p>
+  <p>Propuesta preparada por Ordanza · ordanzacorp.com</p>
+</footer>
+<div class="fijo"><a class="btn dark" href="https://wa.me/5214423708857?text=Hola%2C%20quisiera%20agendar%20una%20cita%20para%20mi%20mascota.">Agendar cita por WhatsApp</a></div>
+</body>
+</html>
