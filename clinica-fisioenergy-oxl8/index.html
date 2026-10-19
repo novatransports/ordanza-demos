@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clínica FisioEnergy · Manejo integral del dolor en Bucaramanga</title>
+<meta name="description" content="Clínica FisioEnergy, Cabecera, Bucaramanga: plantillas personalizadas 3D con estudio computarizado de la marcha, medicina integrativa, sauna infrarrojo y sueroterapia.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Guía: 2ag.md (botica clínica). Su verde de marca (#0d7a5f, de su web) toma el papel del acento;
+   un verde profundo derivado de él hace de superficie estructural. Bordes finos, sin sombras, botones píldora. */
+:root{
+  --marca:#0d7a5f;--marca-h:#0a634d;--profundo:#123f36;--suave:#8fd6c0;
+  --carbon:#000;--ink:#151515;--graphite:#4d4d4d;--slate:#6b6b6b;--fog:#999;
+  --mist:#e5e7eb;--bone:#f0f1f2;--paper:#fff;
+  --sans:"Inter Tight","Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --num:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);font-size:16px;line-height:1.5;letter-spacing:.005em;background:var(--paper);color:var(--carbon);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1280px;margin:0 auto;padding:0 16px}
+h1,h2,h3{margin:0;font-weight:500;color:var(--ink)}
+.cap{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--slate)}
+
+.franja{background:var(--marca);color:#fff;font-size:13px;text-align:center;padding:10px 16px;line-height:1.5}
+.franja b{font-weight:600}
+
+header{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--mist)}
+.nav{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 16px}
+.marca{text-decoration:none;line-height:1.15}
+.marca b{display:block;font-size:20px;font-weight:600;letter-spacing:-.02em;color:var(--profundo)}
+.marca span{display:block;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin-top:2px}
+.nav ul{display:flex;gap:2px;list-style:none;margin:0;padding:0}
+.nav ul a{display:block;text-decoration:none;font-size:15px;font-weight:500;padding:7px 16px;border-radius:50px;transition:background-color .2s ease}
+.nav ul a:hover{background:var(--bone)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--marca);color:#fff;text-decoration:none;font-size:16px;font-weight:500;padding:13px 32px;border-radius:50px;border:1px solid var(--marca);white-space:nowrap;transition:background-color .2s ease}
+.btn:hover{background:var(--marca-h);border-color:var(--marca-h)}
+.btn.linea{background:transparent;border-color:var(--suave);color:#fff}
+.btn.linea:hover{background:rgba(255,255,255,.08)}
+.nav .btn{padding:9px 20px;font-size:14px}
+
+/* Hero dividido: panel profundo con el titular, panel claro con la prueba */
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:12px;padding:16px 0 0}
+.panel-d{background:var(--profundo);color:#fff;border-radius:20px;padding:72px 56px 56px;display:flex;flex-direction:column;justify-content:space-between;min-height:560px}
+.panel-d .cap{color:var(--suave)}
+.panel-d h1{color:#fff;font-size:clamp(40px,5.2vw,62px);line-height:1.04;letter-spacing:-.035em;margin:20px 0 24px;max-width:640px}
+.panel-d p{color:rgba(255,255,255,.78);font-size:18px;line-height:1.55;max-width:520px;margin:0}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:40px}
+.panel-c{background:var(--bone);border-radius:20px;padding:40px;display:flex;flex-direction:column;gap:0}
+.fila{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:22px 0;border-bottom:1px solid var(--mist)}
+.fila:first-child{padding-top:0}
+.fila:last-child{border-bottom:0;padding-bottom:0}
+.fila strong{font-family:var(--num);font-weight:500;font-size:48px;line-height:1.05;letter-spacing:-.04em;color:var(--profundo)}
+.fila span{font-size:14px;color:var(--slate);text-align:right;max-width:180px;line-height:1.4}
+.panel-c .dir{margin-top:auto;padding-top:28px;font-size:15px;color:var(--graphite);border-top:1px solid var(--mist)}
+.panel-c .dir b{display:block;font-weight:600;color:var(--ink);font-size:16px}
+
+section{padding:96px 0}
+.cabeza{max-width:760px;margin-bottom:40px}
+.cabeza h2{font-size:clamp(32px,4vw,45px);line-height:1.15;letter-spacing:-.03em;margin-top:10px}
+.cabeza p{color:var(--graphite);font-size:18px;margin:16px 0 0;max-width:620px}
+
+/* Insignia: plantillas 3D */
+.insignia{display:grid;grid-template-columns:1.1fr 1fr;gap:12px}
+.ins-a{border:1px solid var(--carbon);border-radius:20px;padding:40px}
+.ins-a h3{font-size:clamp(30px,3.2vw,36px);line-height:1.15;letter-spacing:-.03em;margin:14px 0 16px}
+.ins-a p{margin:0;font-size:17px;color:var(--graphite);max-width:520px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.chip{font-size:13px;font-weight:600;letter-spacing:.04em;border-radius:50px;padding:7px 16px;background:var(--marca);color:#fff}
+.chip.o{background:transparent;color:var(--ink);border:1px solid var(--mist)}
+.ins-b{background:var(--bone);border-radius:20px;padding:40px}
+.ins-b .cap{display:block;margin-bottom:8px}
+.cita-row{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--mist)}
+.cita-row:last-child{border-bottom:0}
+.cita-row b{font-size:20px;font-weight:500;color:var(--profundo);line-height:1.3}
+.cita-row span{font-family:var(--num);font-size:15px;font-weight:500;color:var(--ink);background:var(--paper);border:1px solid var(--mist);border-radius:50px;padding:4px 14px;white-space:nowrap}
+
+/* Otros servicios */
+.servs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+.serv{border:1px solid var(--mist);border-radius:20px;padding:32px;display:flex;flex-direction:column;gap:12px}
+.serv h3{font-size:24px;line-height:1.25;letter-spacing:-.02em}
+.serv p{margin:0;color:var(--graphite);font-size:16px}
+.serv ul{list-style:none;margin:auto 0 0;padding:16px 0 0;border-top:1px solid var(--mist);display:flex;flex-wrap:wrap;gap:6px}
+.serv li{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--profundo);border:1px solid var(--mist);border-radius:50px;padding:4px 12px}
+
+/* Banda profunda: enfoque y directora */
+.banda{background:var(--profundo);color:#fff}
+.banda .in{display:grid;grid-template-columns:1fr 1fr;gap:64px;padding:96px 16px;align-items:start}
+.banda .cap{color:var(--suave)}
+.banda h2{color:#fff;font-size:clamp(32px,4vw,45px);line-height:1.15;letter-spacing:-.03em;margin-top:10px}
+.banda p{color:rgba(255,255,255,.78);font-size:18px;margin:20px 0 0;max-width:520px}
+.pilares{list-style:none;margin:0;padding:0;border-top:1px solid rgba(255,255,255,.16)}
+.pilares li{padding:22px 0;border-bottom:1px solid rgba(255,255,255,.16);display:grid;gap:4px}
+.pilares b{font-size:20px;font-weight:500}
+.pilares span{font-size:15px;color:rgba(255,255,255,.7)}
+
+/* Convenios */
+.conv{display:grid;grid-template-columns:1fr 2fr;gap:48px;align-items:start;border-top:1px solid var(--carbon);padding-top:32px}
+.conv h2{font-size:clamp(28px,3.2vw,36px);line-height:1.2;letter-spacing:-.03em}
+.conv-lista{display:grid;grid-template-columns:repeat(3,1fr);gap:0 24px}
+.conv-lista div{padding:16px 0;border-bottom:1px solid var(--mist);font-size:18px;font-weight:500}
+.conv-lista small{display:block;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin-bottom:2px}
+
+/* Pregunta */
+.faq{background:var(--bone);border-radius:20px;padding:40px;display:grid;grid-template-columns:1fr 1.4fr;gap:40px}
+.faq h3{font-size:26px;line-height:1.25;letter-spacing:-.02em}
+.faq p{margin:0;font-size:18px;color:var(--graphite)}
+
+/* Contacto */
+.contacto{display:grid;grid-template-columns:1fr 1.3fr;gap:12px}
+.ficha{border:1px solid var(--mist);border-radius:20px;padding:36px}
+.ficha h2{font-size:clamp(30px,3.4vw,40px);line-height:1.15;letter-spacing:-.03em}
+dl{margin:28px 0 0}
+dt{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin-top:22px}
+dt:first-child{margin-top:0}
+dd{margin:4px 0 0;font-size:17px}
+dd a{text-decoration:underline;text-decoration-color:rgba(13,122,95,.35);text-underline-offset:4px}
+dd a:hover{text-decoration-color:var(--marca)}
+.ficha .btn{margin-top:32px}
+.mapa{border-radius:20px;overflow:hidden;background:var(--bone);min-height:420px}
+.mapa iframe{display:block;width:100%;height:100%;min-height:420px;border:0;filter:grayscale(.3)}
+
+footer{border-top:1px solid var(--mist);text-align:center;padding:36px 16px 120px;font-size:13px;color:var(--slate);line-height:1.9}
+footer b{font-weight:600;color:var(--ink)}
+.fijo{display:none}
+
+@media (max-width:980px){
+  .hero{grid-template-columns:1fr}
+  .panel-d{min-height:0;padding:56px 32px 40px}
+  .insignia,.banda .in,.conv,.faq,.contacto{grid-template-columns:1fr}
+  .servs{grid-template-columns:1fr 1fr}
+  .banda .in{gap:40px}
+}
+@media (max-width:760px){
+  .nav ul{display:none}
+  .panel-d{padding:44px 24px 32px;border-radius:16px}
+  .panel-d p{font-size:17px}
+  .panel-c{padding:28px 24px;border-radius:16px}
+  .fila strong{font-size:40px}
+  section{padding:64px 0}
+  .ins-a,.ins-b,.faq,.ficha{padding:28px 24px}
+  .servs{grid-template-columns:1fr}
+  .serv{padding:28px 24px}
+  .banda .in{padding:64px 16px}
+  .conv{gap:20px}
+  .conv-lista{grid-template-columns:1fr 1fr}
+  .faq{gap:16px}
+  .mapa,.mapa iframe{min-height:320px}
+  .fijo{display:block;position:fixed;left:16px;right:16px;bottom:16px;z-index:10}
+  .fijo .btn{width:100%;padding:15px}
+}
+@media (max-width:420px){
+  .marca b{font-size:18px}
+  .nav .btn{padding:8px 16px;font-size:13px}
+  .cta .btn{flex:1 1 100%}
+  .ficha .btn{width:100%}
+}
+</style>
+</head>
+<body>
+<div class="franja">Propuesta de diseño para <b>Clínica FisioEnergy</b> · preparada por Ordanza</div>
+
+<header><nav class="nav">
+  <a class="marca" href="#"><b>FisioEnergy</b><span>Clínica del dolor · Bucaramanga</span></a>
+  <ul><li><a href="#plantillas">Plantillas 3D</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#contacto">Contacto</a></li></ul>
+  <a class="btn" href="https://wa.me/573117384012" target="_blank" rel="noopener">Reservar</a>
+</nav></header>
+
+<main>
+<div class="wrap">
+  <div class="hero">
+    <div class="panel-d">
+      <div>
+        <span class="cap">Clínica del dolor y plantillas 3D</span>
+        <h1>Especialistas en el manejo integral del dolor</h1>
+        <p>Recuperamos tu movilidad y elevamos tu calidad de vida con Plantillas Personalizadas 3D, Medicina Integrativa y tecnología clínica especializada para el tratamiento del dolor.</p>
+      </div>
+      <div class="cta">
+        <a class="btn" href="https://wa.me/573117384012" target="_blank" rel="noopener">Reservar valoración por WhatsApp</a>
+        <a class="btn linea" href="tel:+573117384012">Llamar 311 738 4012</a>
+      </div>
+    </div>
+    <div class="panel-c">
+      <div class="fila"><strong>16</strong><span>Tratamientos clínicos</span></div>
+      <div class="fila"><strong>100%</strong><span>Tratamientos personalizados</span></div>
+      <div class="fila"><strong>4.9/5</strong><span>Pacientes verificados</span></div>
+      <div class="dir"><b>Calle 44 # 35-27</b>Barrio Cabecera, Bucaramanga, Santander</div>
+    </div>
+  </div>
+</div>
+
+<section id="plantillas"><div class="wrap">
+  <div class="cabeza">
+    <span class="cap">Servicio insignia</span>
+    <h2>Plantillas Personalizadas 3D</h2>
+    <p>Para aliviar el dolor desde la primera semana.</p>
+  </div>
+  <div class="insignia">
+    <div class="ins-a">
+      <span class="cap">Qué incluye</span>
+      <h3>Estudio Computarizado de la Marcha, escaneo 3D y diseño biomecánico.</h3>
+      <p>El servicio insignia de FisioEnergy.</p>
+      <div class="chips"><span class="chip">Adultos</span><span class="chip">Pediátricas</span><span class="chip">Deportivas</span><span class="chip o">Estudio 3D y CNC</span></div>
+    </div>
+    <div class="ins-b">
+      <span class="cap">Duración de las citas</span>
+      <div class="cita-row"><b>Plantillas personalizadas · Primera vez</b><span>60 min</span></div>
+      <div class="cita-row"><b>Control de plantillas</b><span>45 min</span></div>
+      <div class="cita-row"><b>Sueroterapia</b><span>45 min</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="servicios" style="padding-top:0"><div class="wrap">
+  <div class="cabeza">
+    <span class="cap">Elige por dónde empezar tu bienestar</span>
+    <h2>Más servicios de la clínica</h2>
+  </div>
+  <div class="servs">
+    <article class="serv"><h3>Medicina Integrativa</h3><p>Consulta especializada, acupuntura, terapia neural, ventosas y más.</p><ul><li>Acupuntura</li><li>Terapia neural</li><li>Fisioterapia funcional</li></ul></article>
+    <article class="serv"><h3>Sauna Infrarrojo</h3><p>Recuperación muscular, detox y bienestar profundo.</p></article>
+    <article class="serv"><h3>Sueroterapia</h3><p>17 tipos de suero para energía, defensas, detox, recuperación, piel y bienestar clínico.</p></article>
+  </div>
+</div></section>
+
+<div class="banda"><div class="wrap in">
+  <div>
+    <span class="cap">Criterio clínico integrativo</span>
+    <h2>Diagnóstico certero y tratamiento medible</h2>
+    <p>Combinamos fisioterapia funcional, medicina integrativa y terapias complementarias para tratar la causa del dolor. Dirección médica: Dra. Carolina Jiménez.</p>
+  </div>
+  <ul class="pilares">
+    <li><b>Atención cálida y cercana</b><span>Cada paciente es una historia única.</span></li>
+    <li><b>Equipo capacitado</b><span>Clínica especializada en el manejo del dolor.</span></li>
+    <li><b>Tratamientos personalizados</b><span>Con enfoque humanizado y mejora continua.</span></li>
+  </ul>
+</div></div>
+
+<section><div class="wrap">
+  <div class="conv">
+    <div><span class="cap">Convenios</span><h2 style="margin-top:10px">Atendemos con tu EPS o prepagada</h2></div>
+    <div class="conv-lista">
+      <div><small>EPS</small>Sura</div>
+      <div><small>EPS</small>Sanitas EPS</div>
+      <div><small>Plan especial</small>Sanitas Plan Premium</div>
+      <div><small>EPS</small>Salud Total EPS</div>
+      <div><small>EPS</small>Famisanar EPS</div>
+      <div><small>Medicina prepagada</small>Colmédica</div>
+    </div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="faq">
+    <h3>¿Quiénes deben consultar en FisioEnergy?</h3>
+    <p>Personas con dolor agudo o crónico que deseen identificar el origen de su problema y recibir un tratamiento personalizado para recuperar su bienestar.</p>
+  </div>
+</div></section>
+
+<section id="contacto" style="padding-top:0"><div class="wrap">
+  <div class="contacto">
+    <div class="ficha">
+      <span class="cap">Reserve su valoración</span>
+      <h2 style="margin-top:10px">Cómo llegar</h2>
+      <dl>
+        <dt>Dirección</dt><dd>Calle 44 # 35-27<br>Barrio Cabecera, Bucaramanga, Santander</dd>
+        <dt>Teléfono y WhatsApp</dt><dd><a href="https://wa.me/573117384012" target="_blank" rel="noopener">+57 311 738 4012</a></dd>
+        <dt>Correo</dt><dd><a href="mailto:contacto@fisioenergy.com">contacto@fisioenergy.com</a></dd>
+        <dt>Redes</dt><dd><a href="https://www.instagram.com/fisioenergy.clinica" target="_blank" rel="noopener">Instagram @fisioenergy.clinica</a> · <a href="https://www.facebook.com/fisioenergy" target="_blank" rel="noopener">Facebook</a></dd>
+      </dl>
+      <a class="btn" href="https://wa.me/573117384012" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+    </div>
+    <div class="mapa"><iframe title="Mapa de Clínica FisioEnergy" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Calle%2044%20%2335-27%2C%20Cabecera%2C%20Bucaramanga%2C%20Santander%2C%20Colombia&amp;z=16&amp;output=embed"></iframe></div>
+  </div>
+</div></section>
+</main>
+
+<footer><b>Clínica FisioEnergy</b> · Calle 44 # 35-27, Cabecera, Bucaramanga<br>Propuesta preparada por Ordanza · ordanzacorp.com</footer>
+
+<div class="fijo"><a class="btn" href="https://wa.me/573117384012" target="_blank" rel="noopener">Reservar por WhatsApp</a></div>
+</body>
+</html>

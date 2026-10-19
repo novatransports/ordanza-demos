@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Clínica Dental Dr. Ulises Ostos Aguilera · Implantes dentales en Saltillo</title>
+<meta name="description" content="Implantes dentales, rehabilitación oral, prótesis y estética dental en Los Pinos, Saltillo. Más de 20 años de experiencia. Agende su cita por WhatsApp.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Inter:wght@300;400;500&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Guía: origin-financial.md, versión clara. Tres voces: serif ligera (display), sans (UI), mono (etiquetas). Superficies planas por escalón de color, sin sombras. */
+:root{
+  --canvas:#f5f5f7;--paper:#ffffff;--step:#e8e8ea;--silver:#cacaca;--pale:#dfe6f1;
+  --ink:#0f1011;--steel:#3f4041;
+  --body:#55575a;--fog:#6a6b6b;--ash:#9f9fa0;--cloud:#f5f5f7;
+  --line:rgba(15,16,17,.12);--line-d:rgba(255,255,255,.12);
+  --serif:"Newsreader","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --sans:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:"Roboto Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,"DejaVu Sans Mono",monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);font-weight:400;font-size:16px;line-height:1.5;background:var(--canvas);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 16px}
+.mono{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;line-height:2}
+
+.franja{background:var(--ink);color:var(--ash);font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-align:center;padding:10px 16px;line-height:1.6}
+.franja b{color:var(--cloud);font-weight:500}
+
+header{position:sticky;top:0;z-index:5;background:rgba(245,245,247,.82);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--line)}
+.nav{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 16px}
+.marca{text-decoration:none;line-height:1.1}
+.marca b{display:block;font-family:var(--serif);font-weight:400;font-size:21px;letter-spacing:-.01em}
+.marca span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--fog);margin-top:3px}
+.nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+.nav ul a{display:block;text-decoration:none;font-size:14px;color:var(--body);padding:8px 12px;border-radius:8px;transition:background-color .2s ease,color .2s ease}
+.nav ul a:hover{background:var(--step);color:var(--ink)}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--ink);color:#fff;text-decoration:none;font-size:15px;font-weight:400;padding:12px 18px;border-radius:8px;border:1px solid var(--ink);white-space:nowrap;transition:background-color .2s ease,color .2s ease}
+.btn::after{content:"\2192";font-size:15px;line-height:1}
+.btn:hover{background:var(--steel);border-color:var(--steel)}
+.btn.sec{background:transparent;color:var(--ink);border-color:rgba(15,16,17,.35)}
+.btn.sec::after{content:none}
+.btn.sec:hover{background:var(--step)}
+.nav .btn{padding:9px 14px;font-size:14px}
+
+/* Hero */
+.hero{text-align:center;padding:112px 16px 48px}
+.pill{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--body);border:1px solid var(--line);background:rgba(15,16,17,.03);border-radius:9999px;padding:6px 18px;line-height:1.6}
+h1,h2,h3{font-family:var(--serif);font-weight:300;margin:0;letter-spacing:-.015em}
+h1{font-size:clamp(46px,8vw,96px);line-height:.95;max-width:980px;margin:28px auto}
+h1 em{font-style:italic}
+.hero p{font-size:18px;font-weight:300;line-height:1.5;color:var(--body);max-width:620px;margin:0 auto}
+.cta{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:36px}
+
+.ficha{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:56px 0 0;text-align:left}
+.ficha div{background:var(--paper);border-radius:16px;padding:24px 24px 28px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+.ficha small{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--fog)}
+.ficha strong{font-family:var(--serif);font-weight:300;font-size:26px;line-height:1.15;letter-spacing:-.01em}
+
+/* Secciones */
+section{padding:100px 0}
+.cabeza{text-align:center;max-width:720px;margin:0 auto 56px}
+h2{font-size:clamp(38px,5.4vw,64px);line-height:1}
+.intro{color:var(--body);font-size:18px;font-weight:300;margin:20px auto 0;max-width:600px}
+
+/* Tratamientos: el color del panel es lo único que los distingue */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.tile{border-radius:30px;padding:32px;display:flex;flex-direction:column;gap:14px}
+.tile .num{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.16em;opacity:.7}
+.tile h3{font-size:clamp(30px,3.4vw,38px);line-height:1}
+.tile p{margin:0;font-size:16px;line-height:1.55}
+.tile ul{list-style:none;margin:6px 0 0;padding:0;border-top:1px solid var(--line)}
+.tile li{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;padding:9px 0;border-bottom:1px solid var(--line)}
+.t1{grid-column:1/-1;background:var(--ink);color:var(--cloud);display:grid;grid-template-columns:1fr 1fr;column-gap:48px;row-gap:14px;align-items:end;padding:48px}
+.t1 .num{grid-column:1/-1}
+.t1 h3{font-size:clamp(40px,5vw,64px);line-height:.95}
+.t1 p{color:var(--ash);font-size:18px;font-weight:300;line-height:1.5;max-width:520px}
+.t2{background:var(--pale)}
+.t3{background:var(--paper)}
+.t4{background:var(--silver)}
+.t2 p,.t3 p,.t4 p{color:#3a3c3f}
+
+/* Doctor: banda oscura */
+.doctor{background:var(--ink);color:var(--cloud)}
+.doctor .in{display:grid;grid-template-columns:1fr 1.15fr;gap:64px;padding:100px 16px;align-items:start}
+.doctor .mono{color:var(--ash)}
+.doctor h2{color:#fff;margin-top:14px}
+.doctor p{color:var(--ash);font-size:18px;font-weight:300;margin:20px 0 0;max-width:440px}
+.cred{list-style:none;margin:0;padding:0;border-top:1px solid var(--line-d)}
+.cred li{padding:24px 0;border-bottom:1px solid var(--line-d);display:grid;gap:6px}
+.cred strong{font-family:var(--serif);font-weight:300;font-size:30px;line-height:1.1;color:#fff;letter-spacing:-.01em}
+.cred span{font-size:14px;color:var(--ash);line-height:1.6}
+
+/* Cita: tarjeta invertida */
+.cita{background:var(--silver);border-radius:30px;padding:56px 48px;display:grid;grid-template-columns:1.3fr auto;gap:40px;align-items:end}
+.cita h2{font-size:clamp(36px,4.6vw,56px)}
+.cita p{margin:16px 0 0;color:#2c2d2f;font-size:17px;font-weight:300;max-width:520px}
+.pagos{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.pagos span{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(15,16,17,.22);border-radius:9999px;padding:5px 14px;color:var(--ink)}
+
+/* Contacto */
+#contacto{padding-top:0}
+.contacto{display:grid;grid-template-columns:1fr 1.3fr;gap:12px;align-items:stretch}
+.datos{background:var(--paper);border-radius:16px;padding:32px}
+dl{margin:0}
+dt{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--fog);margin-top:24px}
+dt:first-child{margin-top:0}
+dd{margin:6px 0 0;font-size:17px;line-height:1.5}
+dd a{text-decoration:underline;text-decoration-color:rgba(15,16,17,.25);text-underline-offset:4px;transition:text-decoration-color .2s ease}
+dd a:hover{text-decoration-color:var(--ink)}
+.horas{display:grid;grid-template-columns:auto 1fr;gap:4px 20px}
+.horas span:nth-child(odd){color:var(--body)}
+.mapa{border-radius:16px;overflow:hidden;background:var(--step);min-height:380px}
+.mapa iframe{display:block;width:100%;height:100%;min-height:380px;border:0;filter:grayscale(.35)}
+
+footer{border-top:1px solid var(--line);text-align:center;padding:40px 16px 120px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;line-height:2.2;color:var(--fog)}
+.fijo{display:none}
+
+@media (max-width:900px){
+  .nav ul{display:none}
+  .hero{padding:72px 16px 32px}
+  .hero p{font-size:17px}
+  .ficha{grid-template-columns:1fr;padding-top:40px}
+  .ficha div{min-height:0;gap:12px}
+  section{padding:72px 0}
+  .cabeza{margin-bottom:40px}
+  .tiles{grid-template-columns:1fr}
+  .t1{grid-template-columns:1fr;padding:28px 24px}
+  .tile{border-radius:24px;padding:28px 24px}
+  .doctor .in{grid-template-columns:1fr;gap:36px;padding:72px 16px}
+  .cita{grid-template-columns:1fr;padding:36px 24px;border-radius:24px;gap:28px}
+  .contacto{grid-template-columns:1fr}
+  .datos{padding:28px 24px}
+  .fijo{display:block;position:fixed;left:16px;right:16px;bottom:16px;z-index:10}
+  .fijo .btn{width:100%;padding:15px}
+}
+@media (max-width:420px){
+  .marca b{font-size:18px}
+  .nav .btn{padding:8px 12px;font-size:13px}
+  .cta .btn{flex:1 1 100%}
+  .cita .btn{width:100%}
+}
+</style>
+</head>
+<body>
+<div class="franja">Propuesta de diseño para <b>Clínica Dental Dr. Ulises Ostos Aguilera</b> · preparada por Ordanza</div>
+
+<header><nav class="nav">
+  <a class="marca" href="#"><b>Dr. Ulises Ostos Aguilera</b><span>Clínica dental · Saltillo</span></a>
+  <ul><li><a href="#tratamientos">Tratamientos</a></li><li><a href="#doctor">El doctor</a></li><li><a href="#contacto">Cómo llegar</a></li></ul>
+  <a class="btn" href="https://wa.me/5218444550117" target="_blank" rel="noopener">Agendar cita</a>
+</nav></header>
+
+<main>
+<div class="wrap hero">
+  <span class="pill">Implantes y rehabilitación oral en Saltillo</span>
+  <h1>Recupere su sonrisa con <em>implantes dentales.</em></h1>
+  <p>Somos una clínica dental en la cual el paciente gozará de atención personalizada en cómodas instalaciones. Odontología en general, implantes, rehabilitación oral y extracción de muelas del juicio en Los Pinos, Saltillo.</p>
+  <div class="cta">
+    <a class="btn" href="https://wa.me/5218444550117" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    <a class="btn sec" href="tel:+528441344106">Llamar 844 134 4106</a>
+  </div>
+  <div class="ficha">
+    <div><small>Experiencia</small><strong>Más de 20 años</strong></div>
+    <div><small>Formación</small><strong>Máster en Prótesis Bucal, UIC Barcelona</strong></div>
+    <div><small>Horario</small><strong>Lun a vie 9:30 a 20:30 · Sáb 9:30 a 13:30</strong></div>
+  </div>
+</div>
+
+<section id="tratamientos"><div class="wrap">
+  <div class="cabeza">
+    <h2>Tratamientos</h2>
+    <p class="intro">Acérquese para darle un diagnóstico adecuado y mantener o mejorar su estética dental.</p>
+  </div>
+  <div class="tiles">
+    <article class="tile t1"><span class="num">01</span><h3>Implantes dentales</h3><p>Un implante dental es un diente de reemplazo de alta tecnología que imita toda la estructura dental. Un poste de titanio se inserta en el hueso y se usa para sostener una corona, puente o dentadura postiza. Se ve, se siente y actúa como un diente real y puede durar toda la vida si se cuida adecuadamente.</p></article>
+    <article class="tile t2"><span class="num">02</span><h3>Rehabilitación oral y prótesis</h3><p>Prostodoncia para devolver función y forma a la boca.</p><ul><li>Coronas</li><li>Puentes</li><li>Prótesis dental</li><li>Poste y placa</li></ul></article>
+    <article class="tile t3"><span class="num">03</span><h3>Estética dental</h3><p>Para mantener o mejorar la apariencia de su sonrisa.</p><ul><li>Carillas</li><li>Blanqueamiento</li><li>Sonrisa estética</li></ul></article>
+    <article class="tile t4"><span class="num">04</span><h3>Odontología integral</h3><p>Atención general para toda la boca, incluida la atención de dolor dental.</p><ul><li>Resinas y empastes</li><li>Reconstrucción dental</li><li>Extracción de muelas del juicio</li></ul></article>
+  </div>
+</div></section>
+
+<div class="doctor" id="doctor"><div class="wrap in">
+  <div>
+    <div class="mono">El doctor</div>
+    <h2>Dr. Ulises Ostos Aguilera</h2>
+    <p>Más de 20 años de experiencia en odontología. Implantes dentales, rehabilitación oral y odontología integral en Saltillo.</p>
+  </div>
+  <ul class="cred">
+    <li><strong>Cirujano Dentista</strong><span>Universidad Autónoma de Nuevo León · Cédula profesional 4009786</span></li>
+    <li><strong>Máster en Prótesis Bucal</strong><span>Universidad Internacional de Cataluña (UIC Barcelona), España</span></li>
+    <li><strong>Diplomado en Implantología</strong><span>Avalado por Loma Linda University</span></li>
+  </ul>
+</div></div>
+
+<section id="cita"><div class="wrap">
+  <div class="cita">
+    <div>
+      <h2>Reserve su cita</h2>
+      <p>Escríbanos por WhatsApp o llame al consultorio y le damos fecha y hora.</p>
+      <div class="pagos" aria-label="Formas de pago">
+        <span>Efectivo</span><span>Visa, Mastercard y AMEX</span><span>Transferencia y SPEI</span><span>Mercado Pago</span><span>PayPal</span><span>CoDi</span>
+      </div>
+    </div>
+    <a class="btn" href="https://wa.me/5218444550117" target="_blank" rel="noopener">Agendar por WhatsApp</a>
+  </div>
+</div></section>
+
+<section id="contacto"><div class="wrap">
+  <div class="cabeza">
+    <h2>Cómo llegar</h2>
+    <p class="intro">Estamos sobre Blvd. Moctezuma, en la colonia Los Pinos, Saltillo.</p>
+  </div>
+  <div class="contacto">
+    <div class="datos"><dl>
+      <dt>Dirección</dt><dd>Blvd. Moctezuma 1860, Int. 2<br>Los Pinos, Saltillo, Coahuila, C.P. 25198</dd>
+      <dt>WhatsApp</dt><dd><a href="https://wa.me/5218444550117" target="_blank" rel="noopener">844 455 0117</a></dd>
+      <dt>Consultorio</dt><dd><a href="tel:+528441344106">844 134 4106</a> · <a href="tel:+528441344105">844 134 4105</a></dd>
+      <dt>Correo</dt><dd><a href="mailto:ulisesostos@hotmail.com">ulisesostos@hotmail.com</a></dd>
+      <dt>Horario</dt><dd><div class="horas"><span>Lunes a viernes</span><span>9:30 a 20:30</span><span>Sábado</span><span>9:30 a 13:30</span><span>Domingo</span><span>Cerrado</span></div></dd>
+      <dt>Mapa</dt><dd><a href="https://www.google.com/maps/search/?api=1&amp;query=25.464300,-100.964253" target="_blank" rel="noopener">Abrir en Google Maps</a></dd>
+    </dl></div>
+    <div class="mapa"><iframe title="Mapa de la Clínica Dental Dr. Ulises Ostos Aguilera" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=25.464300,-100.964253&amp;z=16&amp;output=embed"></iframe></div>
+  </div>
+</div></section>
+</main>
+
+<footer>Clínica Dental Dr. Ulises Ostos Aguilera · Los Pinos, Saltillo<br>Propuesta preparada por Ordanza · ordanzacorp.com</footer>
+
+<div class="fijo"><a class="btn" href="https://wa.me/5218444550117" target="_blank" rel="noopener">Agendar por WhatsApp</a></div>
+</body>
+</html>
