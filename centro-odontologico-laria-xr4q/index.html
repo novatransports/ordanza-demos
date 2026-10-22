@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Centro Odontológico Adrián Laría · Consultorio odontológico en San Juan</title>
+<meta name="description" content="Consultorio odontológico en San Juan, Argentina: ortodoncia, implantes dentales, blanqueamiento, prótesis fijas y removibles, diseño de sonrisa y odontología general.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@400&family=Playfair+Display:wght@400&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#faf9f6;--card:#fff;--ink:#141414;--gra:#4a4a48;--sla:#75746f;--line:#e4e2dc;--soft:#f1efe9;--acc:#1f4a3f;--acc2:#bfd8cc;--accink:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.franja{background:var(--ink);color:#e9e7e1;font-size:13px;text-align:center;padding:10px 16px}
+.franja b{font-weight:600;color:#fff}
+.vistas{display:flex;justify-content:center;gap:6px;padding:10px 16px;background:var(--soft);border-bottom:1px solid var(--line)}
+.vistas button{font:500 13px Inter,sans-serif;border:1px solid var(--line);background:var(--card);color:var(--gra);border-radius:999px;padding:7px 16px;cursor:pointer}
+.vistas button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.mono{font-family:"Roboto Mono",ui-monospace,monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+header{position:sticky;top:0;z-index:5;background:rgba(250,249,246,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 16px}
+.marca{text-decoration:none;line-height:1.15}
+.marca b{display:block;font-family:"Playfair Display",Georgia,serif;font-weight:400;font-size:21px;letter-spacing:-.01em}
+.marca span{color:var(--sla)}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:15px}
+.nav ul a{text-decoration:none;color:var(--gra)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--acc);color:var(--accink);text-decoration:none;font-weight:500;font-size:15px;padding:13px 22px;border-radius:8px;border:1px solid var(--acc);white-space:nowrap}
+.btn.line{background:transparent;color:var(--ink);border-color:var(--ink)}
+.hero{max-width:1200px;margin:auto;padding:88px 16px 72px;display:grid;grid-template-columns:1.4fr 1fr;gap:64px;align-items:end}
+.hero .mono{color:var(--acc)}
+h1{font-family:"Playfair Display",Georgia,serif;font-weight:400;font-size:clamp(42px,6.6vw,84px);line-height:.98;letter-spacing:-.025em;margin:18px 0 24px}
+.hero p.lead{font-size:19px;color:var(--gra);max-width:560px;margin:0}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.datos{border-top:1px solid var(--ink)}
+.datos div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.datos dt{color:var(--sla)}
+.datos dd{margin:0;text-align:right;font-weight:500}
+.datos dd a{text-decoration:none}
+section{max-width:1200px;margin:auto;padding:88px 16px}
+.cab{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;margin-bottom:44px}
+.cab .mono{color:var(--acc)}
+h2.t{font-family:"Playfair Display",Georgia,serif;font-weight:400;font-size:clamp(32px,4.4vw,52px);line-height:1.04;letter-spacing:-.02em;margin:12px 0 0}
+.cab p{color:var(--gra);font-size:17px;margin:0;max-width:480px}
+.serv{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);column-gap:56px;border-top:1px solid var(--ink)}
+.serv li{display:grid;grid-template-columns:52px 1fr;gap:8px;padding:24px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.serv small{font-family:"Roboto Mono",monospace;font-size:12px;color:var(--sla)}
+.serv h3{margin:0;font-family:"Playfair Display",Georgia,serif;font-weight:400;font-size:25px;letter-spacing:-.01em}
+.serv p{margin:6px 0 0;color:var(--sla);font-size:15px}
+.banda{background:var(--acc);color:#fff}
+.banda-in{max-width:1200px;margin:auto;padding:72px 16px;display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
+.banda h2{font-family:"Playfair Display",Georgia,serif;font-weight:400;font-size:clamp(30px,4vw,46px);line-height:1.06;letter-spacing:-.02em;margin:12px 0 0}
+.banda .mono{color:var(--acc2)}
+.banda p{color:rgba(255,255,255,.78);margin:0 0 24px;font-size:17px}
+.banda .btn{background:#fff;color:var(--ink);border-color:#fff}
+.contacto{display:grid;grid-template-columns:1fr 1.3fr;gap:48px}
+.contacto dl{margin:0}
+.contacto dt{margin-top:26px;color:var(--sla)}
+.contacto dt:first-child{margin-top:0}
+.contacto dd{margin:6px 0 0;font-size:18px}
+.contacto dd a{text-underline-offset:4px;text-decoration-color:var(--line)}
+.mapa{border:1px solid var(--line);border-radius:16px;overflow:hidden;min-height:380px;background:var(--soft)}
+.mapa iframe{display:block;width:100%;height:100%;min-height:380px;border:0}
+footer{border-top:1px solid var(--line);padding:32px 16px 104px;text-align:center;color:var(--sla);font-size:14px}
+footer p{margin:4px 0}
+.fijo{position:fixed;left:16px;right:16px;bottom:16px;z-index:9;display:none}
+.fijo .btn{width:100%;padding:15px 22px}
+/* Panel */
+#panel{display:none;background:#f2f2f2;min-height:100vh}
+body.ver-panel #sitio,body.ver-panel .fijo{display:none}
+body.ver-panel #panel{display:block}
+.p-top{background:#fff;border-bottom:1px solid #d9d9d9}
+.p-top-in{max-width:1200px;margin:auto;padding:16px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.p-top b{font-weight:600;font-size:16px}
+.p-top span{color:#737373;font-size:14px}
+.ejemplo{display:inline-block;border:1px solid var(--acc);color:var(--acc);border-radius:999px;padding:4px 12px;font-size:12px;font-weight:600;letter-spacing:.02em}
+.p-in{max-width:1200px;margin:auto;padding:28px 16px 64px}
+.p-in h2{font-family:"Inter Tight",Inter,sans-serif;font-weight:400;font-size:clamp(28px,4vw,40px);letter-spacing:-.02em;line-height:1.1;margin:0 0 6px}
+.p-in .sub{color:#737373;margin:0 0 24px;font-size:15px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.kpi{background:#fff;border:1px solid #d9d9d9;border-radius:12px;padding:18px}
+.kpi span{display:block;color:#737373;font-size:13px}
+.kpi b{display:block;font-family:"Inter Tight",Inter,sans-serif;font-weight:400;font-size:34px;letter-spacing:-.02em;margin-top:6px}
+.p-grid{display:grid;grid-template-columns:1.7fr 1fr;gap:20px;align-items:start}
+.caja{background:#fff;border:1px solid #d9d9d9;border-radius:12px;overflow:hidden}
+.caja h3{margin:0;padding:16px 18px;font-size:15px;font-weight:600;border-bottom:1px solid #d9d9d9;display:flex;justify-content:space-between;gap:8px}
+.caja h3 small{font-weight:400;color:#737373}
+.cita{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;padding:14px 18px;border-bottom:1px solid #ececec}
+.cita:last-child{border-bottom:0}
+.cita time{font-family:"Roboto Mono",monospace;font-size:13px;color:#1a1a1a}
+.cita b{display:block;font-weight:500;font-size:15px}
+.cita span{color:#737373;font-size:13px}
+.est{font-size:12px;font-weight:500;border-radius:999px;padding:4px 10px;white-space:nowrap;border:1px solid #d9d9d9;color:#4a4a48}
+.est.ok{background:var(--acc);border-color:var(--acc);color:#fff}
+.est.pend{border-color:var(--acc);color:var(--acc)}
+.est.done{background:#f2f2f2;color:#737373}
+.sol{padding:14px 18px;border-bottom:1px solid #ececec}
+.sol:last-child{border-bottom:0}
+.sol b{display:block;font-weight:500;font-size:15px}
+.sol span{display:block;color:#737373;font-size:13px;margin-top:2px}
+.sol .acc{display:inline-block;margin-top:10px;font-size:13px;font-weight:500;color:var(--acc);border:1px solid var(--acc);border-radius:6px;padding:5px 10px}
+.tabla{width:100%;border-collapse:collapse;font-size:14px}
+.tabla td{padding:12px 18px;border-bottom:1px solid #ececec}
+.tabla tr:last-child td{border-bottom:0}
+.tabla td:last-child{text-align:right;font-family:"Roboto Mono",monospace}
+.barra{height:6px;background:#f2f2f2;border-radius:3px;margin-top:6px;overflow:hidden}
+.barra i{display:block;height:100%;background:var(--acc)}
+.p-nota{margin-top:20px;color:#737373;font-size:13px}
+@media(max-width:860px){
+ .nav ul,.nav>.btn{display:none}
+ .hero{grid-template-columns:1fr;padding:52px 16px 48px;gap:40px}
+ .hero p.lead{font-size:17px}
+ section{padding:60px 16px}
+ .cab{grid-template-columns:1fr;gap:12px;margin-bottom:28px}
+ .serv{grid-template-columns:1fr}
+ .banda-in{grid-template-columns:1fr;padding:56px 16px;gap:8px}
+ .contacto{grid-template-columns:1fr;gap:32px}
+ .fijo{display:block}
+ .kpis{grid-template-columns:repeat(2,1fr)}
+ .p-grid{grid-template-columns:1fr}
+ .cita{grid-template-columns:56px 1fr;}
+ .cita .est{grid-column:2;justify-self:start}
+}
+@media(max-width:440px){.cta .btn{flex:1 1 100%}}
+</style>
+</head>
+<body>
+<div class="franja">Propuesta de diseño para <b>Centro Odontológico Adrián Laría</b> · preparada por Ordanza</div>
+<div class="vistas" role="group" aria-label="Vista"><button type="button" aria-pressed="true">Página para pacientes</button><button type="button" aria-pressed="false">Panel del consultorio</button></div>
+
+<div id="sitio">
+<header><nav class="nav">
+  <a class="marca" href="#"><b>Adrián Laría</b><span class="mono">Centro Odontológico · San Juan</span></a>
+  <ul><li><a href="#servicios">Servicios</a></li><li><a href="#contacto">Ubicación</a></li></ul>
+  <a class="btn" href="https://wa.me/5492645659662?text=Hola%2C%20quisiera%20consultar%20por%20un%20turno%20en%20el%20consultorio.">Pedir turno por WhatsApp</a>
+</nav></header>
+<main>
+<div class="hero">
+  <div>
+    <span class="mono">San Juan · Argentina</span>
+    <h1>Consultorio odontológico en San Juan.</h1>
+    <p class="lead">Ortodoncia, implantes, blanqueamiento, prótesis y diseño de sonrisa con el Dr. Adrián Laría, odontólogo. Lavalle Sur 985, esquina Mariano Moreno.</p>
+    <div class="cta">
+      <a class="btn" href="https://wa.me/5492645659662?text=Hola%2C%20quisiera%20consultar%20por%20un%20turno%20en%20el%20consultorio.">Pedir turno por WhatsApp</a>
+      <a class="btn line" href="https://www.google.com/maps/search/?api=1&amp;query=Lavalle%20Sur%20985%2C%20San%20Juan%2C%20Argentina">Cómo llegar</a>
+    </div>
+  </div>
+  <dl class="datos">
+<div><dt>Horario</dt><dd>Lunes a viernes, 08:00 a 20:00 hs</dd></div>
+<div><dt>WhatsApp</dt><dd><a href="https://wa.me/5492645659662">+54 9 264 565 9662</a></dd></div>
+<div><dt>Correo</dt><dd><a href="mailto:info@lariaodontologia.com">info@lariaodontologia.com</a></dd></div>
+<div><dt>Dirección</dt><dd>Lavalle Sur 985, San Juan</dd></div>
+  </dl>
+</div>
+
+<section id="servicios">
+  <div class="cab">
+    <div><span class="mono">Servicios</span><h2 class="t">Servicios odontológicos especializados.</h2></div>
+    <p>Tratamientos de ortodoncia para todo tipo de pacientes; prótesis e implantes para mayores de 18 años.</p>
+  </div>
+  <ul class="serv">
+<li><small>01</small><div><h3>Ortodoncia</h3><p>Tratamientos dirigidos a todo tipo de pacientes.</p></div></li>
+<li><small>02</small><div><h3>Implantes dentales</h3><p>Para personas mayores de 18 años. Hasta 12 cuotas.</p></div></li>
+<li><small>03</small><div><h3>Blanqueamiento</h3></div></li>
+<li><small>04</small><div><h3>Prótesis fijas y removibles</h3><p>Para personas mayores de 18 años.</p></div></li>
+<li><small>05</small><div><h3>Diseño de sonrisa</h3></div></li>
+<li><small>06</small><div><h3>Odontología en general</h3></div></li>
+  </ul>
+</section>
+
+<div class="banda"><div class="banda-in">
+  <div><span class="mono">Turnos</span><h2>Pida su turno por WhatsApp.</h2></div>
+  <div><p>Atención de lunes a viernes, de 08:00 a 20:00 hs. Escríbanos al +54 9 264 565 9662.</p><a class="btn" href="https://wa.me/5492645659662?text=Hola%2C%20quisiera%20consultar%20por%20un%20turno%20en%20el%20consultorio.">Escribir por WhatsApp</a></div>
+</div></div>
+
+<section id="contacto">
+  <div class="cab"><div><span class="mono">Ubicación</span><h2 class="t">Lavalle Sur 985, esquina Mariano Moreno.</h2></div></div>
+  <div class="contacto">
+    <dl>
+<dt>Dirección</dt><dd>Lavalle Sur 985, esq. Mariano Moreno<br>(5400) San Juan, Argentina</dd>
+<dt>Horario</dt><dd>Lunes a viernes, 08:00 a 20:00 hs</dd>
+<dt>Teléfono y WhatsApp</dt><dd><a href="https://wa.me/5492645659662">+54 9 264 565 9662</a></dd>
+<dt>Correo</dt><dd><a href="mailto:info@lariaodontologia.com">info@lariaodontologia.com</a></dd>
+<dt>Facebook</dt><dd><a href="https://www.facebook.com/ADRIANLARIAODONTOLOGIA/">Adrián Laría Odontología</a></dd>
+      <dt>Mapa</dt><dd><a href="https://www.google.com/maps/search/?api=1&amp;query=Lavalle%20Sur%20985%2C%20San%20Juan%2C%20Argentina">Abrir en Google Maps</a></dd>
+    </dl>
+    <div class="mapa"><iframe title="Mapa de Centro Odontológico Adrián Laría" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Lavalle%20Sur%20985%2C%20San%20Juan%2C%20Argentina&amp;z=16&amp;output=embed"></iframe></div>
+  </div>
+</section>
+</main>
+<footer>
+  <p>Centro Odontológico Adrián Laría · Lavalle Sur 985, esq. Mariano Moreno, San Juan</p>
+  <p>Propuesta preparada por Ordanza · ordanzacorp.com</p>
+</footer>
+<div class="fijo"><a class="btn" href="https://wa.me/5492645659662?text=Hola%2C%20quisiera%20consultar%20por%20un%20turno%20en%20el%20consultorio.">Pedir turno por WhatsApp</a></div>
+</div>
+
+<div id="panel">
+  <div class="p-top"><div class="p-top-in">
+    <div><b>Adrián Laría</b> <span>· Panel del consultorio</span></div>
+    <span class="ejemplo">Datos de ejemplo</span>
+  </div></div>
+  <div class="p-in">
+    <h2>Agenda de hoy</h2>
+    <p class="sub">Así vería el consultorio sus turnos y las solicitudes que llegan desde la página. Pacientes y cantidades son de ejemplo; los servicios son los de Adrián Laría.</p>
+    <div class="kpis">
+<div class="kpi"><span>Turnos hoy</span><b>8</b></div>
+<div class="kpi"><span>Confirmados</span><b>6</b></div>
+<div class="kpi"><span>Por confirmar</span><b>2</b></div>
+<div class="kpi"><span>Consultas nuevas</span><b>3</b></div>
+    </div>
+    <div class="p-grid">
+      <div class="caja"><h3>Turnos del día <small>Datos de ejemplo</small></h3>
+<div class="cita"><time>08:30</time><div><b>Paciente 01</b><span>Control de ortodoncia</span></div><span class="est done">Atendido</span></div>
+<div class="cita"><time>09:30</time><div><b>Paciente 02</b><span>Odontología general</span></div><span class="est done">Atendido</span></div>
+<div class="cita"><time>10:30</time><div><b>Paciente 03</b><span>Implantes dentales · valoración</span></div><span class="est ok">En consulta</span></div>
+<div class="cita"><time>12:00</time><div><b>Paciente 04</b><span>Blanqueamiento</span></div><span class="est ok">Confirmado</span></div>
+<div class="cita"><time>16:00</time><div><b>Paciente 05</b><span>Prótesis fija · prueba</span></div><span class="est ok">Confirmado</span></div>
+<div class="cita"><time>17:00</time><div><b>Paciente 06</b><span>Ortodoncia · primera consulta</span></div><span class="est ok">Confirmado</span></div>
+<div class="cita"><time>18:00</time><div><b>Paciente 07</b><span>Diseño de sonrisa</span></div><span class="est pend">Por confirmar</span></div>
+<div class="cita"><time>19:00</time><div><b>Paciente 08</b><span>Odontología general</span></div><span class="est pend">Por confirmar</span></div>
+      </div>
+      <div style="display:grid;gap:20px">
+        <div class="caja"><h3>Solicitudes desde la página <small>Ejemplo</small></h3>
+<div class="sol"><b>Implantes dentales</b><span>Paciente 09 · consulta por las cuotas</span><span class="acc">Responder por WhatsApp</span></div>
+<div class="sol"><b>Ortodoncia</b><span>Paciente 10 · turno para su hijo</span><span class="acc">Responder por WhatsApp</span></div>
+<div class="sol"><b>Blanqueamiento</b><span>Paciente 11 · prefiere por la tarde</span><span class="acc">Responder por WhatsApp</span></div>
+        </div>
+        <div class="caja"><h3>Turnos de la semana por servicio <small>Ejemplo</small></h3>
+          <table class="tabla">
+<tr><td>Ortodoncia<div class="barra"><i style="width:100%"></i></div></td><td>12</td></tr>
+<tr><td>Odontología en general<div class="barra"><i style="width:75%"></i></div></td><td>9</td></tr>
+<tr><td>Implantes dentales<div class="barra"><i style="width:42%"></i></div></td><td>5</td></tr>
+<tr><td>Blanqueamiento<div class="barra"><i style="width:33%"></i></div></td><td>4</td></tr>
+<tr><td>Prótesis fijas y removibles<div class="barra"><i style="width:25%"></i></div></td><td>3</td></tr>
+<tr><td>Diseño de sonrisa<div class="barra"><i style="width:17%"></i></div></td><td>2</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <p class="p-nota">Panel de demostración. Datos de ejemplo: no son pacientes reales.</p>
+  </div>
+</div>
+<script>
+(function(){var b=document.body,bs=document.querySelectorAll('.vistas button');
+function v(p){b.classList.toggle('ver-panel',p);bs[0].setAttribute('aria-pressed',!p);bs[1].setAttribute('aria-pressed',p);}
+bs[0].addEventListener('click',function(){v(false);window.scrollTo(0,0)});
+bs[1].addEventListener('click',function(){v(true);window.scrollTo(0,0)});
+if(location.hash==='#panel')v(true);})();
+</script>
+</body>
+</html>

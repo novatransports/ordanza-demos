@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aesthetic Dental Clinic · Odontología integral en Tampico</title>
+<meta name="description" content="Clínica de odontología integral en la zona norte de Tampico, Tamaulipas: endodoncia, periodoncia e implantología, prostodoncia, ortodoncia, odontopediatría y odontología estética.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f8f7f4;--card:#fff;--ink:#121413;--gra:#454846;--sla:#6f726f;--line:#e2e1dc;--soft:#efeee9;--acc:#1e4a47;--acc2:#bcd6d2}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--paper);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+.franja{background:var(--ink);color:#e7e6e1;font-size:13px;text-align:center;padding:10px 16px}
+.franja b{font-weight:600;color:#fff}
+.mono{font-family:"Roboto Mono",ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+header{position:sticky;top:0;z-index:5;background:rgba(248,247,244,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 16px}
+.marca{text-decoration:none;line-height:1.15}
+.marca b{display:block;font-family:"Playfair Display",Georgia,serif;font-weight:400;font-size:21px;letter-spacing:-.01em}
+.marca span{color:var(--sla)}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:15px}
+.nav ul a{text-decoration:none;color:var(--gra)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--acc);color:#fff;text-decoration:none;font-weight:500;font-size:15px;padding:13px 22px;border-radius:8px;border:1px solid var(--acc);white-space:nowrap}
+.btn.line{background:transparent;color:var(--ink);border-color:var(--ink)}
+.hero{max-width:1200px;margin:auto;padding:88px 16px 72px;display:grid;grid-template-columns:1.4fr 1fr;gap:64px;align-items:end}
+.hero .mono{color:var(--acc)}
+h1{font-family:"Playfair Display",Georgia,serif;font-weight:400;font-size:clamp(40px,6.4vw,82px);line-height:.98;letter-spacing:-.025em;margin:18px 0 24px}
+.lead{font-size:19px;color:var(--gra);max-width:560px;margin:0}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.datos{border-top:1px solid var(--ink);margin:0}
+.datos div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.datos dt{color:var(--sla)}
+.datos dd{margin:0;text-align:right;font-weight:500}
+.datos dd a{text-decoration:none}
+section{max-width:1200px;margin:auto;padding:88px 16px}
+.cab{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;margin-bottom:44px}
+.cab .mono{color:var(--acc)}
+h2{font-family:"Playfair Display",Georgia,serif;font-weight:400;font-size:clamp(32px,4.4vw,52px);line-height:1.04;letter-spacing:-.02em;margin:12px 0 0}
+.cab p{color:var(--gra);font-size:17px;margin:0;max-width:480px}
+.serv{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);column-gap:56px;border-top:1px solid var(--ink)}
+.serv li{display:grid;grid-template-columns:52px 1fr;gap:8px;padding:24px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.serv small{font-family:"Roboto Mono",monospace;font-size:12px;color:var(--sla)}
+.serv h3{margin:0;font-family:"Playfair Display",Georgia,serif;font-weight:400;font-size:25px;letter-spacing:-.01em}
+.serv p{margin:6px 0 0;color:var(--sla);font-size:15px}
+.banda{background:var(--acc);color:#fff}
+.banda-in{max-width:1200px;margin:auto;padding:72px 16px;display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
+.banda .mono{color:var(--acc2)}
+.banda h2{font-size:clamp(28px,3.8vw,44px)}
+.banda blockquote{margin:0;font-family:"Playfair Display",Georgia,serif;font-size:clamp(22px,2.6vw,30px);line-height:1.3}
+.banda cite{display:block;margin-top:18px;font-style:normal;color:rgba(255,255,255,.74);font-size:14px}
+.contacto{display:grid;grid-template-columns:1fr 1.2fr;gap:48px}
+.contacto dl{margin:0;border-top:1px solid var(--ink)}
+.contacto dl div{padding:18px 0;border-bottom:1px solid var(--line)}
+.contacto dt{color:var(--sla);font-size:14px;margin-bottom:4px}
+.contacto dd{margin:0;font-size:17px}
+.horas{width:100%;border-collapse:collapse;font-size:16px}
+.horas td{padding:12px 0;border-bottom:1px solid var(--line)}
+.horas td:last-child{text-align:right;font-weight:500}
+.mapa{margin-top:28px;display:block;border:1px solid var(--line);border-radius:12px;background:var(--card);padding:24px;text-decoration:none}
+.mapa b{display:block;font-weight:500;font-size:17px}
+.mapa span{color:var(--sla);font-size:15px}
+footer{border-top:1px solid var(--line);margin-top:24px}
+.pie{max-width:1200px;margin:auto;padding:32px 16px 96px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--sla);font-size:14px}
+.flota{position:fixed;right:16px;bottom:16px;z-index:9;display:none}
+@media (max-width:860px){
+  .nav ul{display:none}
+  .hero{grid-template-columns:1fr;gap:40px;padding:56px 16px 48px}
+  .cab,.banda-in,.contacto{grid-template-columns:1fr;gap:24px}
+  .serv{grid-template-columns:1fr}
+  section{padding:64px 16px}
+  .lead{font-size:17px}
+  .flota{display:inline-flex}
+  .nav .btn{display:none}
+}
+</style>
+</head>
+<body>
+<div class="franja">Propuesta de diseño para <b>Aesthetic Dental Clinic</b> · preparada por Ordanza</div>
+<header>
+  <nav class="nav">
+    <a class="marca" href="#inicio"><b>Aesthetic Dental Clinic</b><span class="mono">Tampico · Tamaulipas</span></a>
+    <ul><li><a href="#servicios">Especialidades</a></li><li><a href="#opiniones">Opiniones</a></li><li><a href="#contacto">Contacto</a></li></ul>
+    <a class="btn" href="https://wa.link/uokh1v">Agendar una cita</a>
+  </nav>
+</header>
+
+<main id="inicio">
+  <div class="hero">
+    <div>
+      <span class="mono">Odontología integral · Zona norte de Tampico</span>
+      <h1>Todas las especialidades dentales en un solo lugar.</h1>
+      <p class="lead">Clínica de odontología integral en la zona norte de Tampico, Tamaulipas. Diagnóstico, planificación, tratamiento y prevención para toda la familia.</p>
+      <div class="cta">
+        <a class="btn" href="https://wa.link/uokh1v">Agendar una cita por WhatsApp</a>
+        <a class="btn line" href="tel:+528336993563">Llamar al 833 699 35 63</a>
+      </div>
+    </div>
+    <dl class="datos">
+      <div><dt>Dirección</dt><dd>Nicaragua 110, Col. Las Américas</dd></div>
+      <div><dt>Lunes a viernes</dt><dd>10:00 a 19:00</dd></div>
+      <div><dt>Sábado</dt><dd>10:00 a 14:00</dd></div>
+      <div><dt>Teléfono</dt><dd><a href="tel:+528336993563">833 699 35 63</a></dd></div>
+    </dl>
+  </div>
+
+  <section id="servicios">
+    <div class="cab">
+      <div><span class="mono">Especialidades</span><h2>Siete áreas, un mismo equipo.</h2></div>
+      <p>Cada especialidad con su descripción en su lugar, para que el paciente encuentre en segundos el tratamiento que busca.</p>
+    </div>
+    <ul class="serv">
+      <li><small>01</small><div><h3>Endodoncia</h3><p>Tratamiento de las lesiones internas de la pulpa y el ápice del diente, enfocado en aliviar el dolor.</p></div></li>
+      <li><small>02</small><div><h3>Periodoncia e implantología</h3><p>Tratamiento de los tejidos blandos alrededor del diente y colocación de implantes dentales.</p></div></li>
+      <li><small>03</small><div><h3>Odontología integral</h3><p>Diagnóstico, planificación, tratamiento y prevención de la salud bucal.</p></div></li>
+      <li><small>04</small><div><h3>Prostodoncia</h3><p>Reemplazo y rehabilitación por pérdida parcial o total de dientes, y atención de trastornos de la articulación temporomandibular.</p></div></li>
+      <li><small>05</small><div><h3>Ortodoncia</h3><p>Corrección de la maloclusión y alineación de los dientes.</p></div></li>
+      <li><small>06</small><div><h3>Odontopediatría</h3><p>Prevención y tratamiento dental para niños y recién nacidos.</p></div></li>
+      <li><small>07</small><div><h3>Odontología estética</h3><p>Diseño de sonrisa y armonía dental.</p></div></li>
+    </ul>
+  </section>
+
+  <div class="banda" id="opiniones">
+    <div class="banda-in">
+      <div><span class="mono">Lo que dicen sus pacientes</span><h2>Atención cercana, de principio a fin.</h2></div>
+      <figure style="margin:0">
+        <blockquote>“Excelente atencion y muy bien atendido, siempre al pendiente de sus pacientes.”</blockquote>
+        <cite>Carlos Alberto Hernández · Tampico · opinión publicada en su sitio actual</cite>
+      </figure>
+    </div>
+  </div>
+
+  <section id="contacto">
+    <div class="cab">
+      <div><span class="mono">Visítenos</span><h2>Nicaragua 110, Col. Las Américas, Tampico.</h2></div>
+      <p>Agende por WhatsApp, por teléfono o por correo. Le confirmamos el horario disponible.</p>
+    </div>
+    <div class="contacto">
+      <dl>
+        <div><dt>WhatsApp</dt><dd><a href="https://wa.link/uokh1v">Agendar una cita</a></dd></div>
+        <div><dt>Teléfono</dt><dd><a href="tel:+528336993563">833 699 35 63</a></dd></div>
+        <div><dt>Correo</dt><dd><a href="mailto:aestheticdentc@gmail.com">aestheticdentc@gmail.com</a></dd></div>
+        <div><dt>Redes</dt><dd><a href="https://www.facebook.com/aestheticdentc">Facebook</a> · <a href="https://www.instagram.com/aestheticdentc">Instagram</a> · @aestheticdentc</dd></div>
+      </dl>
+      <div>
+        <table class="horas">
+          <tr><td>Lunes a viernes</td><td>10:00 a 19:00</td></tr>
+          <tr><td>Sábado</td><td>10:00 a 14:00</td></tr>
+        </table>
+        <a class="mapa" href="https://www.google.com/maps/search/?api=1&query=Nicaragua+110,+Las+Am%C3%A9ricas,+Tampico,+Tamaulipas"><b>Cómo llegar</b><span>Abrir Nicaragua 110, Col. Las Américas, Tampico en Google Maps</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="pie"><span>Aesthetic Dental Clinic · Tampico, Tamaulipas</span><span>Propuesta preparada por Ordanza · ordanzacorp.com</span></div></footer>
+<a class="btn flota" href="https://wa.link/uokh1v">Agendar por WhatsApp</a>
+</body>
+</html>

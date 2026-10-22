@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Veterinaria San Francisco · Atención veterinaria en Saltillo</title>
+<meta name="description" content="Veterinaria San Francisco, 38 años en Saltillo, Coahuila: consulta general, dermatología, geriatría, mascotas exóticas, vacunas, cirugías, laboratorio, rayos X digitales y servicio dental.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#244d54;--mint:#2ecea0;--soft:#6dddbd;--ink:#151515;--carbon:#000;--gra:#4d4d4d;--sla:#6b6b6b;--mist:#e5e7eb;--bone:#f0f1f2;--paper:#fff;--tealtx:#1d6b5a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Inter Tight",Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--paper);color:var(--carbon);line-height:1.5;letter-spacing:.005em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+.franja{background:var(--teal);color:#dfeeea;font-size:13px;text-align:center;padding:10px 16px}
+.franja b{color:#fff;font-weight:500}
+.vistas{display:flex;justify-content:center;gap:6px;padding:10px 16px;background:var(--bone);border-bottom:1px solid var(--mist)}
+.vistas button{font:500 13px "Inter Tight",sans-serif;border:1px solid var(--mist);background:var(--paper);color:var(--gra);border-radius:50px;padding:7px 16px;cursor:pointer}
+.vistas button[aria-pressed=true]{background:var(--teal);border-color:var(--teal);color:#fff}
+.cap{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+header{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--mist)}
+.nav{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 16px}
+.marca{text-decoration:none;line-height:1.15}
+.marca b{display:block;font-weight:600;font-size:18px;letter-spacing:-.01em;color:var(--teal)}
+.marca span{font-size:13px;color:var(--sla)}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0;font-size:15px;font-weight:500}
+.nav ul a{text-decoration:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--mint);color:var(--ink);text-decoration:none;font-weight:500;font-size:15px;padding:13px 26px;border-radius:50px;border:1px solid var(--mint);white-space:nowrap}
+.btn.line{background:transparent;color:inherit;border-color:currentColor}
+.hero{display:grid;grid-template-columns:1.15fr 1fr;min-height:560px}
+.hero-a{background:var(--teal);color:#fff;padding:80px max(16px,calc((100vw - 1200px)/2 + 16px)) 72px;padding-right:56px;display:flex;flex-direction:column;justify-content:flex-end}
+.hero-a .cap{color:var(--soft)}
+h1{font-weight:500;font-size:clamp(40px,5.6vw,66px);line-height:1.02;letter-spacing:-.035em;margin:18px 0 22px}
+.hero-a p{font-size:18px;color:rgba(255,255,255,.8);max-width:520px;margin:0}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.hero-a .btn.line{color:#fff;border-color:var(--mint)}
+.hero-b{background:var(--bone);padding:72px max(16px,calc((100vw - 1200px)/2 + 16px)) 72px 48px;display:flex;flex-direction:column;justify-content:flex-end}
+.hero-b .num{font-family:Inter,sans-serif;font-weight:500;font-size:clamp(88px,12vw,150px);line-height:.9;letter-spacing:-.06em;color:var(--teal)}
+.hero-b .num small{font-size:.28em;letter-spacing:-.02em;margin-left:6px}
+.hero-b .bajo{font-size:15px;color:var(--gra);margin:10px 0 36px;max-width:360px}
+.datos{margin:0;border-top:1px solid var(--carbon)}
+.datos div{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--mist);font-size:15px}
+.datos dt{color:var(--sla)}
+.datos dd{margin:0;text-align:right;font-weight:500}
+.datos dd a{text-decoration:none}
+section{max-width:1200px;margin:auto;padding:88px 16px}
+.cab{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;margin-bottom:40px}
+.cab .cap{color:var(--tealtx)}
+h2{font-weight:500;font-size:clamp(30px,4vw,45px);line-height:1.1;letter-spacing:-.03em;margin:12px 0 0;color:var(--ink)}
+.cab p{color:var(--gra);font-size:17px;margin:0;max-width:480px}
+.serv{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--carbon)}
+.serv li{padding:22px 24px 24px 0;border-bottom:1px solid var(--mist)}
+.serv h3{margin:0;font-weight:500;font-size:20px;letter-spacing:-.01em;color:var(--teal)}
+.serv p{margin:6px 0 0;color:var(--sla);font-size:15px}
+.serv .pill{display:inline-block;margin-left:6px;vertical-align:3px;background:var(--bone);border:1px solid var(--mist);color:var(--gra);border-radius:50px;padding:2px 10px;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.banda{background:var(--teal);color:#fff}
+.banda section{padding-top:80px;padding-bottom:80px}
+.banda .cap{color:var(--soft)}
+.banda h2{color:#fff}
+.banda .cab p{color:rgba(255,255,255,.75)}
+.equipo{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.equipo li{border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:20px}
+.equipo b{display:block;font-weight:500;font-size:17px;line-height:1.3}
+.equipo span{display:block;color:rgba(255,255,255,.65);font-size:14px;margin-top:4px}
+.equipo .anos{font-family:Inter,sans-serif;font-size:34px;font-weight:500;letter-spacing:-.04em;color:var(--soft);margin-bottom:14px;display:block}
+.equipo .anos small{font-size:13px;letter-spacing:0;color:rgba(255,255,255,.65);font-weight:400;margin-left:4px}
+.resenas{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.resena{background:var(--bone);border:1px solid var(--mist);border-radius:16px;padding:22px;margin:0}
+.resena p{margin:0;font-size:18px;font-weight:500;line-height:1.4;color:var(--ink)}
+.resena cite{display:block;margin-top:14px;font-style:normal;font-size:13px;color:var(--sla)}
+.horario{width:100%;border-collapse:collapse;font-size:16px}
+.horario td{padding:14px 0;border-bottom:1px solid var(--mist)}
+.horario td:last-child{text-align:right;font-weight:500}
+.contacto{display:grid;grid-template-columns:1fr 1.3fr;gap:48px}
+.contacto dl{margin:0 0 36px}
+.contacto dt{margin-top:22px;color:var(--sla);font-size:14px}
+.contacto dt:first-child{margin-top:0}
+.contacto dd{margin:4px 0 0;font-size:18px;font-weight:500}
+.contacto dd a{text-underline-offset:4px;text-decoration-color:var(--mist)}
+.mapa{border:1px solid var(--mist);border-radius:20px;overflow:hidden;min-height:420px;background:var(--bone)}
+.mapa iframe{display:block;width:100%;height:100%;min-height:420px;border:0}
+footer{border-top:1px solid var(--mist);padding:32px 16px 104px;text-align:center;color:var(--sla);font-size:14px}
+footer p{margin:4px 0}
+.fijo{position:fixed;left:16px;right:16px;bottom:16px;z-index:9;display:none}
+.fijo .btn{width:100%;padding:15px 22px}
+/* Panel */
+#panel{display:none;background:var(--bone);min-height:100vh}
+body.ver-panel #sitio,body.ver-panel .fijo{display:none}
+body.ver-panel #panel{display:block}
+.p-top{background:var(--teal);color:#fff}
+.p-top-in{max-width:1200px;margin:auto;padding:16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.p-top b{font-weight:600;font-size:16px}
+.p-top span{color:rgba(255,255,255,.7);font-size:14px}
+.ejemplo{display:inline-block;background:var(--mint);color:var(--ink);border-radius:50px;padding:4px 12px;font-size:12px;font-weight:600;letter-spacing:.04em}
+.p-in{max-width:1200px;margin:auto;padding:28px 16px 64px}
+.p-in h2{font-size:clamp(28px,4vw,38px);margin:0 0 6px}
+.p-in .sub{color:var(--sla);margin:0 0 24px;font-size:15px;max-width:720px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.kpi{background:var(--paper);border:1px solid var(--mist);border-radius:16px;padding:18px 20px}
+.kpi span{display:block;color:var(--sla);font-size:13px}
+.kpi b{display:block;font-family:Inter,sans-serif;font-weight:500;font-size:36px;letter-spacing:-.04em;margin-top:6px;color:var(--teal)}
+.p-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:20px;align-items:start}
+.caja{background:var(--paper);border:1px solid var(--mist);border-radius:16px;overflow:hidden}
+.caja h3{margin:0;padding:16px 20px;font-size:15px;font-weight:600;border-bottom:1px solid var(--mist);display:flex;justify-content:space-between;gap:8px}
+.caja h3 small{font-weight:500;color:var(--sla)}
+.cita{display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;padding:14px 20px;border-bottom:1px solid var(--mist)}
+.cita:last-child{border-bottom:0}
+.cita time{font-family:Inter,sans-serif;font-size:14px;font-weight:500;color:var(--teal)}
+.cita b{display:block;font-weight:500;font-size:15px}
+.cita span{color:var(--sla);font-size:13px}
+.est{font-size:12px;font-weight:600;border-radius:50px;padding:4px 10px;white-space:nowrap;border:1px solid var(--mist);color:var(--gra)}
+.est.ok{background:var(--mint);border-color:var(--mint);color:var(--ink)}
+.est.pend{border-color:var(--teal);color:var(--teal)}
+.est.done{background:var(--bone);color:var(--sla)}
+.sol{padding:14px 20px;border-bottom:1px solid var(--mist)}
+.sol:last-child{border-bottom:0}
+.sol b{display:block;font-weight:500;font-size:15px}
+.sol span{display:block;color:var(--sla);font-size:13px;margin-top:2px}
+.sol .acc{display:inline-block;margin-top:10px;font-size:13px;font-weight:600;color:var(--teal);border:1px solid var(--teal);border-radius:50px;padding:5px 12px}
+.p-nota{margin-top:20px;color:var(--sla);font-size:13px}
+@media(max-width:900px){
+ .nav ul,.nav>.btn{display:none}
+ .hero{grid-template-columns:1fr;min-height:0}
+ .hero-a{padding:52px 16px 48px}
+ .hero-a p{font-size:17px}
+ .hero-b{padding:40px 16px 44px}
+ section{padding:60px 16px}
+ .cab{grid-template-columns:1fr;gap:12px;margin-bottom:28px}
+ .serv{grid-template-columns:1fr}
+ .serv li{padding-right:0}
+ .equipo{grid-template-columns:1fr 1fr}
+ .resenas{grid-template-columns:1fr}
+ .contacto{grid-template-columns:1fr;gap:28px}
+ .mapa,.mapa iframe{min-height:300px}
+ .fijo{display:block}
+ .kpis{grid-template-columns:1fr 1fr}
+ .p-grid{grid-template-columns:1fr}
+}
+@media(max-width:420px){.equipo{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="franja">Propuesta de diseño para <b>Veterinaria San Francisco</b> · preparada por Ordanza</div>
+<div class="vistas" role="group" aria-label="Vista">
+ <button type="button" aria-pressed="true">Página</button>
+ <button type="button" aria-pressed="false">Panel de la clínica</button>
+</div>
+
+<div id="sitio">
+<header>
+ <div class="nav">
+  <a class="marca" href="#inicio"><b>Veterinaria San Francisco</b><span>Saltillo, Coahuila</span></a>
+  <ul>
+   <li><a href="#servicios">Servicios</a></li>
+   <li><a href="#equipo">Equipo</a></li>
+   <li><a href="#horario">Horario</a></li>
+   <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <a class="btn" href="https://wa.me/528446085637?text=Hola%2C%20quisiera%20agendar%20una%20cita%20para%20mi%20mascota.">Agendar por WhatsApp</a>
+ </div>
+</header>
+
+<main id="inicio">
+ <div class="hero">
+  <div class="hero-a">
+   <span class="cap">Clínica veterinaria · Saltillo</span>
+   <h1>Atención veterinaria inmediata en Saltillo</h1>
+   <p>Lo que comenzó como el sueño de una pareja de médicos hoy es un equipo de siete médicos veterinarios zootecnistas: consulta, cirugía, laboratorio y rayos X digitales en un mismo lugar.</p>
+   <div class="cta">
+    <a class="btn" href="https://wa.me/528446085637?text=Hola%2C%20quisiera%20agendar%20una%20cita%20para%20mi%20mascota.">Agendar cita por WhatsApp</a>
+    <a class="btn line" href="tel:+528444393357">Llamar a la clínica</a>
+   </div>
+  </div>
+  <div class="hero-b">
+   <div class="num">38<small>años</small></div>
+   <p class="bajo">atendiendo mascotas en Saltillo, en San Juan de Sabinas 2065, Col. República Oriente.</p>
+   <dl class="datos">
+    <div><dt>Lunes a viernes</dt><dd>9:00–14:00 y 16:00–20:00</dd></div>
+    <div><dt>Sábado</dt><dd>9:00–18:00</dd></div>
+    <div><dt>WhatsApp de citas</dt><dd><a href="https://wa.me/528446085637">(844) 608 56 37</a></dd></div>
+   </dl>
+  </div>
+ </div>
+
+ <section id="servicios">
+  <div class="cab">
+   <div><span class="cap">Servicios</span><h2>Todo lo que su mascota necesita, sin cambiar de clínica</h2></div>
+   <p>Desde la revisión general hasta cirugía con monitoreo constante, con laboratorio y radiografía digital en la misma clínica.</p>
+  </div>
+  <ul class="serv">
+   <li><h3>Consulta general</h3><p>Revisión integral del estado de salud de su mascota.</p></li>
+   <li><h3>Consulta dermatológica</h3><p>Diagnóstico y tratamiento de enfermedades de piel.</p></li>
+   <li><h3>Consulta geriátrica</h3><p>Cuidado especializado para mascotas en edad avanzada.</p></li>
+   <li><h3>Mascotas exóticas</h3><p>Atención para aves, reptiles, roedores y más.</p></li>
+   <li><h3>Vacunas</h3><p>Planes preventivos personalizados para cada etapa.</p></li>
+   <li><h3>Desparasitación</h3><p>Protección interna y externa contra parásitos.</p></li>
+   <li><h3>Cirugías</h3><p>Equipos de última generación y monitoreo constante.</p></li>
+   <li><h3>Laboratorio</h3><p>Análisis clínicos con resultados el mismo día.</p></li>
+   <li><h3>Rayos X</h3><p>Radiografías digitales para un diagnóstico preciso.</p></li>
+   <li><h3>Servicio dental</h3><p>Extracción y limpieza dental profesional.</p></li>
+   <li><h3>Estética</h3><p>Baño, corte y cuidado dermatológico.</p></li>
+   <li><h3>Espacio Cat Friendly <span class="pill">Próximamente</span></h3><p>Consultas en un espacio diseñado especialmente para gatos.</p></li>
+  </ul>
+ </section>
+
+ <div class="banda" id="equipo">
+  <section>
+   <div class="cab">
+    <div><span class="cap">Equipo médico</span><h2>Siete médicos veterinarios zootecnistas</h2></div>
+    <p>Dirigidos por el M.V.Z. Wolfgang Kosegarten Gallagher, con 45 años de experiencia.</p>
+   </div>
+   <ul class="equipo">
+    <li><span class="anos">45<small>años de experiencia</small></span><b>M.V.Z. Wolfgang Kosegarten Gallagher</b><span>Director General</span></li>
+    <li><span class="anos">42<small>años de experiencia</small></span><b>M.V.Z. Prudencia Garza Martínez</b></li>
+    <li><span class="anos">6<small>años de experiencia</small></span><b>M.V.Z. Victoria González Castillo</b></li>
+    <li><span class="anos">4<small>años de experiencia</small></span><b>M.V.Z. Osbaldo Avalos González</b></li>
+    <li><span class="anos">3<small>años de experiencia</small></span><b>M.V.Z. Emmanuel Reyna Dominguez</b></li>
+    <li><span class="anos">3<small>años de experiencia</small></span><b>M.V.Z. Carlos Galaviz Delgado</b></li>
+    <li><span class="anos">2<small>años de experiencia</small></span><b>M.V.Z. Anna Lizárraga Calderón</b></li>
+   </ul>
+  </section>
+ </div>
+
+ <section id="opiniones">
+  <div class="cab">
+   <div><span class="cap">Opiniones</span><h2>Lo que dicen quienes ya los conocen</h2></div>
+   <p>Reseñas publicadas en el sitio de la clínica.</p>
+  </div>
+  <div class="resenas">
+   <blockquote class="resena"><p>Excelente lugar, tengo más de 10 años llevando a mis perros con ellos y siempre los han sacado adelante.</p><cite>Alondra Carbajal</cite></blockquote>
+   <blockquote class="resena"><p>Excelente servicio y un magnífico trato para mi mascota, estuvo internado varios días.</p><cite>Elsa Ofelia Cabrera</cite></blockquote>
+   <blockquote class="resena"><p>El servicio es excelente, siempre hay espacio para ver a tu mascota y siempre le dan el mejor trato.</p><cite>Paulina Heras</cite></blockquote>
+  </div>
+ </section>
+
+ <section id="horario" style="padding-top:0">
+  <div class="contacto" id="contacto">
+   <div>
+    <span class="cap" style="color:var(--tealtx)">Horario y contacto</span>
+    <h2 style="margin-bottom:28px">Visítenos en la Col. República Oriente</h2>
+    <table class="horario">
+     <tr><td>Lunes a viernes</td><td>9:00–14:00 y 16:00–20:00</td></tr>
+     <tr><td>Sábado</td><td>9:00–18:00</td></tr>
+     <tr><td>Domingo</td><td>Cerrado</td></tr>
+    </table>
+    <dl style="margin-top:32px">
+     <dt>Dirección</dt><dd>San Juan de Sabinas 2065, Col. República Oriente, Saltillo, Coah.</dd>
+     <dt>Teléfonos</dt><dd><a href="tel:+528444393357">(844) 439 33 57</a> · <a href="tel:+528444150370">(844) 415 03 70</a></dd>
+     <dt>WhatsApp de citas</dt><dd><a href="https://wa.me/528446085637">(844) 608 56 37</a></dd>
+     <dt>Redes</dt><dd><a href="https://www.instagram.com/veterinariasanfrancisco._">Instagram</a> · <a href="https://www.facebook.com/share/1DsmxC5Vux/">Facebook</a></dd>
+    </dl>
+    <div class="cta" style="margin-top:0">
+     <a class="btn" href="https://wa.me/528446085637?text=Hola%2C%20quisiera%20agendar%20una%20cita%20para%20mi%20mascota.">Agendar por WhatsApp</a>
+     <a class="btn line" href="https://www.google.com/maps/search/?api=1&amp;query=San%20Juan%20de%20Sabinas%202065%2C%20Rep%C3%BAblica%20Oriente%2C%20Saltillo%2C%20Coahuila">Cómo llegar</a>
+    </div>
+   </div>
+   <div class="mapa"><iframe title="Mapa de Veterinaria San Francisco" loading="lazy" src="https://maps.google.com/maps?q=San%20Juan%20de%20Sabinas%202065%2C%20Rep%C3%BAblica%20Oriente%2C%20Saltillo%2C%20Coahuila&amp;z=16&amp;output=embed"></iframe></div>
+  </div>
+ </section>
+</main>
+
+<footer>
+ <p>Veterinaria San Francisco · San Juan de Sabinas 2065, Col. República Oriente, Saltillo, Coah.</p>
+ <p>Propuesta preparada por Ordanza · ordanzacorp.com</p>
+</footer>
+</div>
+
+<div class="fijo"><a class="btn" href="https://wa.me/528446085637?text=Hola%2C%20quisiera%20agendar%20una%20cita%20para%20mi%20mascota.">Agendar cita por WhatsApp</a></div>
+
+<div id="panel">
+ <div class="p-top"><div class="p-top-in">
+  <div><b>Veterinaria San Francisco</b> <span>· Panel de la clínica</span></div>
+  <span class="ejemplo">Datos de ejemplo</span>
+ </div></div>
+ <div class="p-in">
+  <h2>Agenda de hoy</h2>
+  <p class="sub">Así vería la clínica sus citas, las solicitudes que llegan desde la página y los recordatorios de vacunas. Mascotas, tutores y cantidades son de ejemplo; los servicios, el horario y los médicos son los de Veterinaria San Francisco.</p>
+  <div class="kpis">
+   <div class="kpi"><span>Citas hoy</span><b>9</b></div>
+   <div class="kpi"><span>Confirmadas</span><b>6</b></div>
+   <div class="kpi"><span>Por confirmar</span><b>3</b></div>
+   <div class="kpi"><span>Vacunas por vencer</span><b>4</b></div>
+  </div>
+  <div class="p-grid">
+   <div class="caja"><h3>Citas del día <small>Datos de ejemplo</small></h3>
+    <div class="cita"><time>09:00</time><div><b>Mascota 01 · Tutor 01</b><span>Consulta general · M.V.Z. Victoria González Castillo</span></div><span class="est done">Atendida</span></div>
+    <div class="cita"><time>09:45</time><div><b>Mascota 02 · Tutor 02</b><span>Vacunas · M.V.Z. Anna Lizárraga Calderón</span></div><span class="est done">Atendida</span></div>
+    <div class="cita"><time>10:30</time><div><b>Mascota 03 · Tutor 03</b><span>Cirugía · M.V.Z. Wolfgang Kosegarten Gallagher</span></div><span class="est ok">En quirófano</span></div>
+    <div class="cita"><time>11:30</time><div><b>Mascota 04 · Tutor 04</b><span>Consulta dermatológica · M.V.Z. Prudencia Garza Martínez</span></div><span class="est ok">Confirmada</span></div>
+    <div class="cita"><time>12:30</time><div><b>Mascota 05 · Tutor 05</b><span>Rayos X · M.V.Z. Osbaldo Avalos González</span></div><span class="est ok">Confirmada</span></div>
+    <div class="cita"><time>13:15</time><div><b>Mascota 06 · Tutor 06</b><span>Mascotas exóticas · M.V.Z. Emmanuel Reyna Dominguez</span></div><span class="est ok">Confirmada</span></div>
+    <div class="cita"><time>16:00</time><div><b>Mascota 07 · Tutor 07</b><span>Servicio dental · M.V.Z. Carlos Galaviz Delgado</span></div><span class="est ok">Confirmada</span></div>
+    <div class="cita"><time>17:00</time><div><b>Mascota 08 · Tutor 08</b><span>Consulta geriátrica · M.V.Z. Prudencia Garza Martínez</span></div><span class="est pend">Por confirmar</span></div>
+    <div class="cita"><time>18:30</time><div><b>Mascota 09 · Tutor 09</b><span>Estética · baño y corte</span></div><span class="est pend">Por confirmar</span></div>
+   </div>
+   <div style="display:grid;gap:20px">
+    <div class="caja"><h3>Solicitudes desde la página <small>Ejemplo</small></h3>
+     <div class="sol"><b>Laboratorio</b><span>Tutor 10 · pide análisis para mañana temprano</span><span class="acc">Responder por WhatsApp</span></div>
+     <div class="sol"><b>Consulta dermatológica</b><span>Tutor 11 · su perro se rasca desde hace una semana</span><span class="acc">Responder por WhatsApp</span></div>
+     <div class="sol"><b>Mascotas exóticas</b><span>Tutor 12 · pregunta si atienden tortugas</span><span class="acc">Responder por WhatsApp</span></div>
+    </div>
+    <div class="caja"><h3>Vacunas por vencer esta semana <small>Ejemplo</small></h3>
+     <div class="sol"><b>Mascota 13 · refuerzo anual</b><span>Vence el viernes · recordatorio listo para enviar</span></div>
+     <div class="sol"><b>Mascota 14 · segunda dosis de cachorro</b><span>Vence el sábado · recordatorio listo para enviar</span></div>
+     <div class="sol"><b>Mascotas 15 y 16 · desparasitación</b><span>Vence el sábado · recordatorio listo para enviar</span></div>
+    </div>
+   </div>
+  </div>
+  <p class="p-nota">Panel de demostración. Datos de ejemplo: no son pacientes ni tutores reales.</p>
+ </div>
+</div>
+
+<script>
+(function(){var b=document.body,bs=document.querySelectorAll('.vistas button');
+function v(p){b.classList.toggle('ver-panel',p);bs[0].setAttribute('aria-pressed',!p);bs[1].setAttribute('aria-pressed',p);}
+bs[0].addEventListener('click',function(){v(false);window.scrollTo(0,0)});
+bs[1].addEventListener('click',function(){v(true);window.scrollTo(0,0)});
+if(location.hash==='#panel')v(true);})();
+</script>
+</body>
+</html>
