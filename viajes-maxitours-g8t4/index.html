@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Viajes Maxitours · Panel de operación</title>
+<meta property="og:title" content="Viajes Maxitours · Panel de operación">
+<meta property="og:description" content="Muestra preparada por Ordanza para el Tour a Guatapé desde Medellín.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<style>
+:root{
+  --fondo:#F3F1EC;--blanco:#fff;--tinta:#16201B;--gris:#67706B;--linea:#E4E1D9;--linea2:#F0EDE6;
+  --sb:#0E1A14;--sb-2:#16251D;--sb-t:#9FB0A6;--acento:#1F6B4A;--acento-2:#E8F2EC;
+  --ok:#1B6B4F;--info:#2456A6;--warn:#B7791F;--bad:#B23B3B;--mor:#6B46A8;--gr:#7A817F;--osc:#3D4441;
+  --e:cubic-bezier(0.16,1,0.3,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:Inter,system-ui,sans-serif;color:var(--tinta);background:var(--fondo);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+input,select{font:inherit;color:inherit}
+.hidden{display:none!important}
+.num{font-variant-numeric:tabular-nums}
+
+.demo{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:12px;height:40px;padding:0 16px;background:#0A0F0D;color:#C9D2CD;font-size:12.5px}
+.demo b{color:#fff;font-weight:500}
+.demo .sm{display:none}
+
+.app{display:grid;grid-template-columns:240px 1fr;min-height:calc(100vh - 40px)}
+.sb{background:var(--sb);color:var(--sb-t);padding:20px 14px;display:flex;flex-direction:column;position:sticky;top:40px;height:calc(100vh - 40px)}
+.sb .marca{display:flex;align-items:center;gap:10px;padding:2px 8px 22px;color:#fff}
+.sb .marca .m{width:36px;height:36px;border-radius:6px;background:#1F3A2C;display:grid;place-items:center;font-size:19px;color:#8FD3AE}
+.sb .marca b{font-weight:500;font-size:15px;line-height:1.15;display:block}
+.sb .marca small{display:block;font-size:11px;color:var(--sb-t)}
+.sec{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#5E7066;padding:14px 10px 8px}
+.nav-i{display:flex;align-items:center;gap:11px;width:100%;padding:10px;border-radius:6px;font-size:14px;color:var(--sb-t);text-align:left;transition:background .25s var(--e),color .25s}
+.nav-i i{font-size:19px}
+.nav-i:hover{background:var(--sb-2);color:#fff}
+.nav-i.on{background:#1F3329;color:#fff}
+.nav-i .n{margin-left:auto;font-size:11px;background:#2B4A3E;color:#BFE7DC;padding:1px 7px;border-radius:10px}
+.rol{margin-top:auto;padding-top:12px;border-top:1px solid #1E2C25}
+.rol label{display:block;font-size:11px;color:#5E7066;margin:0 8px 6px}
+.rol select{width:100%;height:36px;border-radius:6px;background:#16251D;border:1px solid #24382E;color:#E3ECE7;padding:0 10px;font-size:13px}
+
+.main{min-width:0}
+.top{display:flex;align-items:center;gap:14px;padding:14px 28px;background:#fff;border-bottom:1px solid var(--linea);position:sticky;top:40px;z-index:10}
+.top h1{font-size:20px;font-weight:600;letter-spacing:-.01em}
+.top .f{font-size:13px;color:var(--gris)}
+.vivo{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--ok);background:#EAF4EF;padding:4px 10px;border-radius:20px;white-space:nowrap}
+.vivo i{width:7px;height:7px;border-radius:50%;background:#22A06B;animation:pulso 2s infinite}
+@keyframes pulso{0%{box-shadow:0 0 0 0 rgba(34,160,107,.5)}70%{box-shadow:0 0 0 7px rgba(34,160,107,0)}100%{box-shadow:0 0 0 0 rgba(34,160,107,0)}}
+.top .der{margin-left:auto;display:flex;align-items:center;gap:12px}
+.clima{font-size:13px;color:var(--gris);display:flex;align-items:center;gap:6px;white-space:nowrap}
+.bt{display:inline-flex;align-items:center;gap:6px;height:38px;padding:0 14px;border-radius:6px;background:var(--sb);color:#fff;font-size:14px;font-weight:500;white-space:nowrap}
+.bt.claro{background:#fff;color:var(--tinta);border:1px solid #DAD6CC}
+.bt.verde{background:#1E8E4E}
+.cnt{padding:22px 28px 48px}
+
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}
+.kpi{background:#fff;border:1px solid var(--linea);border-radius:8px;padding:16px 18px}
+.kpi span{font-size:12px;color:var(--gris);display:flex;align-items:center;gap:6px}
+.kpi b{display:block;font-size:27px;font-weight:600;letter-spacing:-.02em;margin:6px 0 2px}
+.kpi small{font-size:12px;color:var(--gris)}
+.g2{display:grid;grid-template-columns:1.5fr 1fr;gap:16px;align-items:start}
+.box{background:#fff;border:1px solid var(--linea);border-radius:8px;overflow:hidden;margin-bottom:16px}
+.box .hd{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;border-bottom:1px solid #EEEBE4}
+.box .hd h3{font-size:14px;font-weight:600}
+.box .hd span{font-size:12px;color:var(--gris)}
+.badge{display:inline-block;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:600;color:#fff;white-space:nowrap}
+.b-ok{background:var(--ok)}.b-info{background:var(--info)}.b-warn{background:var(--warn)}.b-bad{background:var(--bad)}.b-gr{background:var(--gr)}.b-mor{background:var(--mor)}.b-osc{background:var(--osc)}
+.lang{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;padding:1px 6px;border-radius:3px;border:1px solid #CFCBC1;color:var(--gris)}
+.lang.en{border-color:#9DB4DA;color:var(--info)}
+
+.punto{display:grid;grid-template-columns:58px 1fr 120px 96px;gap:14px;align-items:center;padding:12px 18px;border-top:1px solid var(--linea2)}
+.punto:first-of-type{border-top:0}
+.punto .h{font-weight:600}
+.punto .n{font-weight:500}
+.punto .n small{display:block;font-size:12px;color:var(--gris);font-weight:400}
+.bar{height:6px;border-radius:3px;background:#EEEBE4;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--acento);border-radius:3px}
+.bar-t{font-size:11px;color:var(--gris);margin-top:4px}
+.veh{display:grid;grid-template-columns:1fr auto;gap:6px 12px;padding:13px 18px;border-top:1px solid var(--linea2)}
+.veh:first-of-type{border-top:0}
+.veh b{font-weight:500}
+.veh small{display:block;font-size:12px;color:var(--gris)}
+.veh .bar{grid-column:1/-1}
+.pend{display:flex;align-items:center;gap:12px;padding:12px 18px;border-top:1px solid var(--linea2)}
+.pend:first-of-type{border-top:0}
+.pend .ico{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;flex-shrink:0;background:#FBF1E0;color:var(--warn)}
+.pend small{display:block;font-size:12px;color:var(--gris)}
+.wa{margin-left:auto;width:34px;height:34px;border-radius:6px;border:1px solid #DAD6CC;display:grid;place-items:center;color:#1E8E4E;font-size:18px;flex-shrink:0}
+
+.filtros{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px}
+.pill{height:34px;padding:0 14px;border-radius:20px;border:1px solid #DAD6CC;background:#fff;font-size:13px;white-space:nowrap}
+.pill.on{background:var(--sb);color:#fff;border-color:var(--sb)}
+.buscar{flex:1;min-width:200px;max-width:320px;height:34px;border:1px solid #DAD6CC;border-radius:20px;padding:0 14px 0 34px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%2367706B' stroke-width='2'%3E%3Ccircle cx='7' cy='7' r='5'/%3E%3Cpath d='m11 11 3 3'/%3E%3C/svg%3E") 12px center no-repeat;font-size:13px}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;font-weight:500;color:var(--gris);font-size:12px;padding:10px 14px;background:#FAF9F6;border-bottom:1px solid #EEEBE4;white-space:nowrap;cursor:pointer;user-select:none}
+td{padding:11px 14px;border-bottom:1px solid #F2EFE9;white-space:nowrap}
+tbody tr{cursor:pointer;transition:background .2s}
+tbody tr:hover{background:#FAF9F6}
+tr.nuevo{background:#EAF2FB!important}
+
+.rutas{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.parada{display:grid;grid-template-columns:54px 1fr auto;gap:12px;padding:11px 18px;border-top:1px solid var(--linea2);align-items:start}
+.parada:first-of-type{border-top:0}
+.parada .h{font-weight:600;padding-top:1px}
+.parada .lug{font-weight:500}
+.parada small{display:block;font-size:12px;color:var(--gris)}
+.parada .pax{font-size:12px;color:var(--gris);text-align:right;white-space:nowrap}
+.pas{font-size:12.5px;color:var(--tinta);margin-top:4px;line-height:1.6}
+
+.sem{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;padding:16px 18px}
+.dia{border:1px solid var(--linea);border-radius:6px;padding:12px;background:#fff}
+.dia .d{font-size:12px;color:var(--gris)}
+.dia b{display:block;font-size:24px;font-weight:600;margin:4px 0 2px}
+.dia small{font-size:12px;color:var(--gris)}
+.dia .bar{margin-top:10px}
+.dia.hoy{border-color:var(--acento);box-shadow:inset 0 0 0 1px var(--acento)}
+
+.metodos{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.metodos div{padding:16px 18px;border-left:1px solid var(--linea2)}
+.metodos div:first-child{border-left:0}
+.metodos span{font-size:12px;color:var(--gris);display:flex;gap:6px;align-items:center}
+.metodos b{display:block;font-size:20px;font-weight:600;margin-top:4px}
+.metodos small{font-size:12px;color:var(--gris)}
+
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;z-index:90;padding:16px}
+.ov.on{display:flex}
+.modal{background:#fff;border-radius:8px;width:100%;max-width:560px;max-height:92vh;display:flex;flex-direction:column;overflow:hidden}
+.modal .mh{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #EEEBE4}
+.modal .mh h3{font-size:16px;font-weight:600}
+.modal .mb{padding:16px 20px;overflow:auto}
+.modal .mf{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;padding:14px 20px;border-top:1px solid #EEEBE4;background:#FAF9F6}
+.dl{display:grid;grid-template-columns:140px 1fr;font-size:14px}
+.dl dt{color:var(--gris);padding:8px 0;border-bottom:1px solid #F2EFE9}
+.dl dd{padding:8px 0;border-bottom:1px solid #F2EFE9}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:12px 14px}
+.fg .full{grid-column:1/-1}
+.fg label{display:block;font-size:12px;color:var(--gris);margin-bottom:5px}
+.fg input,.fg select{width:100%;height:42px;border:1px solid #DAD6CC;border-radius:6px;padding:0 12px;background:#fff;font-size:15px}
+.fg input:focus,.fg select:focus{outline:none;border-color:var(--acento)}
+.calc{margin-top:16px;padding:14px;border-radius:6px;background:#F6F4EF;font-size:13px}
+.calc .l{display:flex;justify-content:space-between;padding:3px 0}
+.calc .t{font-weight:600;font-size:15px;border-top:1px solid #E4E1D9;margin-top:6px;padding-top:8px}
+.msg{margin-top:14px;padding:12px 14px;border-radius:8px;background:#E7F6EC;font-size:13px;white-space:pre-line;line-height:1.55;border:1px solid #CDE9D6}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,30px);opacity:0;background:var(--sb);color:#fff;padding:13px 18px;border-radius:6px;font-size:14px;z-index:99;max-width:92vw;transition:all .5s var(--e);display:flex;gap:10px;align-items:center;pointer-events:none}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.toast i{color:#8FD3AE;font-size:18px}
+.tabs-m{display:none}
+.aviso{font-size:12.5px;color:var(--gris);margin:-4px 0 14px}
+
+@media (max-width:1100px){.kpis{grid-template-columns:repeat(2,1fr)}.g2,.rutas{grid-template-columns:1fr}.sem{grid-template-columns:repeat(4,1fr)}.metodos{grid-template-columns:repeat(2,1fr)}.metodos div:nth-child(3){border-left:0}.metodos div:nth-child(n+3){border-top:1px solid var(--linea2)}}
+@media (max-width:760px){
+  body{font-size:15px}
+  .demo .lg{display:none}.demo .sm{display:inline}
+  .app{grid-template-columns:1fr}
+  .sb{display:none}
+  .tabs-m{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--sb);padding:6px 4px calc(6px + env(safe-area-inset-bottom))}
+  .tabs-m button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;color:var(--sb-t);padding:6px 0}
+  .tabs-m button i{font-size:21px}
+  .tabs-m button.on{color:#fff}
+  .top{padding:12px 16px;flex-wrap:wrap;gap:8px 12px}
+  .top .f,.clima{display:none}
+  .cnt{padding:16px 16px 96px}
+  .kpi b{font-size:23px}
+  .punto{grid-template-columns:50px 1fr auto}
+  .punto .bw{display:none}
+  .sem{grid-template-columns:repeat(2,1fr)}
+  .col-h{display:none}
+  .fg{grid-template-columns:1fr}
+  .dl{grid-template-columns:120px 1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="demo">
+  <span><b class="lg">Muestra para Viajes Maxitours</b><b class="sm">Muestra · Maxitours</b><span class="lg"> · preparada por Ordanza · reservas, nombres y vehículos de ejemplo</span></span>
+  <span class="lg" style="opacity:.7">Precios y puntos de encuentro tomados de touraguatape.com</span>
+</div>
+
+<div class="app">
+  <aside class="sb">
+    <div class="marca"><div class="m"><i class="ti ti-mountain"></i></div><div><b>Viajes Maxitours</b><small>Tour a Guatapé · Panel</small></div></div>
+    <div class="sec">Operación</div>
+    <button class="nav-i" data-p="hoy" onclick="pag('hoy')"><i class="ti ti-layout-dashboard"></i>Hoy</button>
+    <button class="nav-i" data-p="reservas" onclick="pag('reservas')"><i class="ti ti-calendar-event"></i>Reservas<span class="n" id="c-res"></span></button>
+    <button class="nav-i" data-p="recogidas" onclick="pag('recogidas')"><i class="ti ti-route"></i>Recogidas por vehículo</button>
+    <button class="nav-i" data-p="semana" onclick="pag('semana')"><i class="ti ti-calendar-week"></i>Cupos de la semana</button>
+    <div class="sec admin">Administración</div>
+    <button class="nav-i admin" data-p="cobros" onclick="pag('cobros')"><i class="ti ti-cash"></i>Cobros del día</button>
+    <div class="rol"><label>Entrar como</label><select id="rol" onchange="cambiaRol(this.value)"><option value="admin">Administración</option><option value="reservas">Reservas (sin cobros)</option><option value="guia">Guía · Buseta 1</option></select></div>
+  </aside>
+  <div class="main">
+    <div class="top">
+      <h1 id="p-tit">Hoy</h1>
+      <span class="vivo"><i></i>En vivo</span>
+      <span class="f" id="p-fecha"></span>
+      <div class="der"><span class="clima"><i class="ti ti-cloud-sun"></i> 22° · Guatapé</span><button class="bt" id="bt-nueva" onclick="nueva()"><i class="ti ti-plus"></i>Nueva reserva</button></div>
+    </div>
+    <div class="cnt" id="p-cont"></div>
+  </div>
+</div>
+<nav class="tabs-m">
+  <button data-p="hoy" onclick="pag('hoy')"><i class="ti ti-layout-dashboard"></i>Hoy</button>
+  <button data-p="reservas" onclick="pag('reservas')"><i class="ti ti-calendar-event"></i>Reservas</button>
+  <button data-p="recogidas" onclick="pag('recogidas')"><i class="ti ti-route"></i>Recogidas</button>
+  <button data-p="semana" onclick="pag('semana')"><i class="ti ti-calendar-week"></i>Semana</button>
+  <button data-p="cobros" class="admin" onclick="pag('cobros')"><i class="ti ti-cash"></i>Cobros</button>
+</nav>
+
+<div class="ov" id="ov" onclick="if(event.target===this)cM()"><div class="modal"><div class="mh"><h3 id="m-t"></h3><button onclick="cM()" aria-label="Cerrar"><i class="ti ti-x" style="font-size:20px"></i></button></div><div class="mb" id="m-b"></div><div class="mf" id="m-f"></div></div></div>
+<div class="toast" id="toast"><i class="ti ti-circle-check"></i><span></span></div>
+
+<script>
+/* Tomado de su página: precios, puntos de encuentro con hora, zonas de hotel, pagos, idiomas.
+   De ejemplo: clientes, reservas, vehículos, guías y horas de recogida en hotel. */
+const PRECIO={ad:129000,ni:119000,be:10000},RECARGO=0.05;
+const PUNTOS=[
+ {id:'gua',l:'Hotel · Guayabal',h:'06:40',z:'hotel'},
+ {id:'epo',l:'Estación Poblado',h:'06:50'},
+ {id:'hpo',l:'Hotel · El Poblado',h:'06:55',z:'hotel'},
+ {id:'ppo',l:'Parque El Poblado',h:'07:00'},
+ {id:'bel',l:'Hotel · Belén',h:'07:10',z:'hotel'},
+ {id:'flo',l:'Estación Floresta',h:'07:20'},
+ {id:'lau',l:'Hotel · Laureles',h:'07:25',z:'hotel'},
+ {id:'est',l:'Estación Estadio',h:'07:40'},
+ {id:'cen',l:'Zona Centro · Hotel 47 Medellín Street',h:'07:40'},
+ {id:'hce',l:'Hotel · El Centro',h:'07:45',z:'hotel'},
+ {id:'ter',l:'Terminal del Norte',h:'07:50'},
+ {id:'zam',l:'Bomba de Zamora',h:'08:00'},
+];
+const HOTELES={gua:['Hotel Dann Carlton Belfort','Hotel Medellín Guayabal'],hpo:['Hotel Poblado Plaza','The Charlee','Selina Medellín','Hotel Estelar Milla de Oro','Hostal Los Patios'],bel:['Hotel Belén Plaza'],lau:['Hotel Laureles 70','Casa Laureles'],hce:['Hotel Nutibara','Hotel Café Real']};
+const VEH=[{id:'b1',l:'Buseta 1',cap:30,guia:'Andrés M.',cond:'Jhon F.'},{id:'b2',l:'Buseta 2',cap:30,guia:'Carolina R.',cond:'Wilson P.'},{id:'v3',l:'Van 3',cap:19,guia:'Daniela G.',cond:'Óscar T.'},{id:'v4',l:'Van 4',cap:19,guia:'Felipe A.',cond:'Mauricio L.'}];
+const NOM_ES=['Laura Gómez','Juan Pablo Restrepo','Santiago Ríos','María José Ortiz','Valentina Cano','Camila Henao','Sofía Arango','Isabela Mejía','Andrés Quintero','Mateo Vélez','Ana Lucía Pérez','Sebastián Toro','Paula Zapata','Mariana Duque','Kevin Rojas','Felipe Cardona','Natalia Uribe','Juliana Marín','Pedro Salazar','Daniela Ospina','Carlos Agudelo','Luisa Fernanda Gil','Alejandro Montoya','Manuela Correa','Esteban Londoño','Catalina Jaramillo','Diego Villa','Laura Sofía Muñoz','Tomás Echeverri','Verónica Álvarez','Julián Patiño','Melissa Hoyos','Ricardo Betancur','Sara Castaño','Jorge Iván Posada','Lina Marcela Ruiz'];
+const NOM_EN=['Emily Carter','Daniel Weber','Lucas Martin','Thomas Müller','James Wilson','Chloé Dubois','Olivia Brown','Noah Smith','Hannah Lee','Ethan Davis','Grace Kim','Liam O’Connor','Sophie Laurent','Jack Turner','Mia Schneider','Ryan Cooper','Emma Johansson','Lucas van Dijk','Ava Thompson','Ben Harris','Nina Rossi','Oscar Lindqvist','Charlotte Evans','Max Becker'];
+const usados={};function nombre(k,en){const L=en?NOM_EN:NOM_ES;usados[k]=usados[k]||new Set();let n,t=0;do{n=L[Math.floor(rnd()*L.length)];t++}while(usados[k].has(n)&&t<40);usados[k].add(n);return n}
+const $=id=>document.getElementById(id);
+const cop=n=>'$'+Math.round(n).toLocaleString('es-CO');
+const pl=(n,a,b)=>n+' '+(n===1?a:b);
+const DIAS=['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'],MES=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+const MESL=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'],DIASL=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+const hoy=new Date();hoy.setHours(0,0,0,0);
+const dkey=d=>{const z=n=>String(n).padStart(2,'0');return d.getFullYear()+'-'+z(d.getMonth()+1)+'-'+z(d.getDate())};
+const addD=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x};
+const larga=d=>`${DIASL[d.getDay()]} ${d.getDate()} de ${MESL[d.getMonth()]}, ${d.getFullYear()}`;
+const corta=k=>{const d=new Date(k+'T00:00');return `${DIAS[d.getDay()]} ${d.getDate()} ${MES[d.getMonth()]}`};
+const CAP=VEH.reduce((a,v)=>a+v.cap,0);
+const PT=id=>PUNTOS.find(p=>p.id===id);
+const paxR=r=>r.ad+r.ni+r.be;
+const totalR=r=>r.ad*PRECIO.ad+r.ni*PRECIO.ni+r.be*PRECIO.be;
+
+/* Reservas de ejemplo (siempre las mismas) */
+let seed=11;const rnd=()=>{seed=(seed*9301+49297)%233280;return seed/233280};
+const R=[];let folio=2210;
+for(let i=-1;i<7;i++){
+  const d=addD(hoy,i),k=dkey(d),finde=[0,6].includes(d.getDay());
+  let meta=Math.round((finde?78:52)+rnd()*(finde?16:20)-(i>3?i*4:0));
+  while(meta>0){
+    const ad=1+Math.floor(rnd()*(rnd()<.3?4:2)),ni=rnd()<.18?1:0,be=rnd()<.06?1:0,p=PUNTOS[Math.floor(rnd()*PUNTOS.length)];
+    const s=rnd(),en=rnd()<.34;
+    let est=i<0?(s<.92?'Completado':'No show'):(s<.78?'Confirmada':s<.9?'Por confirmar':s<.96?'Confirmada':'Cancelada');
+    const r={folio:'MX-'+(folio++),fecha:k,nombre:nombre(k,en),doc:(en?'Pasaporte ':'CC ')+(en?String.fromCharCode(65+Math.floor(rnd()*26))+Math.floor(1e6+rnd()*8e6):Math.floor(1e9+rnd()*9e8)),
+      wa:en?'+1 '+(200+Math.floor(rnd()*700))+' '+(100+Math.floor(rnd()*899))+' '+(1000+Math.floor(rnd()*8999)):'+57 3'+(10+Math.floor(rnd()*30))+' '+(100+Math.floor(rnd()*899))+' '+(1000+Math.floor(rnd()*8999)),
+      ad,ni,be,punto:p.id,hotel:p.z?HOTELES[p.id][Math.floor(rnd()*HOTELES[p.id].length)]:'',idioma:en?'EN':'ES',est,pago:null,metodo:null,origen:rnd()<.8?'WhatsApp':'Llamada'};
+    if(i<0&&est==='Completado'){const m=rnd();r.metodo=m<.45?'Efectivo COP':m<.6?'Efectivo USD':m<.85?'Tarjeta':'Bancolombia';r.pago=totalR(r)*(r.metodo==='Tarjeta'?1+RECARGO:1)}
+    if(i<0&&est==='No show'){r.pago=totalR(r)*.5;r.metodo='Penalidad 50%'}
+    R.push(r);meta-=paxR(r);
+  }
+}
+/* Hoy: algunos ya cobrados en la recogida */
+R.filter(r=>r.fecha===dkey(hoy)&&r.est==='Confirmada').forEach((r,i)=>{if(i%3!==2){const m=['Efectivo COP','Tarjeta','Efectivo COP','Bancolombia','Efectivo USD'][i%5];r.metodo=m;r.pago=totalR(r)*(m==='Tarjeta'?1+RECARGO:1)}});
+
+/* Asignar vehículo: en orden de ruta, llenando cada unidad */
+function asigna(k){
+  const rs=R.filter(r=>r.fecha===k&&!['Cancelada'].includes(r.est)).sort((a,b)=>PUNTOS.findIndex(p=>p.id===a.punto)-PUNTOS.findIndex(p=>p.id===b.punto));
+  const usado={};VEH.forEach(v=>usado[v.id]=0);
+  rs.forEach(r=>{const v=VEH.find(v=>usado[v.id]+paxR(r)<=v.cap)||VEH[VEH.length-1];r.veh=v.id;usado[v.id]+=paxR(r)});
+  return usado;
+}
+const ESTB={'Confirmada':'b-info','Por confirmar':'b-gr','Pagada':'b-ok','Completado':'b-ok','No show':'b-osc','Cancelada':'b-bad'};
+const estado=r=>r.est==='Confirmada'&&r.pago?'Pagada':r.est;
+
+let P='hoy',ROL='admin',filtro='hoy',q='',orden={k:'punto',d:1};
+function pag(p){
+  if(ROL==='guia'&&p!=='recogidas')p='recogidas';
+  if(ROL==='reservas'&&p==='cobros')p='hoy';
+  P=p;document.querySelectorAll('[data-p]').forEach(n=>n.classList.toggle('on',n.dataset.p===p));
+  $('c-res').textContent=R.filter(r=>r.fecha>=dkey(hoy)&&r.est!=='Cancelada').length;
+  $('p-tit').textContent={hoy:'Hoy',reservas:'Reservas',recogidas:ROL==='guia'?'Mi ruta de hoy':'Recogidas por vehículo',semana:'Cupos de la semana',cobros:'Cobros del día'}[p];
+  $('p-fecha').textContent=larga(hoy);
+  $('p-cont').innerHTML=({hoy:pHoy,reservas:pReservas,recogidas:pRecogidas,semana:pSemana,cobros:pCobros})[p]();
+  window.scrollTo(0,0);
+  if(p==='reservas')setTimeout(()=>R.forEach(r=>delete r.nuevo),3500);
+}
+function cambiaRol(v){ROL=v;document.querySelectorAll('.admin').forEach(e=>e.classList.toggle('hidden',v!=='admin'));
+  document.querySelectorAll('.nav-i,.tabs-m button').forEach(e=>{if(v==='guia'&&e.dataset.p!=='recogidas')e.classList.add('hidden');else if(!e.classList.contains('admin')||v==='admin')e.classList.remove('hidden')});
+  $('bt-nueva').classList.toggle('hidden',v==='guia');pag(v==='guia'?'recogidas':'hoy')}
+
+function pHoy(){
+  const k=dkey(hoy),usado=asigna(k),rs=R.filter(r=>r.fecha===k&&r.est!=='Cancelada');
+  const pax=rs.reduce((a,r)=>a+paxR(r),0),en=rs.filter(r=>r.idioma==='EN').reduce((a,r)=>a+paxR(r),0);
+  const porCobrar=rs.filter(r=>!r.pago).reduce((a,r)=>a+totalR(r),0),cobrado=rs.filter(r=>r.pago).reduce((a,r)=>a+r.pago,0);
+  const sinConf=rs.filter(r=>r.est==='Por confirmar');
+  const pts=PUNTOS.map(p=>{const x=rs.filter(r=>r.punto===p.id),n=x.reduce((a,r)=>a+paxR(r),0);return {p,n,res:x.length}}).filter(o=>o.n>0);
+  const maxN=Math.max(...pts.map(o=>o.n));
+  return `<div class="kpis">
+   <div class="kpi"><span><i class="ti ti-users"></i>Pasajeros hoy</span><b class="num">${pax}</b><small>${pl(rs.length,'reserva','reservas')} · ${en} en inglés</small></div>
+   <div class="kpi"><span><i class="ti ti-bus"></i>Ocupación de flota</span><b class="num">${Math.round(pax/CAP*100)}%</b><small>${pax} de ${CAP} lugares en ${VEH.length} vehículos</small></div>
+   <div class="kpi"><span><i class="ti ti-cash"></i>Cobrado en recogida</span><b class="num">${cop(cobrado)}</b><small>Falta cobrar ${cop(porCobrar)} COP</small></div>
+   <div class="kpi"><span><i class="ti ti-alert-triangle"></i>Por confirmar</span><b class="num" style="color:var(--warn)">${sinConf.length}</b><small>escribirles por WhatsApp</small></div></div>
+  <div class="g2"><div>
+   <div class="box"><div class="hd"><h3>Puntos de recogida · ${larga(hoy).split(',')[0]}</h3><span>regreso a Medellín 6:30 pm</span></div>
+   ${pts.map(o=>`<div class="punto"><div class="h num">${o.p.h}</div><div class="n">${o.p.l}<small>${pl(o.res,'reserva','reservas')}</small></div><div class="bw"><div class="bar"><i style="width:${Math.round(o.n/maxN*100)}%"></i></div></div><div style="text-align:right"><b class="num">${o.n}</b> <span style="color:var(--gris);font-size:12px">pax</span></div></div>`).join('')}</div>
+  </div><div>
+   <div class="box"><div class="hd"><h3>Flota de hoy</h3><span>${VEH.length} vehículos</span></div>
+   ${VEH.map(v=>{const u=usado[v.id]||0;return `<div class="veh"><div><b>${v.l}</b> · guía ${v.guia}<small>Conductor ${v.cond} · ${u} de ${v.cap} lugares</small></div><div>${u>=v.cap?'<span class="badge b-bad">Lleno</span>':u>=v.cap*.8?'<span class="badge b-warn">Casi lleno</span>':u===0?'<span class="badge b-gr">Libre</span>':'<span class="badge b-ok">Con lugares</span>'}</div><div class="bar"><i style="width:${Math.min(100,u/v.cap*100)}%"></i></div></div>`}).join('')}</div>
+   <div class="box"><div class="hd"><h3>Por confirmar</h3><span>${sinConf.length}</span></div>
+   ${sinConf.map(r=>`<div class="pend"><span class="ico"><i class="ti ti-message-question"></i></span><div><b style="font-weight:500">${r.nombre}</b> <span class="lang ${r.idioma==='EN'?'en':''}">${r.idioma}</span><small>${pl(paxR(r),'pasajero','pasajeros')} · ${PT(r.punto).l} ${PT(r.punto).h}</small></div><button class="wa" title="Confirmar por WhatsApp" onclick="det('${r.folio}')"><i class="ti ti-brand-whatsapp"></i></button></div>`).join('')||'<div class="pend">Todo confirmado.</div>'}</div>
+  </div></div>`;
+}
+function pReservas(){
+  const k=dkey(hoy),m=dkey(addD(hoy,1));
+  let rs=R.filter(r=>r.fecha>=k);
+  if(filtro==='hoy')rs=rs.filter(r=>r.fecha===k);
+  if(filtro==='manana')rs=rs.filter(r=>r.fecha===m);
+  if(filtro==='conf')rs=rs.filter(r=>r.est==='Por confirmar');
+  if(filtro==='en')rs=rs.filter(r=>r.idioma==='EN');
+  if(q)rs=rs.filter(r=>(r.nombre+r.folio+r.doc+PT(r.punto).l+r.hotel).toLowerCase().includes(q.toLowerCase()));
+  rs.sort((a,b)=>{let x,y;const kk=orden.k;
+    if(kk==='punto'){x=a.fecha+PT(a.punto).h;y=b.fecha+PT(b.punto).h}else if(kk==='pax'){x=paxR(a);y=paxR(b)}else if(kk==='total'){x=totalR(a);y=totalR(b)}else{x=a[kk];y=b[kk]}
+    return (x>y?1:x<y?-1:0)*orden.d});
+  rs=rs.filter(r=>r.nuevo).concat(rs.filter(r=>!r.nuevo));
+  const th=(kk,t,c='')=>`<th class="${c}" onclick="ordena('${kk}')">${t}${orden.k===kk?(orden.d>0?' ↑':' ↓'):''}</th>`;
+  const pill=(kk,t)=>`<button class="pill ${filtro===kk?'on':''}" onclick="filtro='${kk}';pag('reservas')">${t}</button>`;
+  return `<div class="filtros">${pill('hoy','Hoy')}${pill('manana','Mañana')}${pill('todas','Próximos 7 días')}${pill('conf','Por confirmar')}${pill('en','En inglés')}<input class="buscar" placeholder="Buscar nombre, documento o folio" value="${q}" oninput="q=this.value;clearTimeout(window.qt);window.qt=setTimeout(()=>{pag('reservas');const b=document.querySelector('.buscar');b.focus();b.setSelectionRange(q.length,q.length)},250)"></div>
+  <div class="box"><div class="hd"><h3>${pl(rs.length,'reserva','reservas')} · ${rs.filter(r=>r.est!=='Cancelada').reduce((a,r)=>a+paxR(r),0)} pasajeros</h3><span>Toca una reserva para ver el detalle</span></div><div class="tw"><table><thead><tr>${th('folio','Folio')}${th('punto','Fecha y recogida')}${th('nombre','Cliente')}<th class="col-h">Documento</th>${th('pax','Pax','num')}<th>Idioma</th>${th('total','Total COP','num col-h')}<th>Estado</th></tr></thead><tbody>
+  ${rs.slice(0,90).map(r=>{const e=estado(r);return `<tr class="${r.nuevo?'nuevo':''}" onclick="det('${r.folio}')"><td>${r.folio}${r.nuevo?' <span class="badge b-info">Nueva</span>':''}</td><td>${corta(r.fecha)} · ${PT(r.punto).h} · ${PT(r.punto).l.replace('Hotel · ','')}</td><td>${r.nombre}</td><td class="col-h">${r.doc}</td><td class="num">${r.ad}${r.ni?' + '+r.ni+' niño':''}${r.be?' + bebé':''}</td><td><span class="lang ${r.idioma==='EN'?'en':''}">${r.idioma}</span></td><td class="num col-h">${cop(totalR(r))}</td><td><span class="badge ${ESTB[e]}">${e}</span></td></tr>`}).join('')||'<tr><td colspan="8" style="color:var(--gris)">No hay reservas con ese filtro.</td></tr>'}</tbody></table></div></div>`;
+}
+function ordena(k){orden.d=orden.k===k?-orden.d:1;orden.k=k;pag('reservas')}
+function pRecogidas(){
+  const k=dkey(hoy);asigna(k);
+  const vs=ROL==='guia'?[VEH[0]]:VEH;
+  return `<p class="aviso">Cada vehículo recoge en orden de ruta. El guía ve su lista en el celular, marca quién subió y cobra lo pendiente.</p><div class="rutas">${vs.map(v=>{
+    const rs=R.filter(r=>r.fecha===k&&r.veh===v.id&&r.est!=='Cancelada');
+    const pts=PUNTOS.filter(p=>rs.some(r=>r.punto===p.id));
+    const pax=rs.reduce((a,r)=>a+paxR(r),0),cob=rs.filter(r=>!r.pago).reduce((a,r)=>a+totalR(r),0);
+    return `<div class="box"><div class="hd"><h3>${v.l} · ${pax}/${v.cap}</h3><span>Guía ${v.guia} · ${v.cond}</span></div>
+    ${pts.map(p=>{const x=rs.filter(r=>r.punto===p.id);return `<div class="parada"><div class="h num">${p.h}</div><div><div class="lug">${p.l}</div><div class="pas">${x.map(r=>`${r.nombre} <span style="color:var(--gris)">(${paxR(r)})</span>${r.hotel?' · <span style="color:var(--gris)">'+r.hotel+'</span>':''} ${r.idioma==='EN'?'<span class="lang en">EN</span>':''} ${r.pago?'<span class="badge b-ok">Pagó</span>':'<span class="badge b-warn">Cobrar '+cop(totalR(r))+'</span>'}`).join('<br>')}</div></div><div class="pax">${x.reduce((a,r)=>a+paxR(r),0)} pax</div></div>`}).join('')||'<div class="parada"><div></div><div style="color:var(--gris)">Sin pasajeros asignados.</div></div>'}
+    <div class="hd" style="border-top:1px solid #EEEBE4;border-bottom:0"><span>Por cobrar en este vehículo</span><b class="num">${cop(cob)} COP</b></div></div>`}).join('')}</div>`;
+}
+function pSemana(){
+  let h='<div class="box"><div class="hd"><h3>Pasajeros por día</h3><span>capacidad de flota: '+CAP+' lugares</span></div><div class="sem">';
+  for(let i=0;i<7;i++){const d=addD(hoy,i),k=dkey(d),rs=R.filter(r=>r.fecha===k&&r.est!=='Cancelada'),pax=rs.reduce((a,r)=>a+paxR(r),0),pc=Math.round(pax/CAP*100);
+    h+=`<div class="dia ${i===0?'hoy':''}"><div class="d">${DIAS[d.getDay()]} ${d.getDate()} ${MES[d.getMonth()]}</div><b class="num">${pax}</b><small>${pl(rs.length,'reserva','reservas')} · ${pc}%</small><div class="bar"><i style="width:${Math.min(100,pc)}%;background:${pc>=90?'var(--bad)':pc>=75?'var(--warn)':'var(--acento)'}"></i></div><small style="display:block;margin-top:6px">${CAP-pax>0?(CAP-pax)+' lugares libres':'Lleno: agregar vehículo'}</small></div>`}
+  return h+'</div></div><p class="aviso">Cuando un día pasa de 90% el panel avisa para conseguir otro vehículo antes de seguir aceptando reservas.</p>';
+}
+function pCobros(){
+  const k=dkey(hoy),ay=dkey(addD(hoy,-1));
+  const blk=(fk,tit)=>{const rs=R.filter(r=>r.fecha===fk&&r.pago),met=['Efectivo COP','Efectivo USD','Tarjeta','Bancolombia'];
+    const tot=m=>rs.filter(r=>r.metodo===m).reduce((a,r)=>a+r.pago,0),cnt=m=>rs.filter(r=>r.metodo===m).length;
+    const pen=rs.filter(r=>r.metodo==='Penalidad 50%');
+    return `<div class="box"><div class="hd"><h3>${tit}</h3><span>Total ${cop(rs.reduce((a,r)=>a+r.pago,0))} COP</span></div><div class="metodos">${met.map(m=>`<div><span><i class="ti ${m.includes('USD')?'ti-currency-dollar':m==='Tarjeta'?'ti-credit-card':m==='Bancolombia'?'ti-building-bank':'ti-cash'}"></i>${m}</span><b class="num">${cop(tot(m))}</b><small>${pl(cnt(m),'reserva','reservas')}${m==='Tarjeta'?' · incluye 5%':''}${m.includes('USD')?' · equivalente en COP':''}</small></div>`).join('')}</div>${pen.length?`<div class="hd" style="border-top:1px solid #EEEBE4;border-bottom:0"><span>No show con penalidad del 50%: ${pen.map(r=>r.nombre).join(', ')}</span><b class="num">${cop(pen.reduce((a,r)=>a+r.pago,0))}</b></div>`:''}</div>`};
+  const pend=R.filter(r=>r.fecha===k&&!r.pago&&r.est!=='Cancelada');
+  return blk(k,'Hoy, hasta ahora')+blk(ay,'Ayer · cierre')+`<div class="box"><div class="hd"><h3>Falta cobrar hoy</h3><span>${pl(pend.length,'reserva','reservas')} · ${cop(pend.reduce((a,r)=>a+totalR(r),0))} COP</span></div><div class="tw"><table><thead><tr><th>Cliente</th><th>Vehículo</th><th>Recogida</th><th class="num">Total</th><th class="num col-h">Con tarjeta (+5%)</th></tr></thead><tbody>${pend.map(r=>`<tr onclick="det('${r.folio}')"><td>${r.nombre}</td><td>${(VEH.find(v=>v.id===r.veh)||{}).l||'—'}</td><td>${PT(r.punto).h} · ${PT(r.punto).l.replace('Hotel · ','')}</td><td class="num">${cop(totalR(r))}</td><td class="num col-h">${cop(totalR(r)*(1+RECARGO))}</td></tr>`).join('')}</tbody></table></div></div>`;
+}
+
+function msgConf(r){
+  const p=PT(r.punto),d=new Date(r.fecha+'T00:00'),dl=r.idioma==='EN'?d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'}):larga(d).split(',')[0];
+  const h12=t=>{let [h,m]=t.split(':').map(Number);return (h%12||12)+':'+String(m).padStart(2,'0')+(h<12?' AM':' PM')};
+  const lugar=r.hotel?`${r.hotel} (${p.l.replace('Hotel · ','')})`:p.l;
+  return r.idioma==='EN'
+   ?`Hi ${r.nombre.split(' ')[0]}! Your Guatapé tour is confirmed ✅\n${dl} · Pickup ${h12(p.h)} at ${lugar}\n${pl(paxR(r),'guest','guests')} · Total ${cop(totalR(r))} COP, paid on the day (cash COP/USD, card +5% or Bancolombia transfer).\nPlease be there 10 minutes early. Back in Medellín around 6:30 PM.\nViajes Maxitours`
+   :`¡Hola ${r.nombre.split(' ')[0]}! Tu tour a Guatapé está confirmado ✅\n${dl} · Recogida ${p.h} hrs en ${lugar}\n${pl(paxR(r),'pasajero','pasajeros')} · Total ${cop(totalR(r))} COP, se paga el día del tour (efectivo COP/USD, tarjeta +5% o transferencia Bancolombia).\nTe esperamos 10 minutos antes. Regreso a Medellín 6:30 pm aprox.\nViajes Maxitours`;
+}
+function det(f){
+  const r=R.find(x=>x.folio===f),p=PT(r.punto),e=estado(r),v=VEH.find(v=>v.id===r.veh);
+  $('m-t').textContent=`Reserva ${r.folio}`;
+  $('m-b').innerHTML=`<dl class="dl"><dt>Estado</dt><dd><span class="badge ${ESTB[e]}">${e}</span></dd><dt>Fecha</dt><dd>${larga(new Date(r.fecha+'T00:00'))}</dd><dt>Recogida</dt><dd>${p.h} hrs · ${p.l}${r.hotel?'<br><span style="color:var(--gris)">'+r.hotel+'</span>':''}</dd><dt>Vehículo</dt><dd>${v?v.l+' · guía '+v.guia:'Se asigna al cerrar el día'}</dd><dt>Cliente</dt><dd>${r.nombre}<br><span style="color:var(--gris)">${r.doc} · ${r.wa}</span></dd><dt>Pasajeros</dt><dd>${pl(r.ad,'adulto','adultos')}${r.ni?' · '+pl(r.ni,'niño','niños')+' (4–7)':''}${r.be?' · 1 bebé':''}</dd><dt>Idioma</dt><dd>${r.idioma==='EN'?'Inglés':'Español'}</dd><dt>Total</dt><dd><b>${cop(totalR(r))} COP</b> <span style="color:var(--gris)">· con tarjeta ${cop(totalR(r)*(1+RECARGO))}</span></dd><dt>Pago</dt><dd>${r.pago?cop(r.pago)+' · '+r.metodo:'Se cobra el día del tour'}</dd></dl>
+  <div class="msg">${msgConf(r)}</div>`;
+  $('m-f').innerHTML=`<button class="bt claro" onclick="cM();toast('Se descarga la confirmación en PDF (${r.idioma==='EN'?'inglés':'español'})')"><i class="ti ti-file-type-pdf"></i>PDF</button><button class="bt verde" onclick="confirma('${r.folio}')"><i class="ti ti-brand-whatsapp"></i>Enviar confirmación</button>`;
+  $('ov').classList.add('on');
+}
+function confirma(f){const r=R.find(x=>x.folio===f);if(r.est==='Por confirmar')r.est='Confirmada';cM();toast(`Se abre WhatsApp con la confirmación para ${r.nombre} en ${r.idioma==='EN'?'inglés':'español'}`);pag(P)}
+function nueva(){
+  $('m-t').textContent='Nueva reserva';
+  const fechas=[];for(let i=0;i<7;i++){const d=addD(hoy,i);fechas.push(`<option value="${dkey(d)}" ${i===1?'selected':''}>${i===0?'Hoy':i===1?'Mañana':''} ${corta(dkey(d))}</option>`)}
+  $('m-b').innerHTML=`<div class="fg"><div class="full"><label>Nombre completo</label><input id="n-nom" value="Carolina Bedoya"></div>
+  <div><label>Documento</label><input id="n-doc" value="CC 1036654321"></div><div><label>WhatsApp</label><input id="n-wa" value="+57 312 555 0198" oninput="calc()"></div>
+  <div><label>Fecha</label><select id="n-f" onchange="calc()">${fechas.join('')}</select></div><div><label>Punto de recogida</label><select id="n-p" onchange="calc()">${PUNTOS.map(p=>`<option value="${p.id}" ${p.id==='ppo'?'selected':''}>${p.h} · ${p.l}</option>`).join('')}</select></div>
+  <div><label>Adultos</label><input id="n-ad" type="number" min="1" value="2" oninput="calc()"></div><div><label>Niños 4–7 años</label><input id="n-ni" type="number" min="0" value="1" oninput="calc()"></div></div>
+  <div class="calc" id="n-calc"></div>`;
+  $('m-f').innerHTML=`<button class="bt claro" onclick="cM()">Cancelar</button><button class="bt" onclick="guarda()"><i class="ti ti-check"></i>Guardar reserva</button>`;
+  $('ov').classList.add('on');calc();
+}
+function calc(){
+  const ad=+$('n-ad').value||0,ni=+$('n-ni').value||0,k=$('n-f').value,ocup=R.filter(r=>r.fecha===k&&r.est!=='Cancelada').reduce((a,r)=>a+paxR(r),0),t=ad*PRECIO.ad+ni*PRECIO.ni;
+  const en=!$('n-wa').value.trim().startsWith('+57');
+  $('n-calc').innerHTML=`<div class="l"><span>${pl(ad,'adulto','adultos')} × ${cop(PRECIO.ad)}</span><span>${cop(ad*PRECIO.ad)}</span></div>${ni?`<div class="l"><span>${pl(ni,'niño','niños')} × ${cop(PRECIO.ni)}</span><span>${cop(ni*PRECIO.ni)}</span></div>`:''}<div class="l t"><span>Total a cobrar el día del tour</span><span>${cop(t)} COP</span></div><div class="l" style="color:var(--gris)"><span>Con tarjeta (+5%)</span><span>${cop(t*1.05)}</span></div><div class="l" style="color:${CAP-ocup<ad+ni?'var(--bad)':'var(--ok)'};margin-top:6px"><span>${CAP-ocup<ad+ni?'No hay lugar ese día':'Quedan '+(CAP-ocup)+' lugares ese día'}</span><span>Confirmación en ${en?'inglés':'español'}</span></div>`;
+}
+function guarda(){
+  const ad=+$('n-ad').value||1,ni=+$('n-ni').value||0,wa=$('n-wa').value.trim();
+  const r={folio:'MX-'+(folio++),fecha:$('n-f').value,nombre:$('n-nom').value||'Cliente',doc:$('n-doc').value,wa,ad,ni,be:0,punto:$('n-p').value,hotel:'',idioma:wa.startsWith('+57')?'ES':'EN',est:'Confirmada',pago:null,metodo:null,origen:'WhatsApp',nuevo:true};
+  R.push(r);asigna(r.fecha);cM();filtro=r.fecha===dkey(hoy)?'hoy':r.fecha===dkey(addD(hoy,1))?'manana':'todas';pag('reservas');
+  toast(`Reserva ${r.folio} guardada y asignada a ${(VEH.find(v=>v.id===r.veh)||{}).l}. Lista para mandar la confirmación.`);
+}
+function cM(){$('ov').classList.remove('on')}
+let tTo;function toast(m){const e=$('toast');e.querySelector('span').textContent=m;e.classList.add('on');clearTimeout(tTo);tTo=setTimeout(()=>e.classList.remove('on'),4500)}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')cM()});
+for(let i=-1;i<7;i++)asigna(dkey(addD(hoy,i)));
+const qs=new URLSearchParams(location.search);
+if(qs.get('rol'))$('rol').value=qs.get('rol'),cambiaRol(qs.get('rol'));else pag(qs.get('p')||'hoy');
+</script>
+</body>
+</html>
