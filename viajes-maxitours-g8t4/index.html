@@ -10,6 +10,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <style>
 :root{
   --fondo:#F3F1EC;--blanco:#fff;--tinta:#16201B;--gris:#67706B;--linea:#E4E1D9;--linea2:#F0EDE6;
@@ -152,10 +155,55 @@ tr.nuevo{background:#EAF2FB!important}
 .toast.on{opacity:1;transform:translate(-50%,0)}
 .toast i{color:#8FD3AE;font-size:18px}
 .tabs-m{display:none}
+/* Entrada */
+.login{position:fixed;inset:0;z-index:80;display:grid;grid-template-columns:1.1fr 1fr;background:#fff}
+.login .izq{background:var(--sb);color:#E3ECE7;padding:56px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.login .izq:after{content:"";position:absolute;right:-120px;bottom:-120px;width:420px;height:420px;border-radius:50%;border:1px solid #24382E;box-shadow:0 0 0 60px rgba(36,56,46,.25),0 0 0 140px rgba(36,56,46,.15)}
+.login .lm{display:flex;align-items:center;gap:12px;font-size:15px}
+.login .lm .m{width:42px;height:42px;border-radius:8px;background:#1F3A2C;display:grid;place-items:center;font-size:22px;color:#8FD3AE}
+.login h2{font-size:clamp(30px,3.4vw,44px);font-weight:500;letter-spacing:-.02em;line-height:1.1;max-width:460px;color:#fff}
+.login .izq p{color:var(--sb-t);max-width:420px;margin-top:14px;font-size:15px}
+.login .dato{display:flex;gap:28px;font-size:13px;color:var(--sb-t);position:relative;z-index:1}
+.login .dato b{display:block;color:#fff;font-size:22px;font-weight:500}
+.login .der{display:flex;flex-direction:column;justify-content:center;padding:56px;max-width:520px}
+.login .der h3{font-size:22px;font-weight:600;margin-bottom:6px}
+.login .der>p{color:var(--gris);margin-bottom:24px}
+.rolc{display:flex;align-items:center;gap:14px;width:100%;text-align:left;padding:16px;border:1px solid var(--linea);border-radius:8px;margin-bottom:10px;transition:border-color .25s var(--e),background .25s var(--e)}
+.rolc:hover{border-color:var(--acento);background:var(--acento-2)}
+.rolc .i{width:42px;height:42px;border-radius:8px;background:var(--acento-2);color:var(--acento);display:grid;place-items:center;font-size:21px;flex-shrink:0}
+.rolc b{display:block;font-weight:600;font-size:15px}
+.rolc small{color:var(--gris);font-size:13px}
+.rolc .ti-chevron-right{margin-left:auto;color:#B9B4A8;font-size:18px}
+.login .nota{font-size:12px;color:var(--gris);margin-top:14px}
+/* Mapa */
+#mapa{height:460px;border-top:1px solid #EEEBE4}
+.leaflet-container{font-family:Inter,sans-serif;background:#EEF0EC}
+.pin{width:26px;height:26px;border-radius:50%;color:#fff;font-size:11px;font-weight:600;display:grid;place-items:center;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.35)}
+.pin.dest{width:auto;padding:0 10px;border-radius:13px;background:var(--sb)}
+.leyv{display:flex;flex-wrap:wrap;gap:14px;padding:10px 18px;font-size:12px;color:var(--gris)}
+.leyv span{display:flex;align-items:center;gap:6px}
+.leyv i{width:14px;height:4px;border-radius:2px;display:inline-block}
+/* Guía de pasos */
+.coach{position:fixed;right:20px;bottom:20px;z-index:60;width:340px;background:#fff;border:1px solid var(--linea);border-radius:10px;box-shadow:0 12px 32px rgba(14,26,20,.18);overflow:hidden;transform:translateY(20px);opacity:0;transition:all .6s var(--e);pointer-events:none}
+.coach.on{transform:none;opacity:1;pointer-events:auto}
+.coach .ch{display:flex;justify-content:space-between;align-items:center;padding:14px 16px 8px}
+.coach .ch b{font-size:14px;font-weight:600}
+.coach .paso{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;padding:10px 16px;border-top:1px solid var(--linea2);transition:background .2s}
+.coach .paso:hover{background:#FAF9F6}
+.coach .paso .nn{width:24px;height:24px;border-radius:50%;background:var(--acento-2);color:var(--acento);font-size:12px;font-weight:600;display:grid;place-items:center;flex-shrink:0}
+.coach .paso.hecho .nn{background:var(--acento);color:#fff}
+.coach .paso span{font-size:13px;font-weight:500}
+.coach .paso small{display:block;font-size:12px;color:var(--gris);font-weight:400}
+.coach .pie{padding:10px 16px 14px;font-size:12px;color:var(--gris);border-top:1px solid var(--linea2)}
+.salir{display:inline-flex;align-items:center;gap:6px;height:38px;padding:0 12px;border-radius:6px;border:1px solid #DAD6CC;font-size:13px;color:var(--gris);white-space:nowrap}
 .aviso{font-size:12.5px;color:var(--gris);margin:-4px 0 14px}
 
 @media (max-width:1100px){.kpis{grid-template-columns:repeat(2,1fr)}.g2,.rutas{grid-template-columns:1fr}.sem{grid-template-columns:repeat(4,1fr)}.metodos{grid-template-columns:repeat(2,1fr)}.metodos div:nth-child(3){border-left:0}.metodos div:nth-child(n+3){border-top:1px solid var(--linea2)}}
+@media (max-width:900px){.login{grid-template-columns:1fr;overflow:auto}.login .izq{padding:28px 20px;gap:28px}.login .izq:after{display:none}.login .der{padding:24px 20px 40px;max-width:none}.login .dato{gap:20px}}
 @media (max-width:760px){
+  .coach{left:12px;right:12px;bottom:76px;width:auto}
+  #mapa{height:300px}
+  .salir span{display:none}
   body{font-size:15px}
   .demo .lg{display:none}.demo .sm{display:inline}
   .app{grid-template-columns:1fr}
@@ -179,6 +227,28 @@ tr.nuevo{background:#EAF2FB!important}
 </head>
 <body>
 
+<div class="login" id="login">
+  <div class="izq">
+    <div class="lm"><div class="m"><i class="ti ti-mountain"></i></div><div><b style="font-weight:500;color:#fff">Viajes Maxitours</b><br><span style="font-size:12px;color:var(--sb-t)">Tour a Guatapé desde Medellín</span></div></div>
+    <div><h2>Toda la operación del tour a Guatapé en una sola pantalla.</h2><p>Reservas, recogidas por buseta, confirmaciones en español e inglés y cobros del día. Desde la oficina o desde el celular del guía.</p></div>
+    <div class="dato"><div><b>7</b>puntos de encuentro</div><div><b>ES · EN</b>confirmaciones</div><div><b>COP · USD</b>cobros en recogida</div></div>
+  </div>
+  <div class="der">
+    <h3>Entrar al panel</h3>
+    <p>Cada persona del equipo ve solo lo que le toca.</p>
+    <button class="rolc" onclick="entrar('admin')"><span class="i"><i class="ti ti-building-store"></i></span><span><b>Administración</b><small>Todo: reservas, rutas, flota y cobros</small></span><i class="ti ti-chevron-right"></i></button>
+    <button class="rolc" onclick="entrar('reservas')"><span class="i"><i class="ti ti-headset"></i></span><span><b>Reservas</b><small>Toma reservas de WhatsApp y confirma; no ve cobros</small></span><i class="ti ti-chevron-right"></i></button>
+    <button class="rolc" onclick="entrar('guia')"><span class="i"><i class="ti ti-map-pin"></i></span><span><b>Guía · Buseta 1</b><small>Su ruta del día en el celular y lo que falta cobrar</small></span><i class="ti ti-chevron-right"></i></button>
+    <p class="nota">Muestra preparada por Ordanza. En la versión final cada quien entra con su usuario y contraseña.</p>
+  </div>
+</div>
+<div class="coach" id="coach">
+  <div class="ch"><b>Así funcionaría en Maxitours</b><button onclick="$('coach').classList.remove('on')" aria-label="Cerrar"><i class="ti ti-x"></i></button></div>
+  <button class="paso" id="cp1" onclick="paso(1)"><span class="nn">1</span><span>Entra una reserva por WhatsApp<small>La capturan en 20 segundos y sale la confirmación lista.</small></span></button>
+  <button class="paso" id="cp2" onclick="paso(2)"><span class="nn">2</span><span>Sale la ruta de cada buseta<small>Ordenada por hora, con mapa, para el guía.</small></span></button>
+  <button class="paso" id="cp3" onclick="paso(3)"><span class="nn">3</span><span>Se cobra y se cierra el día<small>Efectivo, tarjeta y Bancolombia, cuadrado.</small></span></button>
+  <div class="pie">Los clientes y vehículos son de ejemplo. Tour, puntos y precios son los suyos.</div>
+</div>
 <div class="demo">
   <span><b class="lg">Muestra para Viajes Maxitours</b><b class="sm">Muestra · Maxitours</b><span class="lg"> · preparada por Ordanza · reservas, nombres y vehículos de ejemplo</span></span>
   <span class="lg" style="opacity:.7">Precios y puntos de encuentro tomados de touraguatape.com</span>
@@ -201,7 +271,7 @@ tr.nuevo{background:#EAF2FB!important}
       <h1 id="p-tit">Hoy</h1>
       <span class="vivo"><i></i>En vivo</span>
       <span class="f" id="p-fecha"></span>
-      <div class="der"><span class="clima"><i class="ti ti-cloud-sun"></i> 22° · Guatapé</span><button class="bt" id="bt-nueva" onclick="nueva()"><i class="ti ti-plus"></i>Nueva reserva</button></div>
+      <div class="der"><span class="clima"><i class="ti ti-cloud-sun"></i> 22° · Guatapé</span><button class="bt" id="bt-nueva" onclick="nueva()"><i class="ti ti-plus"></i>Nueva reserva</button><button class="salir" onclick="salir()" title="Cambiar de usuario"><i class="ti ti-logout"></i><span>Cambiar usuario</span></button></div>
     </div>
     <div class="cnt" id="p-cont"></div>
   </div>
@@ -221,22 +291,23 @@ tr.nuevo{background:#EAF2FB!important}
 /* Tomado de su página: precios, puntos de encuentro con hora, zonas de hotel, pagos, idiomas.
    De ejemplo: clientes, reservas, vehículos, guías y horas de recogida en hotel. */
 const PRECIO={ad:129000,ni:119000,be:10000},RECARGO=0.05;
-const PUNTOS=[
- {id:'gua',l:'Hotel · Guayabal',h:'06:40',z:'hotel'},
- {id:'epo',l:'Estación Poblado',h:'06:50'},
- {id:'hpo',l:'Hotel · El Poblado',h:'06:55',z:'hotel'},
- {id:'ppo',l:'Parque El Poblado',h:'07:00'},
- {id:'bel',l:'Hotel · Belén',h:'07:10',z:'hotel'},
- {id:'flo',l:'Estación Floresta',h:'07:20'},
- {id:'lau',l:'Hotel · Laureles',h:'07:25',z:'hotel'},
- {id:'est',l:'Estación Estadio',h:'07:40'},
- {id:'cen',l:'Zona Centro · Hotel 47 Medellín Street',h:'07:40'},
- {id:'hce',l:'Hotel · El Centro',h:'07:45',z:'hotel'},
- {id:'ter',l:'Terminal del Norte',h:'07:50'},
- {id:'zam',l:'Bomba de Zamora',h:'08:00'},
+const PUNTOS=[ // ll: ubicación aproximada
+
+ {id:'gua',ll:[6.2155,-75.5862],l:'Hotel · Guayabal',h:'06:40',z:'hotel'},
+ {id:'epo',ll:[6.2126,-75.5776],l:'Estación Poblado',h:'06:50'},
+ {id:'hpo',ll:[6.2075,-75.5672],l:'Hotel · El Poblado',h:'06:55',z:'hotel'},
+ {id:'ppo',ll:[6.2096,-75.5711],l:'Parque El Poblado',h:'07:00'},
+ {id:'bel',ll:[6.2318,-75.6035],l:'Hotel · Belén',h:'07:10',z:'hotel'},
+ {id:'flo',ll:[6.2587,-75.6077],l:'Estación Floresta',h:'07:20'},
+ {id:'lau',ll:[6.2448,-75.5935],l:'Hotel · Laureles',h:'07:25',z:'hotel'},
+ {id:'est',ll:[6.2527,-75.5880],l:'Estación Estadio',h:'07:40'},
+ {id:'cen',ll:[6.2449,-75.5689],l:'Zona Centro · Hotel 47 Medellín Street',h:'07:40'},
+ {id:'hce',ll:[6.2510,-75.5665],l:'Hotel · El Centro',h:'07:45',z:'hotel'},
+ {id:'ter',ll:[6.2786,-75.5703],l:'Terminal del Norte',h:'07:50'},
+ {id:'zam',ll:[6.3088,-75.5575],l:'Bomba de Zamora',h:'08:00'},
 ];
 const HOTELES={gua:['Hotel Dann Carlton Belfort','Hotel Medellín Guayabal'],hpo:['Hotel Poblado Plaza','The Charlee','Selina Medellín','Hotel Estelar Milla de Oro','Hostal Los Patios'],bel:['Hotel Belén Plaza'],lau:['Hotel Laureles 70','Casa Laureles'],hce:['Hotel Nutibara','Hotel Café Real']};
-const VEH=[{id:'b1',l:'Buseta 1',cap:30,guia:'Andrés M.',cond:'Jhon F.'},{id:'b2',l:'Buseta 2',cap:30,guia:'Carolina R.',cond:'Wilson P.'},{id:'v3',l:'Van 3',cap:19,guia:'Daniela G.',cond:'Óscar T.'},{id:'v4',l:'Van 4',cap:19,guia:'Felipe A.',cond:'Mauricio L.'}];
+const VEH=[{id:'b1',col:'#1F6B4A',l:'Buseta 1',cap:30,guia:'Andrés M.',cond:'Jhon F.'},{id:'b2',col:'#2456A6',l:'Buseta 2',cap:30,guia:'Carolina R.',cond:'Wilson P.'},{id:'v3',col:'#B7791F',l:'Van 3',cap:19,guia:'Daniela G.',cond:'Óscar T.'},{id:'v4',col:'#6B46A8',l:'Van 4',cap:19,guia:'Felipe A.',cond:'Mauricio L.'}];
 const NOM_ES=['Laura Gómez','Juan Pablo Restrepo','Santiago Ríos','María José Ortiz','Valentina Cano','Camila Henao','Sofía Arango','Isabela Mejía','Andrés Quintero','Mateo Vélez','Ana Lucía Pérez','Sebastián Toro','Paula Zapata','Mariana Duque','Kevin Rojas','Felipe Cardona','Natalia Uribe','Juliana Marín','Pedro Salazar','Daniela Ospina','Carlos Agudelo','Luisa Fernanda Gil','Alejandro Montoya','Manuela Correa','Esteban Londoño','Catalina Jaramillo','Diego Villa','Laura Sofía Muñoz','Tomás Echeverri','Verónica Álvarez','Julián Patiño','Melissa Hoyos','Ricardo Betancur','Sara Castaño','Jorge Iván Posada','Lina Marcela Ruiz'];
 const NOM_EN=['Emily Carter','Daniel Weber','Lucas Martin','Thomas Müller','James Wilson','Chloé Dubois','Olivia Brown','Noah Smith','Hannah Lee','Ethan Davis','Grace Kim','Liam O’Connor','Sophie Laurent','Jack Turner','Mia Schneider','Ryan Cooper','Emma Johansson','Lucas van Dijk','Ava Thompson','Ben Harris','Nina Rossi','Oscar Lindqvist','Charlotte Evans','Max Becker'];
 const usados={};function nombre(k,en){const L=en?NOM_EN:NOM_ES;usados[k]=usados[k]||new Set();let n,t=0;do{n=L[Math.floor(rnd()*L.length)];t++}while(usados[k].has(n)&&t<40);usados[k].add(n);return n}
@@ -346,11 +417,12 @@ function ordena(k){orden.d=orden.k===k?-orden.d:1;orden.k=k;pag('reservas')}
 function pRecogidas(){
   const k=dkey(hoy);asigna(k);
   const vs=ROL==='guia'?[VEH[0]]:VEH;
-  return `<p class="aviso">Cada vehículo recoge en orden de ruta. El guía ve su lista en el celular, marca quién subió y cobra lo pendiente.</p><div class="rutas">${vs.map(v=>{
+  setTimeout(()=>mapa(vs),60);
+  return `<div class="box"><div class="hd"><h3>Mapa de recogidas · ${larga(hoy).split(',')[0]}</h3><span>salida hacia Guatapé por la autopista norte</span></div><div id="mapa"></div><div class="leyv">${vs.map(v=>`<span><i style="background:${v.col}"></i>${v.l}</span>`).join('')}<span style="margin-left:auto">Ubicaciones aproximadas</span></div></div><p class="aviso">Cada vehículo recoge en orden de ruta. El guía ve su lista en el celular, marca quién subió y cobra lo pendiente.</p><div class="rutas">${vs.map(v=>{
     const rs=R.filter(r=>r.fecha===k&&r.veh===v.id&&r.est!=='Cancelada');
     const pts=PUNTOS.filter(p=>rs.some(r=>r.punto===p.id));
     const pax=rs.reduce((a,r)=>a+paxR(r),0),cob=rs.filter(r=>!r.pago).reduce((a,r)=>a+totalR(r),0);
-    return `<div class="box"><div class="hd"><h3>${v.l} · ${pax}/${v.cap}</h3><span>Guía ${v.guia} · ${v.cond}</span></div>
+    return `<div class="box"><div class="hd"><h3><i style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${v.col};margin-right:8px"></i>${v.l} · ${pax}/${v.cap}</h3><span>Guía ${v.guia} · ${v.cond}</span></div>
     ${pts.map(p=>{const x=rs.filter(r=>r.punto===p.id);return `<div class="parada"><div class="h num">${p.h}</div><div><div class="lug">${p.l}</div><div class="pas">${x.map(r=>`${r.nombre} <span style="color:var(--gris)">(${paxR(r)})</span>${r.hotel?' · <span style="color:var(--gris)">'+r.hotel+'</span>':''} ${r.idioma==='EN'?'<span class="lang en">EN</span>':''} ${r.pago?'<span class="badge b-ok">Pagó</span>':'<span class="badge b-warn">Cobrar '+cop(totalR(r))+'</span>'}`).join('<br>')}</div></div><div class="pax">${x.reduce((a,r)=>a+paxR(r),0)} pax</div></div>`}).join('')||'<div class="parada"><div></div><div style="color:var(--gris)">Sin pasajeros asignados.</div></div>'}
     <div class="hd" style="border-top:1px solid #EEEBE4;border-bottom:0"><span>Por cobrar en este vehículo</span><b class="num">${cop(cob)} COP</b></div></div>`}).join('')}</div>`;
 }
@@ -383,10 +455,10 @@ function det(f){
   $('m-t').textContent=`Reserva ${r.folio}`;
   $('m-b').innerHTML=`<dl class="dl"><dt>Estado</dt><dd><span class="badge ${ESTB[e]}">${e}</span></dd><dt>Fecha</dt><dd>${larga(new Date(r.fecha+'T00:00'))}</dd><dt>Recogida</dt><dd>${p.h} hrs · ${p.l}${r.hotel?'<br><span style="color:var(--gris)">'+r.hotel+'</span>':''}</dd><dt>Vehículo</dt><dd>${v?v.l+' · guía '+v.guia:'Se asigna al cerrar el día'}</dd><dt>Cliente</dt><dd>${r.nombre}<br><span style="color:var(--gris)">${r.doc} · ${r.wa}</span></dd><dt>Pasajeros</dt><dd>${pl(r.ad,'adulto','adultos')}${r.ni?' · '+pl(r.ni,'niño','niños')+' (4–7)':''}${r.be?' · 1 bebé':''}</dd><dt>Idioma</dt><dd>${r.idioma==='EN'?'Inglés':'Español'}</dd><dt>Total</dt><dd><b>${cop(totalR(r))} COP</b> <span style="color:var(--gris)">· con tarjeta ${cop(totalR(r)*(1+RECARGO))}</span></dd><dt>Pago</dt><dd>${r.pago?cop(r.pago)+' · '+r.metodo:'Se cobra el día del tour'}</dd></dl>
   <div class="msg">${msgConf(r)}</div>`;
-  $('m-f').innerHTML=`<button class="bt claro" onclick="cM();toast('Se descarga la confirmación en PDF (${r.idioma==='EN'?'inglés':'español'})')"><i class="ti ti-file-type-pdf"></i>PDF</button><button class="bt verde" onclick="confirma('${r.folio}')"><i class="ti ti-brand-whatsapp"></i>Enviar confirmación</button>`;
+  $('m-f').innerHTML=`<button class="bt claro" onclick="pdf('${r.folio}')"><i class="ti ti-file-type-pdf"></i>PDF</button><button class="bt verde" onclick="confirma('${r.folio}')"><i class="ti ti-brand-whatsapp"></i>Enviar confirmación</button>`;
   $('ov').classList.add('on');
 }
-function confirma(f){const r=R.find(x=>x.folio===f);if(r.est==='Por confirmar')r.est='Confirmada';cM();toast(`Se abre WhatsApp con la confirmación para ${r.nombre} en ${r.idioma==='EN'?'inglés':'español'}`);pag(P)}
+function confirma(f){const r=R.find(x=>x.folio===f);if(r.est==='Por confirmar')r.est='Confirmada';window.open('https://wa.me/?text='+encodeURIComponent(msgConf(r)),'_blank');cM();toast(`Confirmación lista en WhatsApp para ${r.nombre} (${r.idioma==='EN'?'inglés':'español'}). Aquí solo eliges el chat; en el sistema real va directo a su número.`);pag(P)}
 function nueva(){
   $('m-t').textContent='Nueva reserva';
   const fechas=[];for(let i=0;i<7;i++){const d=addD(hoy,i);fechas.push(`<option value="${dkey(d)}" ${i===1?'selected':''}>${i===0?'Hoy':i===1?'Mañana':''} ${corta(dkey(d))}</option>`)}
@@ -414,7 +486,57 @@ let tTo;function toast(m){const e=$('toast');e.querySelector('span').textContent
 document.addEventListener('keydown',e=>{if(e.key==='Escape')cM()});
 for(let i=-1;i<7;i++)asigna(dkey(addD(hoy,i)));
 const qs=new URLSearchParams(location.search);
-if(qs.get('rol'))$('rol').value=qs.get('rol'),cambiaRol(qs.get('rol'));else pag(qs.get('p')||'hoy');
+if(qs.get('rol'))entrar(qs.get('rol'),true);else if(qs.get('p')){$('login').classList.add('hidden');pag(qs.get('p'))}else pag('hoy');
+
+/* Entrada por rol, guía de pasos, mapa y PDF */
+function entrar(rol,sinCoach){$('login').classList.add('hidden');$('rol').value=rol;cambiaRol(rol);if(rol==='admin'&&!sinCoach)setTimeout(()=>$('coach').classList.add('on'),700)}
+function salir(){$('coach').classList.remove('on');cM();$('login').classList.remove('hidden');window.scrollTo(0,0)}
+function paso(n){$('cp'+n).classList.add('hecho');if(n===1){nueva()}if(n===2){cM();pag('recogidas')}if(n===3){cM();pag('cobros')}}
+let MAP=null;
+function mapa(vs){
+  const el=$('mapa');if(!el)return;
+  if(typeof L==='undefined'){el.innerHTML='<div style="padding:40px;text-align:center;color:var(--gris)">El mapa no cargó. Revisa la conexión.</div>';return}
+  if(MAP){MAP.remove();MAP=null}
+  MAP=L.map(el,{scrollWheelZoom:false,zoomControl:true,attributionControl:true});
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{maxZoom:18,subdomains:'abcd',attribution:'&copy; OpenStreetMap &copy; CARTO'}).addTo(MAP);
+  const k=dkey(hoy),todos=[];
+  vs.forEach(v=>{
+    const pts=PUNTOS.filter(p=>R.some(r=>r.fecha===k&&r.veh===v.id&&r.est!=='Cancelada'&&r.punto===p.id));
+    if(!pts.length)return;
+    const lls=pts.map(p=>p.ll);lls.push([6.3150,-75.5520]);
+    L.polyline(lls,{color:v.col,weight:4,opacity:.85}).addTo(MAP);
+    pts.forEach((p,i)=>{const pax=R.filter(r=>r.fecha===k&&r.veh===v.id&&r.punto===p.id&&r.est!=='Cancelada').reduce((a,r)=>a+paxR(r),0);
+      L.marker(p.ll,{icon:L.divIcon({className:'',html:`<div class="pin" style="background:${v.col}">${i+1}</div>`,iconSize:[26,26],iconAnchor:[13,13]})}).addTo(MAP)
+       .bindTooltip(`<b>${p.h} · ${p.l}</b><br>${v.l} · ${pax} pax`,{direction:'top',offset:[0,-12]});todos.push(p.ll)});
+  });
+  L.marker([6.3150,-75.5520],{icon:L.divIcon({className:'',html:'<div class="pin dest" style="white-space:nowrap">→ Guatapé</div>',iconSize:[90,26],iconAnchor:[10,13]})}).addTo(MAP);
+  MAP.fitBounds(todos,{padding:[24,24]});setTimeout(()=>{MAP.invalidateSize();MAP.fitBounds(todos,{padding:[24,24]})},250);
+}
+function pdf(f){
+  const r=R.find(x=>x.folio===f),p=PT(r.punto),en=r.idioma==='EN';
+  if(!window.jspdf){toast('No cargó el generador de PDF. Revisa la conexión.');return}
+  const doc=new window.jspdf.jsPDF({unit:'mm',format:'a4'}),W=210,verde=[31,107,74],tinta=[22,32,27],gris=[103,112,107];
+  doc.setFillColor(14,26,20);doc.rect(0,0,W,38,'F');
+  doc.setTextColor(255,255,255);doc.setFont('helvetica','bold');doc.setFontSize(18);doc.text('Viajes Maxitours',20,20);
+  doc.setFont('helvetica','normal');doc.setFontSize(10);doc.setTextColor(159,176,166);doc.text(en?'Guatapé tour from Medellín':'Tour a Guatapé desde Medellín',20,28);
+  doc.setTextColor(255,255,255);doc.setFontSize(10);doc.text((en?'Booking ':'Reserva ')+r.folio,W-20,20,{align:'right'});
+  doc.setTextColor(...verde);doc.setFontSize(9);doc.text((en?'BOOKING CONFIRMATION':'CONFIRMACIÓN DE RESERVA').split('').join(' '),20,54);
+  doc.setTextColor(...tinta);doc.setFontSize(22);doc.text((en?'See you soon, ':'Te esperamos, ')+r.nombre.split(' ')[0]+'.',20,66);
+  const d=new Date(r.fecha+'T00:00'),fecha=en?d.toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'}):larga(d);
+  const h12=t=>{let [h,m]=t.split(':').map(Number);return (h%12||12)+':'+String(m).padStart(2,'0')+(h<12?' AM':' PM')};
+  const filas=[[en?'Date':'Fecha',fecha],[en?'Pickup':'Recogida',(en?h12(p.h):p.h+' hrs')+' · '+(r.hotel?r.hotel+' ('+p.l.replace('Hotel · ','')+')':p.l)],[en?'Return':'Regreso',en?'Medellín, around 6:30 PM':'Medellín, 6:30 pm aprox.'],[en?'Guests':'Pasajeros',`${r.ad} ${en?'adult(s)':'adulto(s)'}${r.ni?` · ${r.ni} ${en?'child(ren) 4–7':'niño(s) 4–7'}`:''}${r.be?(en?' · 1 infant':' · 1 bebé'):''}`],[en?'Name':'Titular',r.nombre+' · '+r.doc],[en?'Total':'Total',cop(totalR(r))+' COP'+(r.pago?(en?' · paid':' · pagado'):(en?' · paid on the day':' · se paga el día del tour'))]];
+  let y=82;doc.setFontSize(11);
+  filas.forEach(([a,b])=>{doc.setDrawColor(228,225,217);doc.line(20,y-6,W-20,y-6);doc.setTextColor(...gris);doc.text(a,20,y);doc.setTextColor(...tinta);doc.text(doc.splitTextToSize(b,120),70,y);y+=12});
+  doc.line(20,y-6,W-20,y-6);
+  y+=6;doc.setTextColor(...verde);doc.setFontSize(9);doc.text((en?'INCLUDED':'INCLUYE').split('').join(' '),20,y);y+=7;
+  doc.setTextColor(...tinta);doc.setFontSize(10);
+  doc.text(doc.splitTextToSize(en?'Transport, breakfast and lunch, boat ride on the Guatapé reservoir, visit to the Old Peñol replica, Guatapé town tour, professional guide and medical assistance card.':'Transporte, desayuno y almuerzo, paseo en lancha por el embalse, visita a la Réplica del Antiguo Peñol, recorrido por Guatapé, guía profesional y tarjeta de asistencia médica.',W-40),20,y);y+=16;
+  doc.setTextColor(...verde);doc.setFontSize(9);doc.text((en?'GOOD TO KNOW':'TEN EN CUENTA').split('').join(' '),20,y);y+=7;doc.setTextColor(...tinta);doc.setFontSize(10);
+  doc.text(doc.splitTextToSize(en?'Please be at the pickup point 10 minutes early. Climbing the Peñol rock is not included (COP 35,000, cash at the ticket office). Payment: cash COP/USD, card (+5%) or Bancolombia transfer. Free cancellation up to 24 hours before.':'Llega 10 minutos antes al punto de recogida. La subida a la Piedra del Peñol no está incluida ($35.000 COP en efectivo en taquilla). Pago: efectivo COP/USD, tarjeta (+5%) o transferencia Bancolombia. Cancelación sin costo hasta 24 horas antes.',W-40),20,y);
+  doc.setDrawColor(228,225,217);doc.line(20,275,W-20,275);doc.setTextColor(...gris);doc.setFontSize(8.5);
+  doc.text('Viajes Maxitours · Inversiones Maxitours S.A.S. · RNT 172253 · WhatsApp +57 311 744 7988',20,281);
+  doc.save(`Maxitours-${r.folio}.pdf`);toast(`PDF de la reserva ${r.folio} descargado (${en?'inglés':'español'})`);
+}
 </script>
 </body>
 </html>
